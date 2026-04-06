@@ -1,4 +1,5 @@
 {% load sponsors %}
+{% if sponsors %}
 <div id="wafer-sponsors" class="container text-center mx-auto space-y-3">
   <h2 class="text-gray-400 pb-2">Our Sponsors</h2>
   {% for package in packages %}
@@ -22,3 +23,4 @@
   {% endif %}
   {% endfor %}
 </div>
+{% endif %}

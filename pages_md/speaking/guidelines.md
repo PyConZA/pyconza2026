@@ -3,9 +3,9 @@ name: Guidelines and advice
 include_in_menu: True
 ---
 
-We are glad you are interested in speaking at PyCon Africa!
+We are glad you are interested in speaking at PyConZA!
 
-This document is a guide to help you submit the best possible proposal for PyCon Africa 2025 and offers tips to make your proposal more likely to be accepted. Please note that we receive many more proposals for talks, tutorials, and posters than we can accept. However, following the recommendations provided here can increase your chances of acceptance.
+This document is a guide to help you submit the best possible proposal for PyConZA 2026 and offers tips to make your proposal more likely to be accepted. Please note that we receive many more proposals for talks, tutorials, and posters than we can accept. However, following the recommendations provided here can increase your chances of acceptance.
 
 ## Topics and Advice
 
@@ -38,7 +38,7 @@ There are also international community members who have blogged about the talk p
 
 ## Bad Ideas
 
-Avoid infomercials. That doesn't mean you can't talk about your work or company at PyCon Africa. For instance, we welcome talks on how you or your company solved a problem or notable open-source projects that may benefit attendees.
+Avoid infomercials. That doesn't mean you can't talk about your work or company at PyConZA. For instance, we welcome talks on how you or your company solved a problem or notable open-source projects that may benefit attendees.
 
 On the other hand, talks on "how to use our product" (or similar) usually aren't appropriate.
 

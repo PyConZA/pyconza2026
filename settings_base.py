@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from wafer.settings import *
 
 
-CONFERENCE_NAME = "PyCon Africa 2025"
+CONFERENCE_NAME = "PyConZA 2026"
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -123,17 +123,17 @@ STATICFILES_FINDERS = (
 
 SOCIAL_LINKS = [
     {"url": "https://bsky.app/profile/za.pycon.org", "icon": "fa-bluesky"},
-    {"url": "https://mastodon.social/@pyconafrica", "icon": "fa-brands fa-mastodon"},
-    {"url": "https://x.com/pyconafrica", "icon": "fa-brands fa-twitter"},
-    {"url": "https://www.instagram.com/pyconafrica", "icon": "fa-brands fa-instagram"},
-    {"url": "https://www.facebook.com/pyconafrica", "icon": "fa-brands fa-facebook"},
+    {"url": "https://fosstodon.org/@pyconza", "icon": "fa-brands fa-mastodon"},
+    {"url": "https://x.com/pyconza", "icon": "fa-brands fa-twitter"},
     {
-        "url": "https://www.linkedin.com/company/pyconafrica/",
+        "url": "https://www.linkedin.com/company/pyconza",
         "icon": "fa-brands fa-linkedin",
     },
-    # {"url": "https://www.youtube.com/@PyconAfrica", "icon": "fa-brands fa-youtube"},
-    {"url": "https://www.youtube.com/@pyconza", "icon": "fa-brands fa-youtube"},
-    {"url": "https://discord.gg/zaAKDnzZGw", "icon": "fa-brands fa-discord"},
+    {
+        "url": "https://www.youtube.com/c/PyConSouthAfrica",
+        "icon": "fa-brands fa-youtube",
+    },
+    {"url": "https://discord.gg/95FJZswds8", "icon": "fa-brands fa-discord"},
 ]
 
 
@@ -170,32 +170,32 @@ WAFER_MENUS += (
         "items": [
             {
                 "menu": "beginners_day",
-                "label": _("8 Oct: Beginners Day (FREE)"),
+                "label": _("Beginners Day (FREE)"),
                 "url": reverse_lazy("page_beginners_day"),
             },
             {
                 "menu": "in_person_event",
-                "label": _("9-10 Oct: In Person Conference"),
+                "label": _("In Person Conference"),
                 "url": reverse_lazy("page_in_person_event"),
             },
             {
                 "menu": "remote_experience",
-                "label": _("9-10 Oct: Online Conference"),
+                "label": _("Online Conference"),
                 "url": reverse_lazy("page_remote_experience"),
             },
             {
                 "menu": "dinner",
-                "label": _("9 Oct: Dinner for Speakers, Organisers & Sponsors"),
+                "label": _("Dinner for Speakers, Organisers & Sponsors"),
                 "url": reverse_lazy("page_dinner"),
             },
             {
                 "menu": "sprints",
-                "label": _("11-12 Oct: Sprints"),
+                "label": _("Sprints"),
                 "url": reverse_lazy("page_sprints"),
             },
             {
                 "menu": "friends",
-                "label": _("30 Aug: Friends of PyCon Africa (FREE)"),
+                "label": _("Friends of PyConZA (FREE)"),
                 "url": reverse_lazy("page_friends_of_pycon_africa"),
             },
         ],
@@ -282,18 +282,18 @@ VISA_ORGANISER_NAME = "Adam Piskorski"
 VISA_ORGANISER_ROLE = "Director of the Python Software Society of South Africa"
 VISA_ORGANISER_CONTACT_EMAIL = "pyconza@piskorski.me"
 VISA_ORGANISER_CONTACT_PHONE = "+27 79 899 2319"
-VISA_CONFERENCE_LOCATION = "Johannesburg, South Africa"
+VISA_CONFERENCE_LOCATION = "Cape Town, South Africa"
 VISA_DEFAULT_EMBASSY_ADDRESS = "Embassy of South Africa"
-WEBSITE_URL = "https://africa.pycon.org"
-CONFERENCE_LOCATION = "Johannesburg, South Africa"
-CONFERENCE_DATES = "8 - 12 October 2025"
+WEBSITE_URL = "https://za.pycon.org"
+CONFERENCE_LOCATION = "Cape Town, South Africa"
+CONFERENCE_DATES = "October 2026"
 
 WAFER_TALK_REVIEW_SCORES = (0, 5)
 
 
 CONTACT_US_EMAILS = {
-    "team": "team@pycon.org",
-    "sponsorship": "sponsorship@pycon.africa",
+    "team": "team@za.pycon.org",
+    "sponsorship": "sponsorship@za.pycon.org",
 }
 
 SOCIAL_MEDIA_ENTRIES = {

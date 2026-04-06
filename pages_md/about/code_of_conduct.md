@@ -4,15 +4,15 @@ include_in_menu: True
 menu_order: 2
 ---
 
-PyCon Africa is a community-driven conference designed for networking and collaboration among developers from all over Africa.
+PyConZA is a community-driven conference designed for networking and collaboration among developers from all over South Africa and beyond.
 
 We highly value each member's participation in the Python community and strive to ensure that all attendees enjoy a fulfilling experience. As such, respect and courtesy are expected from everyone during the conference and at all related events.
 
-To clarify the expected behaviour, all staff, attendees, speakers, exhibitors, organizers, and volunteers at any PyCon Africa event must adhere to the following Code of Conduct. This policy is enforced throughout the event by the organizers.
+To clarify the expected behaviour, all staff, attendees, speakers, exhibitors, organizers, and volunteers at any PyConZA event must adhere to the following Code of Conduct. This policy is enforced throughout the event by the organizers.
 
 ## Our Community
 
-The Python Software Community across Africa is vibrant, consisting of members with diverse skills, personalities, cultures, and experiences. It's through these differences that our community finds strength and achieves growth. We encourage all community interactions to be guided by the following principles, which help steer our interactions and maintain a positive, successful, and growing community:
+The Python Software Community in South Africa is vibrant, consisting of members with diverse skills, personalities, cultures, and experiences. It's through these differences that our community finds strength and achieves growth. We encourage all community interactions to be guided by the following principles, which help steer our interactions and maintain a positive, successful, and growing community:
 
 - **Being open**: Community members are open to collaboration, whether it's on PEPs, patches, problems, or other initiatives.
 - **Focusing on what is best for the community**: Our actions and decisions should reflect respect for our community processes and contribute positively.
@@ -41,7 +41,7 @@ Unacceptable behaviors include but are not limited to:
 
 ### Weapons Policy
 
-No weapons will be allowed at PyCon Africa events, consistent with venue policies.
+No weapons will be allowed at PyConZA events, consistent with venue policies.
 
 ### Consequences
 
@@ -49,11 +49,11 @@ Participants asked to stop any inappropriate behaviour are expected to comply im
 
 ## Scope
 
-This Code of Conduct applies to all participants at PyCon Africa events, including:
+This Code of Conduct applies to all participants at PyConZA events, including:
 
 - Talks, workshops, parties, and any associated social events.
 - Online interactions related to the conference, including posts related to the conference on social media.
 
-The Code of Conduct applies both within conference spaces and in public spaces when an individual is representing PyCon Africa or its community. Instances of abusive, harassing, or otherwise unacceptable behaviour may be reported by contacting the event organizing team at coc@pycon.africa.
+The Code of Conduct applies both within conference spaces and in public spaces when an individual is representing PyConZA or its community. Instances of abusive, harassing, or otherwise unacceptable behaviour may be reported by contacting the event organizing team at conduct@za.pycon.org.
 
 **NB:** This code of conduct has been adapted from the [Python Software Foundation](https://www.python.org/psf/), under whose guidance local Python communities operate. The full original code of conduct can be found on their website.

@@ -4,7 +4,7 @@ include_in_menu: True
 menu_order: 1
 ---
 
-PyCon Africa 2025 is a hybrid conference. This means that we will be having an in-person conference this year, and we will be making sure that those folks who want or need to join us remotely still get a great experience.
+PyConZA 2026 is a hybrid conference. This means that we will be having an in-person conference this year, and we will be making sure that those folks who want or need to join us remotely still get a great experience.
 
 ## Joining remotely 
 
@@ -20,4 +20,3 @@ Remote attendees will have access to:
 ## Joining in person 
 
 Note that remote ticket holders will not have access to the in-person event. You need to buy an in-person ticket to access the physical venue. 
-

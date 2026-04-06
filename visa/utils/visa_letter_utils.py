@@ -36,7 +36,7 @@ def generate_visa_letter_pdf(request, visa_letter):
         "contact_email": settings.VISA_ORGANISER_CONTACT_EMAIL,
         "contact_phone": settings.VISA_ORGANISER_CONTACT_PHONE,
         "website_url": settings.WEBSITE_URL,
-        "logo_url": request.build_absolute_uri("/static/img/letter_header.png"),
+        "logo_url": request.build_absolute_uri("/static/img/pyconza-logo.png"),
         "signature_url": request.build_absolute_uri("/static/img/adam_signature.png"),
     }
 

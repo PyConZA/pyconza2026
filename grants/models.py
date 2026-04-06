@@ -43,10 +43,10 @@ class GrantApplication(models.Model):
     )
 
     motivation = models.TextField(
-        help_text=_("Explain why you would like to attend PyCon Africa and how it would benefit you.")
+        help_text=_("Explain why you would like to attend PyConZA and how it would benefit you.")
     )
     contribution = models.TextField(
-        help_text=_("Describe any contributions you have made to Python, PyCon Africa, or the broader tech community.")
+        help_text=_("Describe any contributions you have made to Python, PyConZA, or the broader tech community.")
     )
     financial_need = models.TextField(
         help_text=_("Please explain your financial circumstances and why you need this grant.")

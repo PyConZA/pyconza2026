@@ -14,13 +14,13 @@ uv sync
 # Core Values
 
 - Community-First: Emphasize collaboration and inclusivity
-- African Excellence: Celebrate African tech talent and innovation
+- South African Excellence: Celebrate South African tech talent and innovation
 - Python Passion: Maintain connection to global Python community
 - Accessibility: Design for all users, regardless of ability or connection speed
 
 
 # Design
-The PyCon Africa visual identity merges Python's established brand elements with vibrant African design sensibilities. Our approach balances professionalism with warmth, technical precision with creative expression, and global standards with local flavor.
+The PyConZA visual identity merges Python's established brand elements with vibrant South African design sensibilities. Our approach balances professionalism with warmth, technical precision with creative expression, and global standards with local flavor.
 
 
 ## Design Implementation Guidelines

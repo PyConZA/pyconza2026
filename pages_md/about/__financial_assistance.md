@@ -4,7 +4,7 @@ include_in_menu: True
 menu_order: 1
 ---
 
-We are delighted you are interested in attending PyCon Africa 2025, which will be held on 24th - 28th September in Accra, Ghana. As part of our commitment to fostering an inclusive community, we recognize that some individuals may need financial assistance to make conference participation possible.
+We are delighted you are interested in attending PyConZA 2026, which will be held in October 2026 in Cape Town, South Africa. As part of our commitment to fostering an inclusive community, we recognize that some individuals may need financial assistance to make conference participation possible.
 
 ## Grant Availability and Coverage:
 Due to budget limitations, we can only support a small number of attendees with financial aid grants. These grants will be awarded based on financial need and responses provided in the application form. Please note that approved grants may only cover certain expenses (e.g. conference ticket but not accommodation). Any expenses not covered by your specific grant would remain your responsibility.
@@ -22,14 +22,12 @@ We'd love to be able to help all those who submit applications, but our funds ar
 The financial assistance programme will prioritise:
 * Speakers
 * Those who will contribute back to their local communities
-* Those who will help increase diversity at the event and in African programming
+* Those who will help increase diversity at the event
 
 We will do our best to maximise the impact of our financial assistance funding.
 
 ## How to Apply
-Please complete our form before the deadline: July 19, 2025 (anywhere in the world). We will not accept applications after this date.
-
-Read the questions on the form carefully and answer them as best you can.
+Details on how to apply for financial assistance will be announced closer to the event.
 
 ## What Can I Request?
 You can request a free ticket only, or a grant as well as a free ticket. Anyone who is allocated a grant will automatically receive a free ticket.
@@ -50,21 +48,17 @@ You will need to budget for:
 * Travel
 * Visa, if necessary
 * Accommodation
-* Subsistence (evening meals, local transport, etc.) while in Accra
+* Subsistence (evening meals, local transport, etc.) while in Cape Town
 
 ## Travel
 
-Spend a little time researching your options. If you will need to travel by air, use websites such as Skyscanner or Hipmunk to estimate the cost of airfare. Be aware that a little flexibility with dates or routes can make a huge difference to the price of an air ticket.
+Spend a little time researching your options. If you will need to travel by air, use websites such as Skyscanner to estimate the cost of airfare. Be aware that a little flexibility with dates or routes can make a huge difference to the price of an air ticket.
 
 ## Accommodation
 
 There are many websites that will allow you to estimate the cost of accommodation, such as Hotels.com or Hostels World. If you know someone else who is also travelling, you can share a room to lower costs. If you are willing to share a room, let us know in your application.
 
 Be reasonable - we want you to stay somewhere clean, safe, and comfortable, but we cannot afford to place you in a luxury hotel!
-
-## Subsistence
-You will have lunch and refreshments each day as part of the conference. In Accra, you can get a decent evening meal for about US$5. Local transport by minibus or taxi is also very inexpensive.
-
 
 ## When Will I Receive the Funds?
 Funds will be provided to successful applicants on attendance at the conference.

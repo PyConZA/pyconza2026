@@ -32,7 +32,7 @@ class GrantApplicationForm(forms.ModelForm):
                 attrs={
                     "class": "form-control",
                     "rows": 5,
-                    "placeholder": "Tell us why you want to attend PyCon Africa...",
+                    "placeholder": "Tell us why you want to attend PyConZA...",
                 }
             ),
             "contribution": forms.Textarea(

@@ -55,7 +55,7 @@ Python Software Community collects personal information for the following princi
 - To provide you with information about Python, PyCon, and events within PyCon
 - To allow you to connect with PyCon sponsors (opt-in only)
 - To communicate with you and to respond to your questions, inquiries, or concerns
-- To administer and improve Python Africa and PyCon, including the websites, events, tutorials, and other services
+- To administer and improve PyConZA, including the websites, events, tutorials, and other services
 - To process your payment for PyCon services and events
 - To prevent and detect fraud
 - To protect and enforce our legal rights
@@ -64,12 +64,12 @@ We do this for our legitimate business purposes, and under certain circumstances
 
 ## Audio, video recordings and photography
 
-We will have audio and video recordings during the event (for e.g. the talk recordings), as well as one or more photographers taking pictures to help us with marketing the conference. We may publish these photos and recordings on our websites, or third-party sites such as Flickr, Archive.org or YouTube, social media, and in other marketing material such as brochures, flyers and promotional videos. We will take care not to make public photos, videos or audio recordings which could cause harm to the individuals shown/heard on them. If you do find such pictures/videos/audio recordings on any of our sites or accounts, please write to privacy@pycon.africa to ask for review.
+We will have audio and video recordings during the event (for e.g. the talk recordings), as well as one or more photographers taking pictures to help us with marketing the conference. We may publish these photos and recordings on our websites, or third-party sites such as Flickr, Archive.org or YouTube, social media, and in other marketing material such as brochures, flyers and promotional videos. We will take care not to make public photos, videos or audio recordings which could cause harm to the individuals shown/heard on them. If you do find such pictures/videos/audio recordings on any of our sites or accounts, please write to team@za.pycon.org to ask for review.
 
 Your Rights, Including Removing, Correcting Or Updating Personal Information
 If you change your mind on the use of your information or wish to access, correct or update personal information (such as your address), we will endeavour to correct, update or remove the personal data that you give us. Information that you have explicitly made available for unrestricted public access, such as having your name associated with a talk that you provide, may not be able to be deleted.
 
-While there is no continent-wide, unified data protection law within the AU, the African Union Convention on Cyber Security and Personal Data Protection (Malabo Convention) offers a framework that is adapted to the PyCon Africa conference:
+While there is no continent-wide, unified data protection law within the AU, the African Union Convention on Cyber Security and Personal Data Protection (Malabo Convention) offers a framework that is adapted to the PyConZA conference:
 
 - Right of Access to your Personal Information
 - Right to Rectify your Personal Information
@@ -88,7 +88,7 @@ We will keep your personal information for no longer than is necessary for the p
 
 ## Questions, Concerns, Or Complaints
 
-If you have any questions, concerns, or complaints about this Privacy Policy, please contact privacy@pycon.africa. You are entitled to make an anonymous complaint or inquiry in relation to this Privacy Policy or your privacy rights; however, we may require you to identify yourself if required by law or it is impracticable for us to deal with your matter otherwise. We will acknowledge receipt of any complaint and will strive to provide you with a written response within 30 days of receipt of your complaint. There may be instances where this is not possible due to the circumstances under which the complaint was made, the content of the complaint, and the scope of the complaint. If this is the case, we will respond to your complaint in a reasonable and practical time.
+If you have any questions, concerns, or complaints about this Privacy Policy, please contact team@za.pycon.org. You are entitled to make an anonymous complaint or inquiry in relation to this Privacy Policy or your privacy rights; however, we may require you to identify yourself if required by law or it is impracticable for us to deal with your matter otherwise. We will acknowledge receipt of any complaint and will strive to provide you with a written response within 30 days of receipt of your complaint. There may be instances where this is not possible due to the circumstances under which the complaint was made, the content of the complaint, and the scope of the complaint. If this is the case, we will respond to your complaint in a reasonable and practical time.
 
 ## Informing you about updates regarding this policy
 

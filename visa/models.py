@@ -107,15 +107,15 @@ class VisaInvitationLetter(models.Model):
         }
 
         if self.status == "approved":
-            subject = "PyCon Africa 2025 - Your Visa Letter Request Has Been Approved"
+            subject = "PyConZA 2026 - Your Visa Letter Request Has Been Approved"
             template_name = "visa/emails/approved.html"
 
         elif self.status == "rejected":
             template_name = "visa/emails/rejected.html"
-            subject = "PyCon Africa 2025 - Your Visa Letter Request Requires Revision"
+            subject = "PyConZA 2026 - Your Visa Letter Request Requires Revision"
 
         elif self.status == "permanently rejected":
-            subject = "PyCon Africa 2025 - Your Visa Letter Request Has Been Permanently Rejected"
+            subject = "PyConZA 2026 - Your Visa Letter Request Has Been Permanently Rejected"
             template_name = "visa/emails/permanently_rejected.html"
 
         html_message = render_to_string(template_name, context)

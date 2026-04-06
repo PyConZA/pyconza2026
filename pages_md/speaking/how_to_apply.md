@@ -3,7 +3,7 @@ name: How to submit a talk or workshop
 include_in_menu: True
 ---
 
-Our CFP (Call For Proposals) is not yet open. If you are interested in speaking at PyCon Africa, or in running a workshop, please watch this space!
+Our CFP (Call For Proposals) is not yet open. If you are interested in speaking at PyConZA, or in running a workshop, please watch this space!
 
 Once our CFP is open we will announce it. To stay in the loop you can:
 

@@ -1,7 +1,6 @@
-# PyCon Africa 2025 Conference Website
+# PyConZA 2026 Conference Website
 
-Based on the [PyConZA 2024](https://github.com/PyConZA/pyconza2024/) website, which is based on [wafer](https://github.com/CTPUG/wafer).
-Based on the [PyConAfrica/PyConZA 2025](https://github.com/PyConZA/pyconza2025) website, which is based on [wafer](https://github.com/CTPUG/wafer).
+Based on the [PyConZA 2025 / PyCon Africa 2025](https://github.com/PyConZA/pyconza2025) website, which is based on [wafer](https://github.com/CTPUG/wafer).
 
 # Local development 
 
