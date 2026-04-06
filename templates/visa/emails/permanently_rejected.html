@@ -1,0 +1,63 @@
+{% extends "_base_email.html" %}
+
+{% block title %}
+Visa letter request permanently rejected
+{% endblock title %}
+
+{% block heading %}
+Visa letter request permanently rejected
+{% endblock heading %}
+
+{% block content %}
+
+<div class="main-message" style="background-color: #f8d7da; border-left: 4px solid #dc3545;">
+    <h3>❌ Your Visa Letter Request Has Been Permanently Rejected</h3>
+    <p>After careful review, we regret to inform you that your visa invitation letter request for PyCon Africa 2025 has
+        been permanently rejected and cannot be resubmitted.</p>
+</div>
+
+<div class="important-note">
+    <h3>Reason for Permanent Rejection</h3>
+    <p>{{ rejection_reason }}</p>
+</div>
+
+<div class="attachment-info" style="background-color: #f8d7da; border: 1px solid #f5c6cb;">
+    <div class="attachment-icon" style="color: #721c24;">⚠️</div>
+    <p class="attachment-text" style="color: #721c24;">This decision is final. No further visa letter requests will be
+        accepted from this account.</p>
+</div>
+
+<div class="important-note">
+    <h3>Alternative Options</h3>
+    <p>While we cannot provide a visa invitation letter, you may still be able to attend PyCon Africa 2025 through other
+        means:</p>
+    <ul>
+        <li>Check if you can attend without a visa (depending on your nationality and passport)</li>
+        <li>Explore other visa categories that may be appropriate for your travel</li>
+        <li>Contact the South African embassy or consulate in your country for visa guidance</li>
+        <li>Consider attending our virtual sessions if available</li>
+    </ul>
+</div>
+
+<div class="contact-section">
+    <h3>Questions About This Decision?</h3>
+    <p>If you believe this decision was made in error or have questions about the rejection:</p>
+    <div class="contact-info">
+        <strong>Email:</strong> {{ organizer_email }}<br>
+        <strong>Phone:</strong> {{ organizer_phone }}<br>
+        <strong>Conference Website:</strong> <a href="{{ website_url }}">{{ website_url }}</a>
+    </div>
+    <p style="color: #6c757d; font-size: 0.9em; margin-top: 10px;">
+        <em>Please note: Appeals are reviewed on a case-by-case basis and may not result in a change of decision.</em>
+    </p>
+</div>
+
+<div class="divider"></div>
+
+<p>We understand this news is disappointing, and we sincerely apologize that we cannot assist with your visa letter
+    request. We encourage you to explore the alternative options mentioned above.</p>
+
+<p>Thank you for your interest in PyCon Africa 2025, and we hope you'll find another way to be part of our community.
+</p>
+
+{% endblock content %}

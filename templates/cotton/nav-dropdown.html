@@ -1,0 +1,19 @@
+<div x-data="{open:false}" class="relative inline-block">
+    <button class="nav-item" @click="open=! open">
+        {{ label }}
+        <i class="fa fa-chevron-up" aria-hidden="true" x-show="open"></i>
+        <i class="fa fa-chevron-down" aria-hidden="true" x-show="!open"></i>
+
+    </button>
+    <div x-show="open" @click.outside="open = false" class="absolute left-0 mt-2 min-w-fit bg-gray-800 border border-slate-700 rounded-md shadow-lg z-50 flex flex-col gap-5 p-2 text-nowrap
+" style="display: none;">
+
+        {% for item in items %}
+        <a class="nav-item" href="{{ item.url }}">
+            {{ item.label }}
+        </a>
+        {% endfor %}
+
+        {{slot}}
+    </div>
+</div>

@@ -1,0 +1,665 @@
+html {
+  background: linear-gradient(to left, #5c5579, #28212d);
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Source Sans Pro';
+}
+
+#wrap {
+  min-height: 100%;  /* put the background behind the clouds -- see CLOUDS further down */
+  background: url("../img/cloud.png"), url("../img/sea.png"), url("../img/sand.png"), url("../img/sky.png"), black;
+  background-repeat: repeat-y, repeat-x, repeat-x, repeat, repeat;
+  background-position: -200px -200px, bottom 100px center, bottom center, 0 0, 0
+}
+
+#main {
+  color: white;
+  padding-top: 1em;
+}
+
+#main .popover-content,
+#main .popover-title {
+  color: black;
+}
+
+#main .form-actions {
+  background: inherit;
+  border: none;
+  padding: 0px;
+}
+
+#main .well {
+  color: black;
+}
+
+#main .well:after {
+  /* ensure wells contain all their floating content */
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#main h1 {
+  margin: 0;
+  padding: 0 24px;
+  line-height: 47px;
+  background-color: black;
+  background-image: linear-gradient(to left, #5c5579, #28212d);
+  font-family: 'Oswald';
+  font-size: 30px;
+  font-weight: bold;
+  color: #8b554f;
+}
+
+#main section {
+  width: 100%;
+  float: left;
+  padding: 0 10px 10px 10px;
+  color: black;
+  background: #a6a6b9;
+  margin-bottom: 1em;
+  background-image: linear-gradient(to left, #f9c784, #c7c3c9);
+  border-radius: 25px;
+  box-shadow: 2px 2px 15px -5px #8c6275;
+}
+
+#main section section {
+  background: rgba(227, 241, 240, 0.75);
+  box-shadow: 2px 2px 15px -5px #8c6275;
+}
+
+#main section h1,
+#main section section h2,
+#main .wafer-profile h1
+{
+  margin: 0 -10px;
+  padding: 0 24px;
+  background-color: black;
+  background-image: linear-gradient(to left, #4e598c, #775567);
+  font-family: 'Oswald';
+  font-weight: bold;
+  color: #ff8c42;
+  margin-bottom: 0.5em;
+  border-radius: 25px 25px 0px 0px;
+}
+
+#main section h1 {
+  line-height: 47px;
+  font-size: 30px;
+}
+
+#main section h2 {
+  font-family: 'Oswald';
+}
+
+#main .wafer-profile h1 {
+    margin: 0px;
+}
+
+#main section p {
+  padding-left: 12px;
+}
+
+#main li p {
+  padding-left: 0;
+}
+
+#main table {
+  width: 100%;
+}
+
+#main table tr {
+  border-bottom: 1px solid #a6a6b9;
+}
+
+#main table th,
+#main table td {
+  padding: 8px 12px;
+  text-align: left;
+  border: 1px solid #a6a6b9;
+  background: #f9c784;
+  font-size: 16px;
+  color: black;
+}
+
+#main table td.title {
+  background-color: black;
+  background-image: linear-gradient(to left, #5c5579, #28212d);
+  border: 1px solid #a6a6b9;
+  font-size: 16px;
+  color: #f9c784;
+  line-height: 26px;
+}
+
+#main table th,
+#main table td.scheduleslot {
+  background: #5c5579;
+  color: white;
+  border: 1px solid #a6a6b9;
+  font-weight: normal;
+  vertical-align: top;
+}
+
+#main table th a {
+  color: white;
+}
+
+#main table td a {
+  color: #28212d;
+}
+
+#main table td.title a {
+  color: #f9c784;
+}
+
+#main table td a:hover {
+  color: #5c5579;
+}
+
+#main table th a:hover,
+#main table td.title a:hover {
+  color: #8b554f;
+}
+
+#main table th span {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  line-height: 26px;
+}
+
+#notes a {
+  color: #28212d;
+}
+
+/* Highlights */
+
+#main table td.schedule {
+  background: #c7c3c9;
+  border: solid 1px #a6a6b9;
+}
+
+#main table td.schedule-break {
+  background: #4e598c;
+  color: #c7c3c9;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#main table td.talk-type-keynote {
+  background: #f9c784;
+  background-image: linear-gradient(to left, #8b554f, #fcaf58);
+  text-align: center;
+}
+
+#main table td.talk-type-panel {
+  background: #f9c784;
+  background-image: linear-gradient(to left, #8b554f, #a6a6b9);
+  text-align: center;
+}
+
+#main table td.unavailable {
+  background: #a6a6b9;
+  font-size: 16px;
+  color: #a6a6b9;
+  line-height: 26px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#main table th.schedule-highlight-venue {
+   filter: brightness(150%);
+}
+
+#main table td.schedule-highlight-venue a {
+   color: #8b554f;
+}
+
+/* We unset the highlight-venue effect for breaks using CSS ordering */
+#main table td.schedule-break a {
+  color: #c7c3c9;
+}
+
+#main table td.schedule-break a:hover {
+  color: #a6a6b9;
+}
+
+#main table td.talk-type-keynote a,
+#main table td.talk-type-panel a {
+  color: #28212d;
+}
+
+#main table td.talk-type-keynote a:hover,
+#main table td.talk-type-panel a:hover {
+  color: #775567;
+}
+
+#main table td.schedule-placeholder {
+  background: repeating-linear-gradient(135deg, #c7c3c9, #c7c3c9 10px, #a6a6b9 10px, #a6a6b9 20px);
+  border: solid 1px #a6a6b9;
+}
+
+#main table td.schedule-placeholder a {
+  color: #5c5579;
+}
+
+#main table td.schedule-placeholder a:hover {
+  color: #28212d;
+}
+
+#main table td.unavailable a {
+  font-style: italic;
+  color: #c7c3c9;
+}
+
+#logos {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#logos img {
+  color: white;
+  padding: 10px 20px;
+}
+
+#legal {
+  text-align: center;
+  font-family: 'Oswald';
+  font-size: 30px;
+  color: white;
+  text-shadow: black 0px 0px 25px;
+  padding-bottom: 15px;
+}
+
+#credits {
+  text-align: center;
+  font-family: 'Oswald';
+  font-size: 20px;
+  color: #4e598c;
+  line-height: 22px;
+  padding-bottom: 20px;
+}
+
+#credits a {
+  color: #5c5579;
+}
+
+#logo_bottom {
+  /* this padding needs to be big enough to avoid clouds_bottom.png covering text. */
+  padding-bottom: 199px;
+  text-align: center;
+}
+
+#4e598cter {
+  position: fixed;
+  bottom: 0;
+  background: black;
+  color: #4e598c;
+  width: 100%;
+  clear: both;
+  padding: 10px 0px;
+  text-align: center;
+  z-index: 100;
+}
+
+#wafer-edit-schedule-bucket {
+  background: #ccc;
+}
+
+.wafer-speakers .wafer-speakers-logo img {
+  border-radius: 50%;
+  border: 4px dashed #5c5579;
+  padding: 10px;
+}
+
+.wafer-speakers .wafer-speakers-logo {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.wafer-speakers .wafer-speakers-name {
+  text-align: center;
+  margin-bottom: 1.0em;
+}
+
+/*  Fix the box below the title in user profile */
+section.wafer-profile-bio {
+  border-radius: 0px 0px 25px 25px!important;
+}
+
+.wafer-profile #profile-avatar {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.wafer-profile #profile-avatar img {
+  border-radius: 50%;
+  border: 4px dashed #5c5579;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+.wafer-profile-bio .row .col-md-10,
+.wafer-profile-bio .bio
+{
+  margin-top: 15px;
+}
+
+h3.card-title {
+    font-family: 'Oswald';
+}
+
+.wafer.list div:nth-child(2n) {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.wafer.list div:nth-child(2n + 1) {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+}
+
+/* Talks on profile pages */
+
+.card {
+    background: #f9c784;
+    border-radius: 25px;
+}
+
+.card a {
+    color: #28212d;
+}
+
+.card a:hover,
+.card a:focus {
+  color: #4e598c;
+}
+
+/* fix icons on top nav bar */
+ul.navbar-nav li.icon a {
+  padding: 12px;
+}
+
+/* dark magic to add matching colours to the svg icons */
+.nav-item.icon .nav-link, .nav-item.icon .nav-link {
+    filter: brightness(0) saturate(100%) invert(80%) sepia(33%) saturate(588%) hue-rotate(338deg) brightness(102%) contrast(95%);
+}
+
+.nav-item.icon .nav-link:hover, .nav-item.icon .nav-link:focus {
+    filter: brightness(0) saturate(100%) invert(60%) sepia(59%) saturate(692%) hue-rotate(330deg) brightness(103%) contrast(101%);
+}
+
+/* override buttons */
+
+ul.btn-group {
+  list-style: none;
+}
+
+.btn-primary {
+  margin: 0 0 2px 2px;
+  background-color: #5c5579;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  color: white !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  background-color: #775567;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  color: #5c5579;
+  text-shadow: none;
+}
+
+.btn-primary.disabled,
+.btn-primary[disabled] {
+  background-color: #4e598c;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-secondary {
+  margin: 0 0 4px 4px;
+  background-color: #5c5579;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  color: white !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary.active {
+  background-color: #775567;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  color: white;
+}
+
+.btn-secondary.disabled,
+.btn-secondary[disabled] {
+  background-color: #4e598c;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+a {
+  color: #28212d;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+a.btn, table a, nav a, #wafer-sponsors a {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #c7c3c9;
+}
+
+#main section a, #main section section a {
+  color: #28212d;
+}
+
+#main section a:hover,
+#main section a:focus,
+#main section section a:hover,
+#main section section a:focus {
+  color: #4e598c;
+}
+
+#main section h1 a, #main section section h2 a, #main .wafer-profile h1 a {
+  color: #ff8c42;
+  text-decoration: none;
+}
+
+#main section h1 a:hover,
+#main section h1 a:focus,
+#main section section h2 a:hover,
+#main section section h2 a:focus,
+#main .wafer-profile h1 a:hover,
+#main .wafer-profile h1 a:focus
+{
+  color: #fcaf58;
+  text-decoration: none;
+}
+
+/* NAV */
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #f9c784;
+  padding: 10px;
+  margin: 0px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover,
+.navbar-brand:focus,
+.navbar-nav .nav-link:focus {
+  color: #ff8c42;
+}
+
+.navbar-nav li.dropdown > .dropdown-toggle .caret,
+.navbar-nav li.dropdown > .dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+  color: black;
+  background-color: #5c5579;
+  background-image: linear-gradient(to left, #ff8c42, #fcaf58);
+}
+
+.container-fluid {
+  padding-top: 0;
+}
+
+.navbar {
+  margin-bottom: 0;
+  background: linear-gradient(to left, black, #4e598c) ! important;
+  font-family: 'Source Sans Pro', 'sans serif';
+}
+
+.pull-right {
+  margin: 0;
+}
+
+.profile-links {
+  padding: 25px;
+  align-items: flex-end;
+}
+
+form {
+  background: #a6a6b9;
+  background-image: linear-gradient(to left, #f9c784, #a6a6b9);
+  padding: 10px;
+  color: black;
+  border-radius: 25px;
+}
+
+.text-muted {
+    color: #28212d !important;
+    font-style: italic;
+}
+
+@media only screen and (max-device-width:768px) {
+  #4e598cter {
+    position: static;
+  }
+
+  .mobile-center {
+    text-align: center;
+  }
+
+}
+
+.page-controls {
+    border-top: 0px;
+}
+
+/* sponsor page:
+
+   * constrain logos to page width for phones.
+   * should probably be made the default in wafer.
+*/
+
+.sponsor-detail div,
+.wafer-sponsor .card-title + div {
+    padding: 0.5em !important;
+    max-width: 100% !important;
+}
+
+.sponsor-detail div img,
+.wafer-sponsor .card-title + div img {
+    max-width: 100% !important;
+}
+
+.wafer-sponsor h2 small {
+    font-size: .5em !important;
+    border: solid 1px;
+    padding: 2px;
+    vertical-align: middle;
+}
+
+/* Alerts */
+
+.alert-light {
+    background: #4e598c;
+    color: #f9c784;
+    font-weight: bold;
+    border: solid 2px #f9c784;
+}
+
+.alert-primary {
+    background: #775567;
+    color: #fcaf58;
+    font-weight: bold;
+    border: solid 2px #fcaf58;
+}
+
+.alert-danger {
+    background: #5c5579;
+    color: #ff8c42;
+    font-weight: bold;
+    border: solid 2px #ff8c42;
+}
+
+.alert-light a {
+    color: #c7c3c9 !important;
+}
+
+.alert-primary a {
+    color: #f9c784 !important;
+}
+
+.alert-light a:hover,
+.alert-light a:focus {
+    color: #fcaf58 !important;
+}
+
+.alert-primary a:hover,
+.alert-primary a:focus {
+    color: #8b554f !important;
+}
+
+/* Collapse nested card divs on sponsor package and sponsors page */
+
+.wafer-sponsorship-package .card,
+.wafer-sponsorship-package .card-body,
+.wafer-sponsor .card,
+.wafer-sponsor .card-body {
+    border: 0px !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.wafer-sponsorship-package .card-title, 
+.wafer-sponsor .card-title {
+    padding: 5px 0 5px 20px !important;
+}
+
+.wafer-sponsor hr {
+    display: none;
+}
+
+.wafer-sponsors .wafer.list div:nth-child(2n) {
+    background: none;
+}
+
+.wafer-sponsor img {
+    background: none ! important;
+    border: 4px dashed #5c5579;
+    border-radius: 25px;
+    padding: 10px;
+}

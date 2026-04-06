@@ -1,0 +1,121 @@
+{% extends "wafer/base.html" %}
+{% load i18n %}
+{% load sponsors %}
+{% block title %}{% trans "Sponsors" %} - {{ WAFER_CONFERENCE_NAME }}{% endblock %}
+{% block page_title %}
+{% trans 'Sponsors' %}
+{% endblock %}
+{% block content %}
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    
+    <!-- Header Section -->
+    <div class="text-center space-y-4">
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            PyCon Africa 2025 is made possible by the generous support of these organizations who share our vision of growing the Python community across Africa.
+        </p>
+    </div>
+    
+    {% block pre_sponsor_list %}{% endblock %}
+    
+    {% block sponsor_list %}
+    <div class="space-y-12">
+        {% for sponsor in sponsor_list %}
+        {% sponsor_tagged_image sponsor "main_logo" as logo_url %}
+
+        {% block sponsor_details %}
+        <div class="wafer-sponsor-{{ sponsor.packages.first.name.lower }}">
+            <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                
+                <!-- Logo Section at Top -->
+                {% if logo_url != '' %}
+                <div class="bg-gray-50 p-8 text-center border-b border-gray-200">
+                    {% if sponsor.url %}
+                    <a href="{{ sponsor.url }}" target="_blank" rel="noopener noreferrer">
+                        <img src="{{ logo_url }}" alt="{{ sponsor.name }} logo" 
+                             class="max-w-[300px] max-h-[120px] object-contain mx-auto">
+                    </a>
+                    {% else %}
+                    <img src="{{ logo_url }}" alt="{{ sponsor.name }} logo" 
+                         class="max-w-[300px] max-h-[120px] object-contain mx-auto">
+                    {% endif %}
+                </div>
+                {% endif %}
+                
+                <!-- Content Section -->
+                <div class="p-8 space-y-6">
+                    <!-- Title and Package -->
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <h2 class="text-2xl lg:text-3xl font-bold text-gray-900">
+                            {% if sponsor.url %}
+                            <a href="{{ sponsor.url }}" target="_blank" rel="noopener noreferrer" 
+                               class="hover:text-pycon-blue transition-colors duration-200">
+                                {{ sponsor.name }}
+                            </a>
+                            {% else %}
+                            {{ sponsor.name }}
+                            {% endif %}
+                        </h2>
+                        
+                        <div class="inline-flex items-center">
+                            <span class="bg-pycon-blue text-white px-4 py-2 rounded-full text-sm font-semibold">
+                                {% if sponsor.symbol %}{{ sponsor.symbol }} {% endif %}{{ sponsor.packages.first.name }}
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Description -->
+                    {% if sponsor.description %}
+                    <div class="prose prose-gray max-w-none space-y-5">
+                        {{ sponsor.description|safe }}
+                    </div>
+                    {% endif %}
+                    
+                    <!-- Website Link -->
+                    {% if sponsor.url %}
+                    <div class="pt-2">
+                        <a href="{{ sponsor.url }}" target="_blank" rel="noopener noreferrer" 
+                           class="inline-flex items-center text-pycon-blue hover:text-pycon-green transition-colors duration-200 font-semibold">
+                            Visit {{ sponsor.name }}
+                            <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endblock sponsor_details %}
+        
+        {% empty %}
+        <div class="text-center py-16">
+            <div class="max-w-md mx-auto space-y-4">
+                <svg class="mx-auto h-16 w-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-2m-2 0H7m5 0v-9a2 2 0 00-2-2H8a2 2 0 00-2 2v9m8 0V9a2 2 0 012-2h2a2 2 0 012 2v9M7 16h6v4H7v-4z"/>
+                </svg>
+                <h3 class="text-xl font-medium text-gray-900">No sponsors yet</h3>
+                <p class="text-gray-500">We're actively seeking sponsors to make PyCon Africa 2025 an amazing experience for everyone.</p>
+                <a href="/pages/about/contact-us/" class="btn">Become a Sponsor</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endblock sponsor_list %}
+    
+    {% block post_sponsor_list %}
+    <!-- Call to Action -->
+    <div class="bg-gray-50 rounded-lg p-8 text-center space-y-6">
+        <h2 class="text-2xl font-bold">Interested in Sponsoring PyCon Africa 2025?</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+            Join these amazing organizations in supporting the growth of Python and tech across Africa. 
+            Various sponsorship packages available to suit your organization's goals.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/pages/about/contact-us/" class="btn">Contact Us About Sponsorship</a>
+            <a href="{% url 'page_donations' %}" class="btn btn-success">Make a Donation</a>
+        </div>
+    </div>
+    {% endblock post_sponsor_list %}
+
+</section>
+{% endblock content %}

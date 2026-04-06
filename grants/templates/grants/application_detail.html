@@ -1,0 +1,99 @@
+{% extends "wafer/base.html" %}
+
+{% block title %}Grant Application Details{% endblock %}
+{% block page_title %}Grant Application Details{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-4">
+    <div class="max-w-4xl mx-auto">
+        <div class="flex justify-between items-start pb-3">
+            <a href="{% url 'grants:application_update' %}" class="btn">Edit Grant Application</a>
+        </div>
+
+        <div class="py-3">
+            <h3 class="text-xl font-semibold">Application Details</h3>
+            <div class="pt-2">Submitted on: {{ application.created_at|date:"F d, Y" }}</div>
+        </div>
+
+        <div class="py-3">
+            <h3 class="text-xl font-semibold">Your Motivation</h3>
+            <div class="pt-2">{{ application.motivation|linebreaks }}</div>
+        </div>
+
+        <div class="py-3">
+            <h3 class="text-xl font-semibold">Your Contributions</h3>
+            <div class="pt-2">{{ application.contribution|linebreaks }}</div>
+        </div>
+
+        <div class="py-3">
+            <h3 class="text-xl font-semibold">Financial Need</h3>
+            <div class="pt-2">{{ application.financial_need|linebreaks }}</div>
+        </div>
+
+        <!-- Personal Information Section -->
+        <div class="py-3">
+            <h3 class="text-xl font-semibold">Personal Information</h3>
+            <div class="grid md:grid-cols-2 gap-4 pt-2">
+                <div>
+                    <strong>Gender:</strong> {{ application.get_gender_display }}
+                    {% if application.gender == 'other' and application.gender_details %}
+                        <div class="text-gray-500 text-sm">{{ application.gender_details }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="pt-2">
+                <div>
+                    <strong>Current Role:</strong> {{ application.get_current_role_display }}
+                    {% if application.current_role == 'other' and application.current_role_details %}
+                        <div class="text-gray-500 text-sm">{{ application.current_role_details }}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Transportation Section -->
+        {% if application.request_travel and application.transportation_type %}
+        <div class="py-3">
+            <h3 class="text-xl font-semibold">Transportation</h3>
+            <div class="pt-2">
+                <strong>Preferred transportation:</strong> {{ application.get_transportation_type_display }}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Additional Information Section -->
+        {% if application.additional_info %}
+        <div class="py-3">
+            <h3 class="text-xl font-semibold">Additional Information</h3>
+            <div class="pt-2">{{ application.additional_info|linebreaks }}</div>
+        </div>
+        {% endif %}
+
+        <div class="py-3">
+            <h3 class="text-xl font-semibold">Requested Support</h3>
+            <ul class="list-none pt-2">
+                {% if application.request_travel %}
+                <li class="pb-2">
+                    <strong>Travel:</strong> ${{ application.travel_amount }}
+                    {% if application.travel_from %}
+                        <span class="text-gray-500">(from {{ application.travel_from_city }}, {{ application.travel_from_country.name }})</span>
+                    {% endif %}
+                </li>
+                {% endif %}
+
+                {% if application.request_accommodation %}
+                <li class="pb-2">
+                    <strong>Accommodation:</strong> {{ application.accommodation_nights }} nights
+                </li>
+                {% endif %}
+
+                {% if application.request_ticket %}
+                <li class="pb-2">
+                    <strong>Conference Ticket:</strong> Yes
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %} 

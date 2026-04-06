@@ -1,0 +1,14 @@
+{% extends 'wafer/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Activation email sent" %}{% endblock %}
+
+{% block page_title %}{% trans 'Activation Email Sent' %}{% endblock %}
+
+
+{% block content %}
+<section>
+   <p>Please check your email -- {{ request.session.registration_email }} -- to complete the registration process.
+   <p>
+</section>
+{% endblock %}

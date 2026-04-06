@@ -1,0 +1,75 @@
+{% extends 'wafer/base_form.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+{% block page_title %}
+
+{% if can_edit %}
+{% trans "Edit Proposal" %}
+{% with corresponding_author_name=object.corresponding_author.userprofile.display_name %}
+{% url 'wafer_user_profile' username=object.corresponding_author.username as corresponding_author_url %}
+{% blocktrans trimmed %}
+{% endblocktrans %}
+{% endwith %}
+{% else %}
+{% trans "Create Proposal" %}
+{% endif %}
+
+{% endblock %}
+
+
+
+{% block content %}
+<section>
+
+  {% if can_edit %}
+  <p>Submitted by <a href="{{ corresponding_author_url }}">{{ corresponding_author_name }}</a>.</p>
+  {% endif %}
+
+  {% if not can_edit and not can_submit %}
+  {% block talks_closed %}
+  {% blocktrans trimmed %}
+  <em>Proposal submission is closed</em>
+  {% endblocktrans %}
+  {% endblock talks_closed %}
+  {% else %}
+  {% block form_preamble %}
+  {% url 'wafer_user_edit_profile' form.user as edit_bio_url %}
+  {% if form.user.userprofile.bio %}
+  <div class="pb-5  space-y-3">
+    <h2 for="bio" class="col-form-label">
+      {% trans "Your Biography" %}
+    </h2>
+    <div id="bio" class="px-3 text-gray-800">
+      {{ form.user.userprofile.bio|linebreaks }}
+    </div>
+    <div class="grid grid-flow-col justify-items-end">
+      <a href="{{ edit_bio_url }}" class="btn btn-secondary">{% trans "Edit Biography" %}</a>
+    </div>
+  </div>
+  {% else %}
+  <div class="alert alert-primary">
+    {% blocktrans trimmed %}
+    Please
+    <a href="{{ edit_bio_url }}">add a speaker biography</a>
+    before submitting a talk.
+    {% endblocktrans %}
+  </div>
+  {% endif %}
+  {% endblock form_preamble %}
+
+  {% if form.user.userprofile.bio %}
+  {% block talkform %}
+  <div class="pt-5 space-y-5">
+    <h2>Proposal</h2>
+    <form method="post">
+      {% crispy form %}
+    </form>
+  </div>
+  {% endblock talkform %}
+  {% endif %}
+  {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "wafer/base.html" %}
+{% block title %}Tickets - {{ WAFER_CONFERENCE_NAME }}{% endblock %}
+{% block container_class %}tickets{% endblock %}
+
+{% block page_title %}
+Tickets
+{% endblock%}
+
+{% block content %}
+
+<section class="space-y-5">
+
+    <div class="text-center py-12 space-y-6">
+        <h2 class="text-pycon-blue">PyCon Africa 2025 Has Concluded</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Thank you to everyone who attended PyCon Africa 2025! Ticket sales are now closed.
+        </p>
+        <p class="text-gray-600 max-w-3xl mx-auto">
+            Browse the <a href="{% url 'wafer_full_schedule' %}" class="text-pycon-blue hover:underline">conference schedule</a> and <a href="{% url 'wafer_talks_speakers' %}" class="text-pycon-blue hover:underline">speakers</a> to see what happened at the conference.
+        </p>
+    </div>
+
+</section>
+
+{% endblock%}

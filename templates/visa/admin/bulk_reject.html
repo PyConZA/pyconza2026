@@ -1,0 +1,41 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static %}
+
+{% block extrahead %}
+{{ block.super }}
+{{ media }}
+{% endblock %}
+
+{% block bodyclass %}{{ block.super }} app-{{ opts.app_label }} model-{{ opts.model_name }} delete-confirmation{%
+endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+    &rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>
+    &rsaquo; <a href="{% url opts|admin_urlname:'changelist' %}">{{ opts.verbose_name_plural|capfirst }}</a>
+    &rsaquo; {% trans 'Reject visa letters' %}
+</div>
+{% endblock %}
+
+{% block content %}
+<p>Are you sure you want to reject these visa letter requests?</p>
+<h2>Please provide a reason for rejection:</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+        <input type="hidden" name="post" value="yes" />
+        <input type="submit" value="Yes, reject these visa letters" class="default" />
+        <a href="{% url opts|admin_urlname:'changelist' %}" class="button cancel-link">No, take me back</a>
+    </div>
+</form>
+
+<h3>The following visa letter requests will be rejected:</h3>
+<ul>
+    {% for letter in queryset %}
+    <li>{{ letter.full_name }} ({{ letter.user.email }}) from {{ letter.country_of_origin }} - Status: {{ letter.status
+        }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

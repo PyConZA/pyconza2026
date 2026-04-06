@@ -1,0 +1,84 @@
+{% load i18n %}
+{% load partials %}
+
+{% partialdef talk-card %}
+
+
+<div class="border border-gray-300 rounded-lg p-2 space-y-3 px-5">
+
+
+  <h3 class="card-title">
+    <a href="{{ talk.get_absolute_url }}">
+      {{ talk.title }}
+    </a>
+  </h3>
+
+  <div class="text-gray-600 ">{{ talk.abstract | linebreaksbr }}</div>
+  {% if show_edit %}
+  <div class=" flex justify-end">
+
+    <a href="{% url 'wafer_talk_edit' talk.pk %}" class="btn btn-secondary btn-small">
+      {% trans 'Edit' %}
+    </a>
+  </div>
+  {% endif %}
+</div>
+
+{% endpartialdef talk-card %}
+
+
+{% with profile=object.userprofile %}
+{# Accepted talks are globally visible #}
+{% if profile.accepted_talks.exists %}
+<section class="wafer-profile-talks wafer-profile-talks-accepted">
+  <h2>{% trans 'Accepted Talks:' %}</h2>
+  {% for talk in profile.accepted_talks %}
+  {% with show_edit=False %}
+  {% partial talk-card %}
+  {% endwith %}
+  {% endfor %}
+</section>
+{% endif %}
+{% if profile.cancelled_talks.exists %}
+<section class="wafer-profile-talks wafer-profile-talks-cancelled">
+  <h2>{% trans 'Cancelled Talks' %}</h2>
+  {% for talk in profile.cancelled_talks %}
+  {% with show_edit=False %}
+  {% partial talk-card %}
+  {% endwith %}
+  {% endfor %}
+</section>
+{% endif %}
+{# Submitted talk proposals are only visible to the owner #}
+{% if can_edit %}
+{% if profile.provisional_talks.exists %}
+<section class="wafer-profile-talks wafer-profile-talks-provisional">
+  <h2>{% trans 'Provisionally Accepted Talks' %}</h2>
+  {% for talk in profile.provisional_talks %}
+  {% with show_edit=False %}
+  {% partial talk-card %}
+  {% endwith %}
+  {% endfor %}
+</section>
+{% endif %}
+{% if profile.pending_talks.exists %}
+<section class="wafer-profile-talks wafer-profile-talks-submitted space-y-5">
+  <h2>{% trans 'Submitted or Under Consideration Talks' %}</h2>
+  {% for talk in profile.pending_talks %}
+
+  {% comment %}
+  Because this is one of the author's pending talks, we don't
+  need to check for edit permission's on the talk explictly.
+  This doesn't show the edit button for people with 'change-talk'
+  permissions, but we accept that tradeoff for simplicity here.
+  {% endcomment %}
+
+  {% with show_edit=True %}
+  {% partial talk-card %}
+  {% endwith %}
+
+  {% endfor %}
+</section>
+{% endif %}
+{% endif %}
+{% endwith %}

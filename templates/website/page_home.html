@@ -1,0 +1,332 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block header %}
+{% endblock %}
+
+
+{% block main %}
+<section class="flex flex-col">
+    <div class="bg-no-repeat bg-cover bg-center w-full bg-gray-900"
+        style="background-image: url('/static/img/pycon-africa-2025-header_2.png')">
+        <div class="flex flex-col">
+            <header class="bg-black">
+                {% include "partial_header.html" %}
+            </header>
+
+            <div class="hidden lg:flex lg:px-12 w-full justify-between text-white py-12 xl:py-16 space-x-16 xl:space-x-22">
+                    <div
+                        class="flex flex-col w-3/5 gap-y-6 text-left backdrop-blur-sm bg-black/50 p-6 rounded-lg">
+
+                        <h1 class="text-5xl xl:text-6xl font-bold leading-tight text-white">
+                            <span class="text-pycon-yellow">In 2025,</span>
+                            <span class="text-pycon-green">PyCon Africa</span> and
+                            <span class="text-pycon-blue">PyConZA</span><br>
+                            <span class="text-pycon-yellow">united in Johannesburg!</span>
+                        </h1>
+
+                        <p class="text-xl text-gray-200 leading-relaxed">
+                            Thank you for joining Africa's premier Python conference for five days of talks, workshops, and community building with developers from across the continent and beyond.
+                        </p>
+
+                        <ul class="text-xl space-y-3">
+                            <li class="flex items-start space-x-3">
+                                <span class="text-pycon-yellow font-bold">📍</span>
+                                <div>
+                                    <span class="font-semibold text-white">The Wanderers Club</span><br>
+                                    <span class="text-gray-200">Johannesburg, South Africa</span>
+                                </div>
+                            </li>
+
+                            <li class="flex items-start space-x-3">
+                                <span class="text-pycon-yellow font-bold">📅</span>
+                                <div>
+                                    <span class="font-semibold text-white">8 - 12 October 2025</span><br>
+                                    <span class="text-gray-200">5 days of Python excellence</span>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                            <a href="{% url 'wafer_full_schedule' %}" class="btn text-center px-8 py-3 text-lg font-semibold">
+                                View the Schedule
+                            </a>
+                            <a href="{% url 'wafer_talks_speakers' %}" class="btn btn-success text-center px-8 py-3 text-lg font-semibold">
+                                See Our Speakers
+                            </a>
+                        </div>
+
+                    </div>
+                    <figure class="w-2xl xl:w-2xl sm:h-auto  flex justify-between items-center">
+                        <img src="{% static 'img/pycon-africa-logo.png' %}" alt="PyConAfrica25 Logo" class="w-full" loading="lazy" />
+                    </figure>
+            </div>
+        </div>
+
+        <!-- For mobile/small screen -->
+        <div class="lg:hidden bg-gray-900 bg-no-repeat bg-cover bg-center flex flex-col"
+            style="background-image: url('/static/img/pycon-africa-2025-header_2.png')">
+            
+            <div class="w-full bg-gradient-to-t from-black/90 via-black/60 to-transparent py-16">
+                <div class="w-full px-4">
+                    <div class="max-w-sm mx-auto flex flex-col gap-y-4 text-center">
+                        <figure class="mb-2">
+                            <img src="{% static 'img/pycon-africa-logo.png' %}" alt="PyConAfrica25 Logo" class="w-40 mx-auto" loading="lazy" />
+                        </figure>
+                        
+                        <h1 class="text-xl font-bold text-white leading-tight">
+                            <span class="text-pycon-green">PyCon Africa</span> and
+                            <span class="text-pycon-blue">PyConZA</span><br>
+                            <span class="text-pycon-yellow">united in Johannesburg!</span>
+                        </h1>
+
+                        <p class="text-gray-200 text-sm leading-relaxed">
+                            Thank you for joining Africa's premier Python conference for five days of talks, workshops, and community building.
+                        </p>
+
+                        <div class="text-sm space-y-1 text-center">
+                            <div class="flex items-center justify-center space-x-2">
+                                <span class="text-pycon-yellow">📍</span>
+                                <span class="text-white">The Wanderers Club, Johannesburg</span>
+                            </div>
+                            <div class="flex items-center justify-center space-x-2">
+                                <span class="text-pycon-yellow">📅</span>
+                                <span class="text-white">8 - 12 October 2025</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-2 pt-3 w-full">
+                            <a href="{% url 'wafer_full_schedule' %}" class="btn text-center py-3 px-4 font-semibold w-full">
+                                View the Schedule
+                            </a>
+                            <a href="{% url 'wafer_talks_speakers' %}" class="btn btn-success text-center py-3 px-4 font-semibold w-full">
+                                See Our Speakers
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- Latest Updates Section -->
+<section class="bg-gradient-to-r from-pycon-blue to-pycon-green py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center space-y-6">
+            <h2 class="text-white text-2xl lg:text-3xl font-bold">🎉 Latest Updates</h2>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-lg p-6 shadow-lg">
+                    <div class="space-y-4">
+                        <div class="text-4xl">🎤</div>
+                        <h3 class="text-xl font-bold text-gray-800">Thank You to Our Speakers</h3>
+                        <p class="text-gray-600">
+                            We had an incredible lineup of speakers who shared their knowledge and passion. Browse the full schedule to see all the talks and workshops.
+                        </p>
+                        <a href="{% url 'wafer_full_schedule' %}" class="btn btn-secondary inline-block">
+                            View Schedule
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 shadow-lg">
+                    <div class="space-y-4">
+                        <div class="text-4xl">🤝</div>
+                        <h3 class="text-xl font-bold text-gray-800">Thank You to Our Volunteers</h3>
+                        <p class="text-gray-600">
+                            PyCon Africa 2025 was made possible by our amazing volunteers. Thank you to everyone who helped make this event a success!
+                        </p>
+                        <a href="{% url 'page_volunteering' %}" class="btn btn-success inline-block">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="bg-gray-50 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+        <h2 class="text-3xl lg:text-4xl font-bold">Thank You for Being Part of PyCon Africa 2025</h2>
+        <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+            It was something special. Whether you attended in person or online, contributed to our community, or joined as a beginner - thank you for being part of it.
+        </p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
+            <div class="bg-white border border-gray-200 rounded-lg p-6 text-center flex flex-col">
+                <h3 class="text-pycon-blue text-xl font-semibold mb-4">View the Schedule</h3>
+                <p class="text-gray-700 mb-6 flex-grow">Relive the conference by browsing all the talks, workshops, and sessions from PyCon Africa 2025.</p>
+                <div class="mt-auto">
+                    <a href="{% url 'wafer_full_schedule' %}" class="btn">View Schedule</a>
+                </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg p-6 text-center flex flex-col">
+                <h3 class="text-pycon-green text-xl font-semibold mb-4">Our Speakers</h3>
+                <p class="text-gray-700 mb-6 flex-grow">Thank you to all the incredible speakers who shared their knowledge and passion with us.</p>
+                <div class="mt-auto">
+                    <a href="{% url 'wafer_talks_speakers' %}" class="btn btn-success">See Speakers</a>
+                </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg p-6 text-center flex flex-col">
+                <h3 class="text-pycon-red text-xl font-semibold mb-4">Friends of PyCon Africa</h3>
+                <p class="text-gray-700 mb-6 flex-grow">Watch the recording of our community livestream event.</p>
+                <div class="mt-auto">
+                    <a href="{% url 'page_friends_of_pycon_africa' %}" class="btn btn-secondary">Watch Recording</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-8 border-t border-gray-200">
+            <p class="text-gray-500 text-sm">
+                New to Python? Learn about our <a href="{% url 'page_beginners_day' %}" class="text-pycon-blue hover:underline">Beginner's Day</a> - a free hands-on workshop we held for complete beginners.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
+        <div class="space-y-6">
+            <h2>Africa's Premier Python Conference</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                We gathered in the vibrant city of Johannesburg, South Africa, where we congregated with hundreds of developers, researchers, students and other professionals across Africa and beyond to give talks, host workshops, tutorials, sprints, and together share our passion for community!
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center flex flex-col">
+                <div class="mb-6 h-64 bg-cover bg-center rounded-lg" style="background-image: url('{% static 'img/home/jhb.jpg' %}')">
+                </div>
+                <h3 class="font-bold text-xl mb-4">Johannesburg</h3>
+                <p class="text-gray-600 flex-grow">A major African technology and business hub.</p>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center flex flex-col">
+                <div class="mb-6 h-64 bg-cover bg-center rounded-lg" style="background-image: url('{% static 'img/home/group.jpg' %}')">
+                </div>
+                <h3 class="font-bold text-xl mb-4">Hundreds of programmers</h3>
+                <p class="text-gray-600 flex-grow">From around Africa and the world</p>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center flex flex-col">
+                <div class="mb-6 h-64 bg-cover bg-center rounded-lg" style="background-image: url('{% static 'img/home/sprint.jpg' %}')">
+                </div>
+                <h3 class="font-bold text-xl mb-4">Five days</h3>
+                <p class="text-gray-600 flex-grow">of talks, workshops and collaboration</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Video Section -->
+<section class="bg-gray-50 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+        <div class="space-y-4">
+            <h2>See What You Missed in 2024</h2>
+            <p class="text-gray-600 text-lg">Get a taste of the energy, learning, and community that makes PyCon Africa special</p>
+        </div>
+        
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/NWr_KEvMdUY?si=80rKLzhcDzOA-W4-"
+                title="PyCon Africa 2024 Highlights" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen 
+                class="mx-auto w-full max-w-[560px] rounded-lg"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Programme Section -->
+<section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
+        <div class="space-y-4">
+            <h2>Our Programme</h2>
+            <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                Five days of learning, networking, and collaboration designed for Python enthusiasts at every level
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center flex flex-col">
+                <div class="mb-6 h-64 bg-cover bg-center rounded-lg" style="background-image: url('{% static 'img/home/tutorials.jpg' %}')">
+                </div>
+                <h3 class="text-pycon-green text-xl font-bold mb-4">Beginners Day</h3>
+                <p class="text-gray-700 mb-6 flex-grow">Free hands-on workshops for complete newcomers to Python. No experience needed!</p>
+                <div class="mt-auto">
+                    <a href="{% url 'page_beginners_day' %}" class="btn btn-success">Learn More</a>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center flex flex-col">
+                <div class="mb-6 h-64 bg-cover bg-center rounded-lg" style="background-image: url('{% static 'img/home/speakers.jpg' %}')">
+                </div>
+                <h3 class="text-pycon-blue text-xl font-bold mb-4">Main Conference Days</h3>
+                <p class="text-gray-700 mb-6 flex-grow">Inspiring talks, hands-on workshops, and networking with amazing speakers from across the continent and beyond</p>
+                <div class="mt-auto">
+                    <a href="{% url 'wafer_full_schedule' %}" class="btn">View Schedule</a>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-lg p-6 text-center flex flex-col">
+                <div class="mb-6 h-64 bg-cover bg-center rounded-lg" style="background-image: url('{% static 'img/home/sprints.jpg' %}')">
+                </div>
+               <h3 class="text-pycon-red text-xl font-semibold mb-4">Sprints</h3>
+                <p class="text-gray-700 mb-6 flex-grow">Collaboration on new and established open-source Python projects with fellow developers</p>
+                <div class="mt-auto">
+                    <a href="{% url 'page_sprints' %}" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+         
+
+            <div class="bg-white border border-gray-200 rounded-lg p-6 text-center flex flex-col h-full">
+                <div class="mb-6 h-64 flex items-center justify-center overflow-hidden rounded-lg bg-gray-100">
+                    <img src="{% static 'img/home/speakers.jpg' %}" alt="Main Conference Days" class="w-full h-full object-cover">>
+                </div>
+                
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg p-6 text-center flex flex-col h-full">
+                <div class="mb-6 h-64 flex items-center justify-center overflow-hidden rounded-lg bg-gray-100">
+                    <img src="{% static 'img/home/sprints.jpg' %}" alt="Sprints" class="w-full h-full object-cover">>
+                </div>
+                
+            </div>
+        </div> -->
+    </div>
+</section>
+
+<!-- Quick Links Section -->
+<section class="bg-pycon-blue/5 py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+        <h2>Thank You for Being Part of PyCon Africa 2025</h2>
+
+        <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4">
+                <h3 class="text-pycon-green text-lg font-semibold">Beginner's Day</h3>
+                <p class="text-gray-700">Our free Beginner's Day workshop welcomed newcomers into the Python community.</p>
+                <a href="{% url 'page_beginners_day' %}" class="btn btn-success">Learn More</a>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4">
+                <h3 class="text-pycon-red text-lg font-semibold">Online Experience</h3>
+                <p class="text-gray-700">Attendees from around the world joined us online for the full conference experience.</p>
+                <a href="{% url 'page_remote_experience' %}" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+        
+        <div class="pt-8">
+            <p class="text-gray-600">
+                Questions? <a href="/pages/about/contact-us/" class="text-pycon-blue hover:underline">Get in touch</a> - we're here to help make your PyCon Africa experience amazing.
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}

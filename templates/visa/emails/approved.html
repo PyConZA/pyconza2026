@@ -1,0 +1,57 @@
+{% extends "_base_email.html" %}
+
+{% block title %}
+Visa letter approved
+{% endblock title %}
+
+{% block heading %}
+Visa letter approved
+{% endblock heading %}
+
+{% block content %}
+
+<div class="main-message">
+    <h3>🎉 Great News! Your Visa Letter Request Has Been Approved</h3>
+    <p>Your visa invitation letter for PyCon Africa 2025 has been reviewed and approved by our organizing team.</p>
+</div>
+
+<div class="attachment-info">
+    <div class="attachment-icon">📄</div>
+    <p class="attachment-text">Your official visa invitation letter is now available for download.</p>
+</div>
+
+<div class="instructions">
+    <h3>How to Download Your Visa Letter:</h3>
+    <ul>
+        <li><strong>Visit Your Account:</strong> Go to <a href="{{ details_url }}">your visa letter details page</a>
+        </li>
+        <li><strong>Download PDF:</strong> Click the "Download PDF Letter" button to get your official letter</li>
+        <li><strong>Print and Submit:</strong> Print the letter and include it with your visa application</li>
+        <li><strong>Keep Safe:</strong> Store the original letter safely as you may need it for travel</li>
+    </ul>
+</div>
+
+<div class="important-note">
+    <h3>Important Reminder</h3>
+    <p>Please ensure you apply for your visa well in advance of the conference dates ({{ conference_dates }}) as
+        processing times may vary by embassy.</p>
+</div>
+
+<div class="contact-section">
+    <h3>Need Assistance?</h3>
+    <p>If you have any questions about your visa application or need further assistance:</p>
+    <div class="contact-info">
+        <strong>Email:</strong> {{ organizer_email }}<br>
+        <strong>Phone:</strong> {{ organizer_phone }}<br>
+        <strong>Conference Website:</strong> <a href="{{ website_url }}">{{ website_url }}</a>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<p>We're excited to welcome you to Johannesburg for PyCon Africa 2025! This promises to be an incredible gathering of
+    the Python community from across Africa and beyond.</p>
+
+<p>Thank you for being part of this amazing event. We look forward to seeing you at the conference!</p>
+
+{% endblock content %}

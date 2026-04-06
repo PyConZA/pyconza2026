@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ conference_name }} - Visa Invitation Letter</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Kanchenjunga', 'Open Sans', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            font-size: 10pt;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-container {
+            width: 100%;
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header-text h1 {
+            color: white;
+            font-size: 28pt;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .header-text h2 {
+            color: #FFD700;
+            font-size: 18pt;
+            margin: 10px 0 0 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .content-wrapper {
+            padding: 0.5cm 2cm;
+        }
+
+        .date {
+            text-align: right;
+            margin-bottom: 30px;
+        }
+
+        .subject {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 14pt;
+            text-decoration: underline;
+        }
+
+        .address {
+            margin-bottom: 30px;
+        }
+
+        .content {
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+
+        .second-page {
+            padding-top: 2.5cm;
+        }
+
+        .signature {
+            margin-top: 15px;
+        }
+
+        .signature .name {
+            font-weight: bold;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+
+        .signature-image {
+            margin: 10px 0;
+            max-width: 200px;
+            height: auto;
+        }
+
+        .signature-contact {
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 10pt;
+            color: #666;
+            border-top: 1px solid #FFD700;
+            padding-top: 15px;
+        }
+
+        .emergency-contacts {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .emergency-contacts h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 14pt;
+        }
+
+        .emergency-contacts ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .page-2-header {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-container">
+        <img class="header-image" src="{{ logo_url }}" alt="PyCon Africa 2025 Banner">
+        <div class="header-overlay">
+            <div class="header-text">
+                <h1>{{ conference_name }}</h1>
+                <h2>{{ conference_dates }}, {{ conference_location }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="date">
+            {{ current_date }}
+        </div>
+
+        <div class="address">
+            {{ embassy_address }}
+        </div>
+
+        <div class="subject">
+            LETTER OF INVITATION FOR VISA APPLICATION
+        </div>
+
+        <div class="content">
+            <p>Dear Sir/Madam,</p>
+
+            <p>This letter is to confirm that <strong>{{ full_name }}</strong>, holder of passport number
+                <strong>{{ passport_number }}</strong> from <strong>{{ country_of_origin }}</strong>, has been invited
+                to
+                attend the {{ conference_name }} conference, which will be held
+                in {{ conference_location }}
+                from {{ conference_dates }}.
+            </p>
+
+            <p>PyCon Africa is the regional Python programming language conference held annually in Africa. It brings
+                together developers, educators, researchers, and technology enthusiasts from across Africa and around
+                the
+                world to share knowledge, collaborate on projects, and promote the use of Python in various sectors.</p>
+
+            <p>{{ full_name }} has {% if is_speaker %}been selected to present a talk/workshop titled "
+                {{ presentation_title }}" and {% endif %}registered to attend the conference
+                as {% if is_speaker %} a {% else %} an {% endif %} {{ registration_type }}.
+                The participant is expected to arrive for {{ conference_name }} which is to run through {{
+                conference_dates }}.</p>
+
+            <p>We kindly request that you issue a visa to {{ full_name }} to enable their attendance at this
+                important event. The participant will be responsible for all expenses related to their travel,
+                accommodation, and stay in South Africa, including health/travel insurance.</p>
+
+            <p>Should you require any further information or clarification, please do not hesitate to contact us
+                at {{ contact_email }} or {{ contact_phone }}.</p>
+
+            <p>Thank you for your consideration and assistance in this matter.</p>
+
+            <div class="signature">
+                <p>Sincerely,</p>
+                <img class="signature-image" src="{{ signature_url }}" alt="Signature">
+                <p class="name">{{ organizer_name }}</p>
+                <p class="signature-contact">{{ organizer_role }}</p>
+                <p class="signature-contact">{{ contact_phone }}</p>
+                <p class="signature-contact">{{ organizer_email }}</p>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <div class="second-page">
+            <div class="page-2-header">
+                <h3>Additional Information for {{ full_name }}</h3>
+            </div>
+
+            <div class="emergency-contacts">
+                <h3>Emergency Contacts:</h3>
+                <ul>
+                    <li>Adam Piskorski: +27 79 899 2319 | pyconza@piskorski.me</li>
+                    <li>Sheena O'Connell: +27 82 976 3586 | sheena.oconnell@gmail.com</li>
+                    <li>Conference Support: {{ contact_phone }} | {{ contact_email }}</li>
+                </ul>
+            </div>
+
+            <div class="footer">
+                <p>{{ conference_name }} | {{ website_url }} | team@pycon.africa </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+{% extends 'wafer/base.html' %}
+{% load static %}
+
+{% block page_title %}In Person Conference{% endblock %}
+
+{% block content %}
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+
+    <!-- Hero Section -->
+    <div class="text-center space-y-6">
+        <h1 class="text-4xl lg:text-5xl font-bold text-gray-900">Where the real connections happen</h1>
+        <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            There's something special about being in the same room with people who share your passion for Python. Join us for two days of learning, connecting, and those spontaneous conversations that happen between sessions - what we call the "hallway track."
+        </p>
+        <div class="inline-flex items-center space-x-4 px-8 py-4 bg-pycon-yellow rounded-lg">
+            <span class="text-2xl font-bold text-gray-900">October 9-10, 2025</span>
+            <span class="text-gray-600">|</span>
+            <span class="text-xl font-semibold text-gray-900">The Wanderers Club, Johannesburg</span>
+        </div>
+    </div>
+
+
+        <!-- Venue Information -->
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <h3 class="text-pycon-blue mb-4 text-center">Venue</h3>
+            <div class="text-center">
+                <p class="font-semibold text-lg mb-2">The Wanderers Club</p>
+                <p class="text-gray-600 mb-4">Illovo, Johannesburg, South Africa</p>
+                <p class="text-sm text-gray-600 mb-4">
+                    Located in the heart of Johannesburg, The Wanderers Club provides an excellent venue for our Beginner's Day workshops. 
+                    More detailed venue information and directions will be provided to confirmed participants.
+                </p>
+                <a href="/pages/venue/in_person_venue/" class="text-pycon-blue hover:underline text-sm" >
+                    Learn more about the venue →
+                </a>
+            </div>
+        </div>
+
+    <!-- Why In-Person Matters -->
+    <div class="bg-gray-50 rounded-lg p-8 space-y-6">
+        <h2 class="text-3xl font-bold text-center">Why in-person matters</h2>
+        <div class="max-w-4xl mx-auto space-y-4 text-lg text-gray-700">
+            <p>Sure, you can watch talks online, but you can't replicate the energy of bumping into someone at lunch who's working on exactly the problem you're trying to solve. Or the late-night coding session that starts because someone mentions an interesting project during coffee break.</p>
+            <p class="text-xl font-semibold text-pycon-blue text-center">We're optimizing for connection. Nothing beats the hallway track.</p>
+        </div>
+    </div>
+
+    <!-- What to Expect -->
+    <div class="space-y-8">
+        <h2 class="text-3xl font-bold text-center">What to expect</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4">
+                <h3 class="text-pycon-green text-xl font-semibold">Talks from the community</h3>
+                <p class="text-gray-700">Two days of presentations covering everything from beginner-friendly introductions to advanced deep dives. Our speakers come from across Africa and beyond, sharing their experiences, projects, and insights.</p>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4">
+                <h3 class="text-pycon-blue text-xl font-semibold">Advanced workshops</h3>
+                <p class="text-gray-700">Hands-on sessions where you can dig deeper into specific topics. These are designed for people who want to get their hands dirty with code and learn by doing.</p>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4">
+                <h3 class="text-pycon-red text-xl font-semibold">Open spaces</h3>
+                <p class="text-gray-700">Some of the best conversations happen in the unstructured time. Open spaces let you organize discussions about whatever topics interest you - whether that's a specific technology, career advice, or just connecting with people working in similar areas.</p>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4">
+                <h3 class="text-pycon-yellow text-xl font-semibold">The hallway track</h3>
+                <p class="text-gray-700">This is where the magic happens. Those conversations by the coffee machine, the impromptu debugging sessions, the "hey, you should meet this person" introductions. We've designed our schedule with plenty of breaks and informal time because we know this is often the most valuable part of the conference.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Practical Info -->
+    <div class="bg-pycon-blue/10 rounded-lg p-8 space-y-8">
+        <h2 class="text-3xl font-bold text-center">The practical stuff</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="text-center space-y-4">
+                <div class="text-4xl">🍽️</div>
+                <h3 class="text-xl font-semibold">Food and refreshments</h3>
+                <p class="text-gray-700">We'll keep you fed with lunch both days, plus coffee, tea, and snacks throughout. Good conversations happen over good food.</p>
+            </div>
+            
+            <div class="text-center space-y-4">
+                <div class="text-4xl">🎁</div>
+                <h3 class="text-xl font-semibold">Swag and goodies</h3>
+                <p class="text-gray-700">Of course there's swag. Some useful, some fun, all designed to help you remember the connections you made.</p>
+            </div>
+            
+            <div class="text-center space-y-4">
+                <div class="text-4xl">📍</div>
+                <h3 class="text-xl font-semibold">Venue and logistics</h3>
+                <p class="text-gray-700">We'll be at The Wanderers Club with all the space you need for talks, workshops, and those important hallway conversations.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Who You'll Meet -->
+    <div class="space-y-8">
+        <h2 class="text-3xl font-bold text-center">Who you'll meet</h2>
+        <div class="bg-white border border-gray-200 rounded-lg p-8">
+            <p class="text-lg text-gray-700 mb-6">The in-person experience brings together:</p>
+            <div class="grid md:grid-cols-2 gap-4">
+                <ul class="space-y-3">
+                    <li class="flex items-start space-x-3">
+                        <span class="text-pycon-green font-bold">•</span>
+                        <span>Python developers from across Africa</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <span class="text-pycon-blue font-bold">•</span>
+                        <span>International speakers and attendees</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <span class="text-pycon-red font-bold">•</span>
+                        <span>Students discovering their potential</span>
+                    </li>
+                </ul>
+                <ul class="space-y-3">
+                    <li class="flex items-start space-x-3">
+                        <span class="text-pycon-yellow font-bold">•</span>
+                        <span>Experienced developers willing to share knowledge</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <span class="text-pycon-green font-bold">•</span>
+                        <span>Entrepreneurs building the next big thing</span>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <span class="text-pycon-blue font-bold">•</span>
+                        <span>Educators bringing programming to their communities</span>
+                    </li>
+                </ul>
+            </div>
+            <p class="text-lg text-pycon-blue font-semibold mt-6 text-center">It's the mix of perspectives and experience levels that makes the conversations so valuable.</p>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-gray-900 rounded-lg p-8 text-white text-center space-y-6">
+        <h2 class="text-3xl font-bold text-white">Thank You for Attending</h2>
+        <p class="text-xl text-gray-200">PyCon Africa 2025 has concluded. Thank you to everyone who joined us in person for an incredible experience!</p>
+        <div class="space-y-4">
+            <a href="{% url 'wafer_full_schedule' %}" class="btn text-center px-8 py-4 text-lg font-semibold">View the Schedule</a>
+        </div>
+    </div>
+
+    <!-- Preparing for Conference -->
+    <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4">
+            <h3 class="text-pycon-green text-xl font-semibold">What to bring</h3>
+            <ul class="space-y-2 text-gray-700">
+                <li> Laptop if you want to follow along with workshops</li>
+                <li> Business cards if you have them (or just be ready to exchange contact info)</li>
+                <li> Comfortable shoes for walking around and standing during breaks</li>
+                <li> An open mind for meeting new people</li>
+            </ul>
+        </div>
+        
+        <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4">
+            <h3 class="text-pycon-blue text-xl font-semibold">Getting the most out of it</h3>
+            <ul class="space-y-2 text-gray-700">
+                <li> Check out the speaker list beforehand</li>
+                <li> Think about what you'd like to discuss in open spaces</li>
+                <li> Download the conference app when it's available</li>
+                <li> Be ready to step out of your comfort zone</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="space-y-8">
+        <h2 class="text-3xl font-bold text-center">Questions?</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="space-y-4">
+                <div class="border-b border-gray-200 pb-4">
+                    <p class="font-semibold text-gray-900">Where exactly is it happening?</p>
+                    <p class="text-gray-600">The Wanderers Club, Illovo, Johannesburg - full venue details available on our venue page.</p>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                    <p class="font-semibold text-gray-900">What's the wifi situation?</p>
+                    <p class="text-gray-600">We'll have reliable internet for everyone</p>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                    <p class="font-semibold text-gray-900">Are meals included?</p>
+                    <p class="text-gray-600">Yes, lunch both days plus snacks and drinks</p>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <div class="border-b border-gray-200 pb-4">
+                    <p class="font-semibold text-gray-900">What if I'm new to conferences?</p>
+                    <p class="text-gray-600">Perfect - everyone's friendly and it's a great place to start</p>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                    <p class="font-semibold text-gray-900">Can I give a lightning talk?</p>
+                    <p class="text-gray-600">We'll have opportunities for spontaneous presentations</p>
+                </div>
+                <div class="border-b border-gray-200 pb-4">
+                    <p class="font-semibold text-gray-900">Need help with anything?</p>
+                    <p class="text-gray-600">Email us at <a href="mailto:team@pycon.africa" class="text-pycon-blue hover:underline">team@pycon.africa</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Final CTA -->
+    <div class="text-center space-y-6 bg-pycon-yellow/20 rounded-lg p-8">
+        <h2 class="text-3xl font-bold">Thank You for Joining Us</h2>
+        <p class="text-lg text-gray-700 max-w-4xl mx-auto">There's something irreplaceable about being in a room full of people who get excited about the same things you do. Thank you to everyone who came to learn, share, and find their people in the Python community.</p>
+        <div class="space-y-4">
+            <p class="text-pycon-blue font-semibold text-xl">Two days. Countless connections. One amazing community.</p>
+        </div>
+    </div>
+
+</section>
+{% endblock %}

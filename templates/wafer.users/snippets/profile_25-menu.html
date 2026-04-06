@@ -1,0 +1,63 @@
+{% load i18n %}
+{% with profile=object.userprofile %}
+{% block side_menu %}
+{% if can_edit %}
+<nav class="flex flex-col space-y-3 text-center pb-5">
+  <a href="{% url 'wafer_user_edit' object.username %}" class="btn btn-secondary w-full">{% trans 'Edit Account'
+    %}</a>
+
+  <a href="{% url 'wafer_user_edit_profile' object.username %}" class="btn btn-secondary w-full">{% trans 'Edit
+    Profile'
+    %}</a>
+  {% if WAFER_REGISTRATION_OPEN %}
+  {% if WAFER_REGISTRATION_MODE == 'ticket' and not profile.is_registered %}
+  {% url 'wafer_ticket_claim' as register_url %}
+  {% endif %}
+  {% if WAFER_REGISTRATION_MODE == 'custom' %}
+  {% url 'register' as register_url %}
+  {% url 'unregister' as unregister_url %}
+  {% endif %}
+  {% if register_url %}
+  <a href="{{ register_url }}" class="btn btn-secondary w-full">{% if profile.is_registered %}{% trans 'Update
+    registration' context "conference" %}{% else %}{% trans 'Register' context "conference" %}{% endif %}</a>
+  {% endif %}
+  {% if unregister_url and profile.is_registered %}
+  <a href="{{ unregister_url }}" class="btn btn-secondary w-full">{% trans 'Unregister' context "conference" %}</a>
+  {% endif %}
+  {% endif %}
+  {% if WAFER_TALKS_OPEN %}
+  <a href="{% url 'wafer_talk_submit' %}" class="btn btn-secondary w-full">{% trans 'Submit Talk Proposal' %}</a>
+  {% endif %}
+
+  {# Grant Application Section #}
+  {% if GRANT_APPLICATIONS_OPEN %}
+
+  {% if object.grant_application %}
+  <a href="{% url 'grants:application_detail' %}" class="btn btn-secondary w-full">
+    {% trans 'View My Grant Application' %}
+  </a>
+  {% else %}
+  <a href="{% url 'grants:application_create' %}" class="btn btn-secondary w-full">{% trans 'Apply for Grant' %}</a>
+  {% endif %}
+
+  {% endif %}
+
+
+  {# Visa letter section #}
+  {% if VISA_LETTER_REQUESTS_OPEN %}
+
+  {% if object.visa_letter %}
+  <a href="{% url 'visa:visa_letter_form' %}" class="btn btn-secondary w-full">
+    {% trans 'View Visa Letter Request' %}
+  </a>
+  {% else %}
+  <a href="{% url 'visa:visa_letter_form' %}" class="btn btn-secondary w-full">{% trans 'Request Visa Letter' %}</a>
+  {% endif %}
+
+  {% endif %}
+
+
+</nav>
+{% endif %}
+{% endblock side_menu %}
+{% endwith %}

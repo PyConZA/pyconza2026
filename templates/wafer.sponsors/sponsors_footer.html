@@ -1,0 +1,24 @@
+{% load sponsors %}
+<div id="wafer-sponsors" class="container text-center mx-auto space-y-3">
+  <h2 class="text-gray-400 pb-2">Our Sponsors</h2>
+  {% for package in packages %}
+  {% if package.sponsors.exists %}
+
+  <div class="flex flex-col lg:flex-row gap-3 justify-center">
+    {% for sponsor in package.sponsors.all %}
+    {% sponsor_tagged_image sponsor "footer_logo" as logo_url %}
+    {% spaceless %}
+    <a href="{{ sponsor.url }}">
+      {% if logo_url != '' %}
+      <img src="{{ logo_url }}" alt="{{ sponsor.name }}" style="max-width: 200px; max-height:100px;" class="mx-auto"
+        title="{{ sponsor.name }}">
+      {% else %}
+      <span class="nologo text-2xl">{{ sponsor.name }}</span>
+      {% endif %}
+    </a>
+    {% endspaceless %}
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>

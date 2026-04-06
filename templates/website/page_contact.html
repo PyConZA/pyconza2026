@@ -1,0 +1,46 @@
+{% extends 'wafer/base.html' %}
+{% load static %}
+
+{% block page_title %}Contact Us{% endblock %}
+
+{% block content %}
+<section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 lg:pb-20 space-y-12">
+
+
+    
+
+    <!-- Social Media -->
+    <div class="space-y-6">
+        <h2>Social Media</h2>
+        {% for link in social_links %}
+        <div class="flex justify-between items-center py-3 border-b border-gray-200">
+            <span class="font-medium">
+                {% if 'mastodon' in link.url %}Mastodon
+                {% elif 'twitter' in link.url or 'x.com' in link.url %}Twitter/X
+                {% elif 'instagram' in link.url %}Instagram
+                {% elif 'facebook' in link.url %}Facebook
+                {% elif 'linkedin' in link.url %}LinkedIn
+                {% elif 'youtube' in link.url %}YouTube
+                {% elif 'bsky.app' in link.url %}Bluesky
+                {% else %}Social{% endif %}
+            </span>
+            <a href="{{ link.url }}" target="_blank" class="text-pycon-blue hover:underline">
+                <i class="{{ link.icon }} mr-2"></i>Follow Us
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Email Contacts -->
+    <div class="space-y-6">
+        <h2>Email</h2>
+        {% for key, email in contact_emails.items %}
+        <div class="flex justify-between items-center py-3 border-b border-gray-200">
+            <span class="font-medium capitalize">{{ key|title }}</span>
+            <a href="mailto:{{ email }}" class="text-pycon-blue hover:underline">{{ email }}</a>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+{% endblock %}

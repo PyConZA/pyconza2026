@@ -1,0 +1,226 @@
+{% extends "wafer/base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block extra_head %}
+{{ block.super }}
+{% if can_review %}
+{{ review_form.media.css }}
+{% endif %}
+{% endblock %}
+{% block title %}{{ object.title }} - {{ WAFER_CONFERENCE_NAME }}{% endblock %}
+{% block page_title %}
+{{ object.title }}
+{% endblock %}
+
+{% block content %}
+<section class="wafer wafer-talk">
+
+
+
+  <table class="w-full">
+    <tbody>
+
+      <tr>
+        <th>{% blocktrans trimmed count counter=object.authors.count %}
+          Speaker
+          {% plural %}
+          Speakers
+          {% endblocktrans %}</th>
+        <td>
+          {% for author in object.authors.all %}
+          <a href="{% url 'wafer_user_profile' username=author.username %}">{{ author.userprofile.display_name }}</a>
+          {% if not forloop.last %}
+          &amp;
+          {% endif %}
+          {% endfor %}
+        </td>
+      </tr>
+
+      {% if object.language %}
+      <tr>
+        <th>
+          {% trans 'Language' %}
+        </th>
+        <td>
+          {% blocktrans trimmed with language=object.get_language_display %}
+          {{ language }}
+          {% endblocktrans %}
+        </td>
+      </tr>
+      {% endif %}
+
+      {% if object.track %}
+      <tr>
+        <th>
+          {% trans 'Track' %}
+        </th>
+        <td>
+          {% blocktrans trimmed with track=object.track.name %}
+          {{ track }}
+          {% endblocktrans %}
+        </td>
+      </tr>
+      {% endif %}
+
+      <tr>
+        <th>
+          {% trans 'Type' %}
+        </th>
+        <td>
+          {% blocktrans trimmed with talk_type=object.talk_type.name|default:_('Talk') %}
+          {{ talk_type }}
+          {% endblocktrans %}
+        </td>
+      </tr>
+
+      {% if user.is_staff or perms.talks.view_all_talks %}
+      <tr>
+        <th>{% trans 'Status:' %}</th>
+        <td>
+          {% if object.submitted %}
+          <span class="badge bg-info">{% trans 'Submitted' %}</span>
+          {% elif object.under_consideration %}
+          <span class="badge bg-info">{% trans 'Under consideration' %}</span>
+          {% elif object.provisional %}
+          <span class="badge bg-success">{% trans 'Provisionally Accepted' %}</span>
+          {% elif object.accepted %}
+          <span class="badge bg-success">{% trans 'Accepted' %}</span>
+          {% elif object.cancelled %}
+          <span class="badge bg-warning">{% trans 'Cancelled' %}</span>
+          {% elif object.withdrawn %}
+          <span class="badge bg-warning ">{% trans 'Withdrawn' %}</span>
+          {% else %}
+          <span class="badge bg-danger">{% trans 'Not accepted' %}</span>
+          {% endif %}
+        </td>
+      </tr>
+
+      <tr>
+        <th>{% trans 'Submission Time' %}</th>
+        <td>
+          {{ object.submission_time }}
+
+          {% if object.is_late_submission %}
+          <span class="badge bg-warning ">{% blocktrans trimmed %}Late submission{% endblocktrans %}</span>
+          {% endif %}
+        </td>
+      </tr>
+
+      {% endif %}
+
+      {% if talk.urls.all %}
+
+      <tr>
+        <th>{% trans "URLs" %}</th>
+        <td>
+          <ul class="list-group" id="urls">
+            {% for talkurl in talk.urls.all %}
+            {% if talkurl.public %}
+            <li class="list-group-item"><a href="{{ talkurl.url }}">{{ talkurl.description }}</a></li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </td>
+      </tr>
+
+      {% endif %}
+
+
+      <tr>
+        <th></th>
+        <td class="flex flex-row gap-3 justify-end">
+          {% if can_edit %}
+          <a href="{% url 'wafer_talk_edit' object.pk %}" class="float-end btn btn-secondary btn-small d-print-none">{%
+            trans
+            'Edit' %}</a>
+          {% if user.is_staff %}
+          <a href="{% url 'admin:talks_talk_change' object.pk %}"
+            class="float-end btn btn-secondary btn-small d-print-none">{%
+            trans 'Admin' %}</a>
+          {% endif %}
+          {% endif %}
+          {% if can_review %}
+          <a href="#review" class="float-end btn btn-secondary btn-small" data-bs-toggle="collapse"
+            data-bs-target="#review">{%
+            trans 'Review' %}</a>
+          {% endif %}
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <div class="space-y-5 pt-5">
+
+    <!-- Bio -->
+
+    {% if user.is_staff or perms.talks.view_all_talks %}
+    {% for author in object.authors.all %}
+    <h2>
+      {% blocktrans trimmed %}Bio{% endblocktrans %}{% if object.authors.count > 1 %} -
+      {{author.userprofile.display_name }}{% endif %}
+    </h2>
+    {% if author.userprofile.bio %}
+    <div class="text-gray-600 px-5">
+
+      {{ author.userprofile.bio|linebreaks }}
+    </div>
+    {% else %}
+    <em>{% blocktrans trimmed %}Not provided{% endblocktrans %}</em>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    <!-- Abstract -->
+
+    <h2>{% trans 'Abstract' %}</h2>
+
+    <div class="text-gray-600 px-5">
+      {{ object.abstract | linebreaksbr}}
+    </div>
+
+    <!-- Notes -->
+
+    {% if perms.talks.view_all_talks or user.is_superuser %}
+    {% if talk.notes %}
+    <div>
+      {% blocktrans trimmed %}
+      <h2>Proposal Notes</h2>
+      <p>(The following is not visible to attendees.)</p>
+      {% endblocktrans %}
+    </div>
+    <div class="text-gray-600 px-5">
+      {{ object.notes|urlize|linebreaksbr }}
+    </div>
+    {% endif %}
+    {% endif %}
+
+    <!-- Private Notes -->
+    {% if perms.talks.edit_private_notes and object.private_notes %}
+    {% blocktrans trimmed %}
+    <div>
+      <h2>Private notes</h2>
+      <p>(The following is not visible to submitters or attendees.)</p>
+    </div>
+    {% endblocktrans %}
+    <div class="text-gray-600 px-5">
+
+      <p>
+        {{ object.private_notes|urlize|linebreaksbr }}
+      </p>
+    </div>
+    {% endif %}
+
+    <!-- Review Form -->
+
+    {% if can_review %}
+    <h2>{% trans 'Review' %}</h2>
+    {% crispy review_form %}
+    {% endif %}
+
+  </div>
+
+</section>
+
+{% endblock %}

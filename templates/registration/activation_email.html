@@ -1,0 +1,49 @@
+{% extends '_base_email.html' %}
+{% load i18n %}
+
+{% block title %}
+{% trans "registration" %}
+{% endblock title %}
+
+{% block heading %}
+{% trans "Verify Your Email Address" %}
+{% endblock heading %}
+
+{% block content %}
+
+<p>
+    {% blocktrans with site_domain=site.domain %}
+    You (or someone pretending to be you) have asked to register an account at
+    <strong>{{ site_domain }}</strong>.
+    If this wasn't you, please ignore this email and your address will be removed from our records.
+    {% endblocktrans %}
+</p>
+
+<div class="button-container">
+    <a href="https://{{ site.domain }}{% url 'registration_activate' activation_key %}" class="verification-button">{%
+        trans "Verify Email Address" %}</a>
+</div>
+
+<p class="verification-link">
+    {% trans "If the button above doesn't work, please copy and paste the following link into your browser:"
+    %}
+</p>
+<p class="verification-link">
+    https://{{ site.domain }}{% url 'registration_activate' activation_key %}
+</p>
+
+<div class="divider"></div>
+
+<p>
+    {% blocktrans with expiration_days=expiration_days %}
+    This verification link will expire in {{ expiration_days }} days.
+    {% endblocktrans %}
+</p>
+
+<p>
+    {% blocktrans with site_domain=site.domain %}
+    Sincerely,<br> {{ site_domain }} Management
+    {% endblocktrans %}
+</p>
+
+{% endblock content %}

@@ -1,0 +1,23 @@
+[project]
+name = "pyconza2026"
+version = "0.1.0"
+description = "PyCon South Africa 2026 website"
+requires-python = ">=3.12"
+dependencies = [
+    "wafer==0.16.1",
+    "Django==5.0.12",
+    "psycopg2-binary==2.9.10",
+    "mdx_variables",
+    "mdx_staticfiles",
+    "django-browser-reload==1.18.0",
+    "django-cotton==2.0.1",
+    "crispy-tailwind==1.0.3",
+    "python-frontmatter==1.1.0",
+    "django-debug-toolbar==5.1.0",
+    "django-template-partials==24.4",
+    "django-countries==7.6.1",
+    "openpyxl==3.1.5",
+    "weasyprint==65.1",
+    "django-import-export==4.3.9",
+    "setuptools<78",
+]

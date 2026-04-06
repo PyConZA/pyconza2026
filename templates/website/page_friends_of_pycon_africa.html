@@ -1,0 +1,177 @@
+{% extends 'wafer/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block page_title %}{% trans 'Friends of PyCon Africa' %} - FREE {% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto px-4">
+    <!-- Header Section -->
+    <!-- <div class="text-center mb-12">
+        <h2 class="text-2xl text-gray-700 mb-4">FREE Livestream with Live Audience Q&A</h2>
+        <!-- <div class="bg-yellow-100 border border-yellow-300 rounded-lg p-4 inline-block">
+            <p class="text-lg font-semibold text-yellow-800">
+                📅 Date: August 30th • 🕐 Time: 17:00 GMT+2 until late!
+            </p>
+        </div> 
+        
+        <!-- YouTube Streaming Info
+        <div class="bg-red-50 border border-red-200 rounded-lg p-4 mt-4 inline-block">
+            <p class="text-lg text-red-800">
+                📺 Stream will be live on YouTube • 
+                <a href="https://www.youtube.com/live/pKnagnDRsf8" target="_blank" class="text-red-700 hover:text-red-900 underline font-semibold">
+                    Watch here!
+                </a>
+            </p>
+        </div>
+    </div> -->
+
+    <div class="mb-8">
+        <div class="bg-green-50 border border-green-200 rounded-lg p-6 mb-6">
+            <h3 class="text-xl font-semibold text-green-800 mb-3">📺 Watch the Recording</h3>
+            <p class="text-green-700 mb-4">
+                Our Friends of PyCon Africa livestream was a huge success! Watch the full recording below and jump around to find the guests you're most excited to hear from.
+            </p>
+            <p class="text-sm text-green-600">
+                💡 <strong>Pro tip:</strong> Jump to different times to hear different guests
+            </p>
+        </div>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/pKnagnDRsf8?si=LCGCbpAn9qG83IS0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-full max-w-4xl mx-auto"></iframe>
+        
+    </div>
+        
+    <!-- Main Description -->
+    <section class="mb-12">
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Experience our engaging celebration of the vibrant Python community across Africa! This wasn't your typical webinar – it was a dynamic, fun-filled conversation where Python community members dropped in and out throughout the event, sharing their stories, projects, and passion for Python.
+        </p>
+    </section>
+
+    <div class="grid md:grid-cols-2 gap-6 pb-10">
+            <div class="bg-white rounded-lg p-6 shadow-sm text-center">
+                <h4 class="text-xl font-semibold text-gray-900 mb-4">📺 Watch the Recording</h4>
+                <p class="text-gray-700 mb-4">The livestream event has concluded. Watch the full recording above!</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-sm text-center">
+                <h4 class="text-xl font-semibold text-gray-900 mb-4">❤️ Thank You for Your Support</h4>
+                <p class="text-gray-700 mb-4">Thank you to everyone who supported Beginners Day and Travel Grants.</p>
+            </div>
+        </div>
+
+    <!-- What You'll Find -->
+    <section class="mb-12">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">What You'll Find in the Recording:</h3>
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+            <p class="text-blue-800 font-semibold mb-2">🎯 Navigate Like a Pro:</p>
+            <p class="text-blue-700 text-sm">
+                We had a lot of guests! If you jump to different times you'll be able to see and hear different people. It was a wide-rangine discussion and there is something in there for everyone!
+            </p>
+        </div>
+        <ul class="space-y-3">
+            <li class="flex items-start">
+                <span class="text-pycon-green text-xl mr-3">✨</span>
+                <span class="text-gray-700">Rotating guests who kept the conversation fresh and exciting throughout the event</span>
+            </li>
+            <li class="flex items-start">
+                <span class="text-pycon-blue text-xl mr-3">📖</span>
+                <span class="text-gray-700">Real stories from Python developers, educators, and community builders across Africa</span>
+            </li>
+            
+            <li class="flex items-start">
+                <span class="text-pycon-yellow text-xl mr-3">🔍</span>
+                <span class="text-gray-700">Behind-the-scenes insights into Python projects and community initiatives</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Featured Guests -->
+    <section class="mb-12">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Featured Special Guests:</h3>
+       
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-gray-50 rounded-lg p-6 text-center">
+                <img src="{% static 'img/friends_of_pycon_africa/dawn-wages.jpeg' %}" alt="Carlton Gibson" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                <h4 class="text-lg font-semibold text-gray-900">Dawn Wages</h4>
+                <p class="text-sm text-gray-600 mt-2">Python Software Foundation President. Wagtail Core Team Member. Anaconda Director of Community & DevRel</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-6 text-center">
+                <img src="{% static 'img/friends_of_pycon_africa/carlton-gibson.jpeg' %}" alt="Carlton Gibson" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                <h4 class="text-lg font-semibold text-gray-900">Carlton Gibson</h4>
+                <p class="text-sm text-gray-600 mt-2">Ex Django Fellow. Django Steering Council & Security Team Member. Co-host of Django Chat podcast and maintainer of Django REST Framework.</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-6 text-center">
+                <img src="{% static 'img/friends_of_pycon_africa/sarah-abderemane.jpg' %}" alt="Sarah Abderemane" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                <h4 class="text-lg font-semibold text-gray-900">Sarah Abderemane</h4>
+                <p class="text-sm text-gray-600 mt-2">Vice President of Django Software Foundation. Software Engineer at Octopus Energy and Django website contributor.</p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-6 text-center">
+                <img src="{% static 'img/friends_of_pycon_africa/michael-kennedy.webp' %}" alt="Michael Kennedy" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                <h4 class="text-lg font-semibold text-gray-900">Michael Kennedy</h4>
+                <p class="text-sm text-gray-600 mt-2">Host of "Talk Python to Me" and "Python Bytes" podcasts. Python educator and founder of Talk Python Training.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supporting PyCon Africa -->
+    <section class="mb-12 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg p-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Supporting PyCon Africa – Opening Doors Through Code</h3>
+        <p class="text-gray-700 mb-6">
+            While you enjoy great conversations, you'll also be supporting an incredible cause. We're raising funds for two transformative initiatives:
+        </p>
+        
+        <div class="space-y-6">
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <h4 class="text-xl font-semibold text-gray-900 mb-3">🎓 Beginners Day (October 8th)</h4>
+                <p class="text-gray-700">
+                    Free workshops including HumbleData, DjangoGirls, and other community-led sessions that welcome newcomers into our thriving Python ecosystem.
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <h4 class="text-xl font-semibold text-gray-900 mb-3">✈️ Travel Grants</h4>
+                <p class="text-gray-700">
+                    Supporting African community contributors, teachers, students, and young professionals who otherwise couldn't attend – because talent is everywhere, but opportunity isn't always.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why This Matters -->
+    <section class="mb-12">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6">Why This Matters:</h3>
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-6">
+            <p class="text-gray-700 mb-4">
+                Python community events have transformed careers, sparked innovations, and built lasting connections across Africa. Every dollar raised opens doors for someone to discover their potential, learn new skills, or contribute to projects that matter.
+            </p>
+            <p class="text-lg font-semibold text-gray-900">
+                The more we raise together, the more lives we can impact.
+            </p>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-gray-100 rounded-lg p-8">
+        <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Thank You for Being a Friend of PyCon Africa</h3>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white rounded-lg p-6 shadow-sm text-center">
+                <h4 class="text-xl font-semibold text-gray-900 mb-4">📺 Watch the Recording</h4>
+                <p class="text-gray-700 mb-4">Missed the live event? Watch the full recording above and jump around to hear different guests!</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-sm text-center">
+                <h4 class="text-xl font-semibold text-gray-900 mb-4">❤️ Thank You</h4>
+                <p class="text-gray-700 mb-4">Thank you to everyone who supported Beginners Day and Travel Grants through their generous donations.</p>
+            </div>
+        </div>
+
+        <!-- Social Hashtag -->
+        <div class="text-center mt-8 p-4 bg-blue-50 rounded-lg">
+            <p class="text-lg text-blue-800 font-semibold">Share your experience with us!</p>
+            <p class="text-xl text-blue-900 font-bold mt-2">#FriendsOfPyConAfrica</p>
+        </div>
+    </section>
+</div>
+{% endblock %}

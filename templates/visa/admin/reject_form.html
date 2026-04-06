@@ -1,0 +1,82 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static admin_modify %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
+    &rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>
+    &rsaquo; <a href="{% url 'admin:visa_visainvitationletter_changelist' %}">{{ opts.verbose_name_plural|capfirst
+        }}</a>
+    &rsaquo; <a href="{% url 'admin:visa_visainvitationletter_change' visa_letter.pk %}">{{ visa_letter }}</a>
+    &rsaquo; {% if is_permanent %}{% trans 'Permanently Reject' %}{% else %}{% trans 'Reject' %}{% endif %}
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div style="padding-bottom: 1em;">
+    <h2 class="">Visa Letter Details</h2>
+    <p><strong>Applicant:</strong> {{ visa_letter.full_name }}</p>
+    <p><strong>Country:</strong> {{ visa_letter.country_of_origin.name }}</p>
+    <p><strong>Passport Number:</strong> {{ visa_letter.passport_number }}</p>
+    <p><strong>Current Status:</strong> {{ visa_letter.get_status_display }}</p>
+    <p><strong>Submitted:</strong> {{ visa_letter.created_at }}</p>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+
+    <fieldset class="module aligned">
+        <h2>{% if is_permanent %}Permanent {% endif %}Rejection Details</h2>
+        <div class="form-row" style="padding-top: 1em;">
+            {{ form.rejection_reason.label_tag }}
+            {{ form.rejection_reason }}
+            {% if form.rejection_reason.help_text %}
+            <p class="help">{{ form.rejection_reason.help_text }}</p>
+            {% endif %}
+            {% if form.rejection_reason.errors %}
+            <ul class="errorlist">
+                {% for error in form.rejection_reason.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </fieldset>
+
+    <div class="submit-row">
+        <input type="submit"
+            value="{% if is_permanent %}{% trans 'Permanently Reject Visa Letter' %}{% else %}{% trans 'Reject Visa Letter' %}{% endif %}"
+            class="default" {% if is_permanent %}style="background-color: #dc3545;" {% endif %} />
+        <p class="deletelink-box">
+            <a href="{% url 'admin:visa_visainvitationletter_change' visa_letter.pk %}" class="deletelink">{% trans
+                'Cancel' %}</a>
+        </p>
+    </div>
+</form>
+
+<div class="form-row">
+    {% if is_permanent %}
+    <div class="help" style=" border: 1px solid red; padding: 10px; border-radius: 4px;">
+        <strong>⚠️ Warning:</strong> Permanently rejecting this visa letter will:
+        <ul>
+            <li>Change the status to "Permanently Rejected"</li>
+            <li>Send a notification email to the applicant</li>
+            <li><strong>Prevent the applicant from submitting any future visa letter requests</strong></li>
+        </ul>
+        <p><strong>This action should only be used in cases of fraud, abuse, or other serious violations.</strong></p>
+    </div>
+    {% else %}
+    <p class="help">
+        <strong>Note:</strong> Rejecting this visa letter will:
+    <ul>
+        <li>Change the status to "Rejected"</li>
+        <li>Send a notification email to the applicant</li>
+        <li>Allow the applicant to resubmit their request with updated information</li>
+    </ul>
+    </p>
+    {% endif %}
+</div>
+{% endblock %}

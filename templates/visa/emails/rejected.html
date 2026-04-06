@@ -1,0 +1,66 @@
+{% extends "_base_email.html" %}
+
+{% block title %}
+Visa letter request requires revision
+{% endblock title %}
+
+{% block heading %}
+Visa letter request requires revision
+{% endblock heading %}
+
+{% block content %}
+
+<div class="main-message" style="background-color: #fff3cd; border-left: 4px solid #ffc107;">
+    <h3>📝 Your Visa Letter Request Needs Revision</h3>
+    <p>Thank you for submitting your visa invitation letter request for PyCon Africa 2025. After reviewing your
+        application, we need you to make some adjustments before we can approve it.</p>
+</div>
+
+<div class="important-note">
+    <h3>Reason for Revision Request</h3>
+    <p>{{ rejection_reason }}</p>
+</div>
+
+<div class="instructions">
+    <h3>How to Resubmit Your Request:</h3>
+    <ul>
+        <li><strong>Visit Your Profile:</strong> Go to <a href="{{ details_url }}">your visa letter details page</a>
+        </li>
+        <li><strong>Edit Your Request:</strong> Click the "Edit Visa Letter Request" button to update your information
+        </li>
+        <li><strong>Make Required Changes:</strong> Address the issues mentioned in the reason above</li>
+        <li><strong>Resubmit:</strong> Save your changes and we'll automatically review your updated request</li>
+    </ul>
+</div>
+
+<div class="attachment-info" style="background-color: #d1ecf1; border: 1px solid #bee5eb;">
+    <div class="attachment-icon" style="color: #0c5460;">ℹ️</div>
+    <p class="attachment-text" style="color: #0c5460;">Don't worry! You can resubmit your request as many times as
+        needed until it's approved.</p>
+</div>
+
+<div class="important-note">
+    <h3>Important Timing Information</h3>
+    <p>Please resubmit your corrected request as soon as possible to ensure sufficient time for visa processing before
+        the conference dates ({{ conference_dates }}).</p>
+</div>
+
+<div class="contact-section">
+    <h3>Need Help?</h3>
+    <p>If you have questions about the required changes or need assistance with your application:</p>
+    <div class="contact-info">
+        <strong>Email:</strong> {{ organizer_email }}<br>
+        <strong>Phone:</strong> {{ organizer_phone }}<br>
+        <strong>Conference Website:</strong> <a href="{{ website_url }}">{{ website_url }}</a>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<p>We appreciate your understanding and look forward to helping you secure your visa for PyCon Africa 2025. Our team is
+    here to support you through this process.</p>
+
+<p>Thank you for your patience, and we're excited to welcome you to Johannesburg for this incredible event!</p>
+
+
+{% endblock content %}

@@ -1,0 +1,114 @@
+{% extends "wafer/base.html" %}
+
+{% block title %}Visa Letter Request Details{% endblock %}
+{% block page_title %}Visa Letter Request Details{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-4 ">
+    <div class="max-w-4xl mx-auto space-y-5">
+        <div class="flex justify-between items-start pb-3">
+            <div class="flex gap-3">
+                {% if VISA_LETTER_REQUESTS_OPEN %}
+                <a href="{% url 'visa:visa_letter_edit' %}" class="btn">Edit Visa Letter Request</a>
+                {% endif %}
+                {% if visa_letter.status == 'approved' %}
+                <a href="{% url 'visa:visa_letter_download' %}" class="btn btn-primary">Download PDF Letter</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="">
+            <h3 class="text-xl font-semibold">Request Status</h3>
+            <div class="pt-2">
+                <span class="px-3 py-1 rounded-full text-sm font-medium
+                    {% if visa_letter.status == 'approved' %}bg-green-100 text-green-800
+                    {% elif visa_letter.status == 'rejected' %}bg-red-100 text-red-800
+                    {% else %}bg-yellow-100 text-yellow-800{% endif %}">
+                    {{ visa_letter.get_status_display }}
+                </span>
+            </div>
+            <div class="pt-2 text-sm text-gray-600">Submitted on: {{ visa_letter.created_at|date:"F d, Y" }}</div>
+            {% if visa_letter.status == 'approved' %}
+            <div class="pt-1 text-sm text-gray-600">Approved on: {{ visa_letter.approved_at|date:"F d, Y" }}</div>
+            {% endif %}
+        </div>
+
+        {% if visa_letter.status == 'rejected' and visa_letter.rejection_reason %}
+        <div class="">
+            <h3 class="text-xl font-semibold text-red-600">Rejection Reason</h3>
+            <div class="pt-2 bg-red-50 border border-red-200 p-4 rounded-lg">
+                {{ visa_letter.rejection_reason|linebreaks }}
+            </div>
+        </div>
+        {% elif visa_letter.status == 'permanently rejected' and visa_letter.rejection_reason %}
+        <div class="">
+            <h3 class="text-xl font-semibold text-red-600">Permanent Rejection</h3>
+            <div class="pt-2 bg-red-50 border border-red-200 p-4 rounded-lg">
+                {{ visa_letter.rejection_reason|linebreaks }}
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="">
+            <h3 class="text-xl font-semibold">Personal Information</h3>
+            <div class="grid md:grid-cols-2 gap-4 pt-2">
+                <div>
+                    <strong>Full Name:</strong> {{ visa_letter.full_name }}
+                </div>
+                <div>
+                    <strong>Passport Number:</strong> {{ visa_letter.passport_number }}
+                </div>
+            </div>
+            <div class="pt-2">
+                <strong>Country of Origin:</strong> {{ visa_letter.country_of_origin.name }}
+            </div>
+        </div>
+
+        <div class="">
+            <h3 class="text-xl font-semibold">Embassy Information</h3>
+            <div class="pt-2">
+                <strong>Embassy/Consulate Address:</strong>
+                <div class="mt-1 whitespace-pre-line">{{ visa_letter.embassy_address }}</div>
+            </div>
+        </div>
+
+        {% if visa_letter.status == 'pending' %}
+        <div class="alert alert-info space-y-5 pb-5">
+            <p class="text-sm ">
+                Your visa letter request is being reviewed by our team.
+                Once approved, the visa letter will be sent to your email address.
+            </p>
+        </div>
+        {% elif visa_letter.status == 'approved' %}
+        <div class="alert alert-success space-y-5 pb-5">
+            <p class="text-sm ">
+                Your visa letter has been approved! You can download your official visa letter below.
+            </p>
+            <div class="mt-3">
+                <a href="{% url 'visa:visa_letter_download' %}" class="btn btn-primary">Download PDF Letter</a>
+            </div>
+        </div>
+        {% elif visa_letter.status == 'rejected' %}
+        <div class="alert alert-warning space-y-5 pb-5">
+            <p class="text-sm ">
+                Your visa letter request requires revision. Please review the rejection reason above and edit your
+                request to address the issues mentioned.
+            </p>
+            {% if VISA_LETTER_REQUESTS_OPEN %}
+            <a href="{% url 'visa:visa_letter_edit' %}" class="btn btn-warning">Edit Your Request</a>
+            {% endif %}
+        </div>
+        {% elif visa_letter.status == 'permanently rejected' %}
+        <div class="alert alert-danger space-y-5 pb-5">
+            <p class="text-sm ">
+                Your visa letter request has been permanently rejected and cannot be resubmitted. Please see the
+                rejection reason above for details.
+            </p>
+            <p class="text-sm text-red-600 mt-2">
+                No further visa letter requests will be accepted from this account.
+            </p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

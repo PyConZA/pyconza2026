@@ -1,0 +1,14 @@
+{% extends "wafer/base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Visa Letter Request{% endblock %}
+{% block page_title %}Visa Letter Request{% endblock %}
+
+{% block content %}
+
+<form method="post" action="" class="container mx-auto px-4 py-4" id="visa-letter-form">
+    {% csrf_token %}
+    {{ form | crispy}}
+    <input type="submit" class="btn" value="Request Visa Letter" />
+</form>
+
+{% endblock %}

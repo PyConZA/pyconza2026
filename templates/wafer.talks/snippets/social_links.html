@@ -1,0 +1,39 @@
+<div class="space-y-1">
+    <div class="bg-white flex items-center justify-center gap-2 flex-wrap self-end">
+        {% for social in user_profile.kv.all %}
+            {% if social.group.name == "Online Profiles" %}
+                <a href="{{ social.value }}"
+                    class="p-2 rounded-lg flex items-center border border-gray-300 justify-center transition-all duration-500 hover:border-gray-100 hover:bg-gray-100">
+
+                    {% if social.key == 'twitter' %}
+                        <i class="fa-brands fa-twitter"></i>
+                    {% elif social.key == 'linkedin' %}
+                        <i class="fa-brands fa-linkedin"></i>
+                    {% elif social.key == 'bluesky' %}
+                        <i class="fa-brands fa-bluesky"></i>
+                    {% elif social.key == 'github' %}
+                        <i class="fa-brands fa-github"></i>
+                    {% elif social.key == 'gitlab' %}
+                        <i class="fa-brands fa-gitlab"></i>
+                    {% elif social.key == 'bitbucket' %}
+                        <i class="fa-brands fa-bitbucket"></i>
+                    {% elif social.key == 'fediverse' %}
+                        <i class="fa-brands fa-mastodon"></i>
+                    {% elif social.key == 'other' %}
+                        <i class="fa-solid fa-globe"></i>
+                    {% endif %}
+
+                </a>
+            {% endif %}
+        {% endfor %}
+
+        <!-- add website link if added -->
+        {% if user_profile.homepage %}
+            <a href="{{ user_profile.homepage }}"
+               class="p-2 rounded-lg flex items-center border border-gray-300 justify-center transition-all duration-500 hover:border-gray-100 hover:bg-gray-100">
+                <i class="fa-solid fa-home"></i>
+            </a>
+        {% endif %}
+
+    </div>
+</div>
