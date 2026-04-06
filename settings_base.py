@@ -137,104 +137,106 @@ SOCIAL_LINKS = [
 ]
 
 
-WAFER_MENUS += (
-    {
-        "menu": "about",
-        "label": _("About"),
-        "items": [
-            # {
-            #     "name": "blog",
-            #     "label": _("Blog"),
-            #     "url": "https://pyconafrica.blogspot.com/",
-            # },
-            {
-                "name": "donations",
-                "label": _("Donations"),
-                "url": reverse_lazy("page_donations"),
-            },
-            {
-                "name": "volunteering",
-                "label": _("Volunteering"),
-                "url": reverse_lazy("page_volunteering"),
-            },
-            # {
-            #     "name": "contact",
-            #     "label": _("Contact Us"),
-            #     "url": reverse_lazy("page_contact"),
-            # },
-        ],
-    },
-    {
-        "menu": "events",
-        "label": _("Events"),
-        "items": [
-            {
-                "menu": "beginners_day",
-                "label": _("Beginners Day (FREE)"),
-                "url": reverse_lazy("page_beginners_day"),
-            },
-            {
-                "menu": "in_person_event",
-                "label": _("In Person Conference"),
-                "url": reverse_lazy("page_in_person_event"),
-            },
-            {
-                "menu": "remote_experience",
-                "label": _("Online Conference"),
-                "url": reverse_lazy("page_remote_experience"),
-            },
-            {
-                "menu": "dinner",
-                "label": _("Dinner for Speakers, Organisers & Sponsors"),
-                "url": reverse_lazy("page_dinner"),
-            },
-            {
-                "menu": "sprints",
-                "label": _("Sprints"),
-                "url": reverse_lazy("page_sprints"),
-            },
-            {
-                "menu": "friends",
-                "label": _("Friends of PyConZA (FREE)"),
-                "url": reverse_lazy("page_friends_of_pycon_africa"),
-            },
-        ],
-    },
-    {
-        "menu": "tickets",
-        "label": _("Tickets"),
-        "items": [{"url": reverse_lazy("page_tickets"), "label": _("Tickets")}],
-    },
-    {
-        "menu": "venue",
-        "label": _("Venue"),
-        "items": [
-            {
-                "menu": "remote_experience",
-                "label": _("Online Venue"),
-                "url": reverse_lazy("page_remote_experience"),
-            },
-            {
-                "menu": "accommodation",
-                "label": _("Accommodation"),
-                "url": reverse_lazy("accommodation_recommendations"),
-            },
-        ],
-    },
-    {
-        "menu": "talks",
-        "label": "Talks",
-        "items": [
-            {
-                "name": "schedule",
-                "label": _("Schedule"),
-                "url": reverse_lazy("wafer_full_schedule"),
-            },
-            {"url": reverse_lazy("wafer_users_talks"), "label": _("Accepted Talks")},
-            {"url": reverse_lazy("wafer_talks_speakers"), "label": _("Speakers")},
-        ],
-    },
-)
+# WAFER_MENUS += (  # from 2025 event. We'll add them one by one as needed
+#     {
+#         "menu": "about",
+#         "label": _("About"),
+#         "items": [
+#             # {
+#             #     "name": "blog",
+#             #     "label": _("Blog"),
+#             #     "url": "https://pyconafrica.blogspot.com/",
+#             # },
+#             {
+#                 "name": "donations",
+#                 "label": _("Donations"),
+#                 "url": reverse_lazy("page_donations"),
+#             },
+#             {
+#                 "name": "volunteering",
+#                 "label": _("Volunteering"),
+#                 "url": reverse_lazy("page_volunteering"),
+#             },
+#             # {
+#             #     "name": "contact",
+#             #     "label": _("Contact Us"),
+#             #     "url": reverse_lazy("page_contact"),
+#             # },
+#         ],
+#     },
+#     {
+#         "menu": "events",
+#         "label": _("Events"),
+#         "items": [
+#             {
+#                 "menu": "beginners_day",
+#                 "label": _("Beginners Day (FREE)"),
+#                 "url": reverse_lazy("page_beginners_day"),
+#             },
+#             {
+#                 "menu": "in_person_event",
+#                 "label": _("In Person Conference"),
+#                 "url": reverse_lazy("page_in_person_event"),
+#             },
+#             {
+#                 "menu": "remote_experience",
+#                 "label": _("Online Conference"),
+#                 "url": reverse_lazy("page_remote_experience"),
+#             },
+#             {
+#                 "menu": "dinner",
+#                 "label": _("Dinner for Speakers, Organisers & Sponsors"),
+#                 "url": reverse_lazy("page_dinner"),
+#             },
+#             {
+#                 "menu": "sprints",
+#                 "label": _("Sprints"),
+#                 "url": reverse_lazy("page_sprints"),
+#             },
+#             {
+#                 "menu": "friends",
+#                 "label": _("Friends of PyConZA (FREE)"),
+#                 "url": reverse_lazy("page_friends_of_pycon_africa"),
+#             },
+#         ],
+#     },
+#     {
+#         "menu": "tickets",
+#         "label": _("Tickets"),
+#         "items": [{"url": reverse_lazy("page_tickets"), "label": _("Tickets")}],
+#     },
+#     {
+#         "menu": "venue",
+#         "label": _("Venue"),
+#         "items": [
+#             {
+#                 "menu": "remote_experience",
+#                 "label": _("Online Venue"),
+#                 "url": reverse_lazy("page_remote_experience"),
+#             },
+#             {
+#                 "menu": "accommodation",
+#                 "label": _("Accommodation"),
+#                 "url": reverse_lazy("accommodation_recommendations"),
+#             },
+#         ],
+#     },
+#     {
+#         "menu": "talks",
+#         "label": "Talks",
+#         "items": [
+#             {
+#                 "name": "schedule",
+#                 "label": _("Schedule"),
+#                 "url": reverse_lazy("wafer_full_schedule"),
+#             },
+#             {"url": reverse_lazy("wafer_users_talks"), "label": _("Accepted Talks")},
+#             {"url": reverse_lazy("wafer_talks_speakers"), "label": _("Speakers")},
+#         ],
+#     },
+# )
+
+WAFER_MENUS = ()
 
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
