@@ -1,0 +1,28 @@
+{% extends 'admin/change_form.html' %}
+
+{% block submit_buttons_bottom %}
+<!-- <div class="submit-row"> -->
+
+<fieldset class="module aligned">
+    <h2 class="fieldset-heading">Approve or Reject</h2>
+    <div class="description">Accepting or rejecting a letter sends an email. If you permanently reject a letter then the
+        user wont be able to request another one.</div>
+    <div class="form-row">
+        <input type="submit" value="Approve" name="_approve">
+    </div>
+    <div class="form-row">
+
+        <input type="submit" value="Reject" name="_reject">
+        Mark the letter as rejected and notify the user. The user will be able to update their request so it can be
+        approved in future
+    </div>
+    <div class="form-row">
+
+        <input type="submit" value="Permanently Reject" name="_permanently_reject">
+
+    </div>
+</fieldset>
+
+<!-- </div> -->
+{{ block.super }}
+{% endblock %}

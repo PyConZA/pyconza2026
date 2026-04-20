@@ -1,0 +1,164 @@
+{% extends 'wafer/base.html' %}
+{% load static %}
+
+{% block page_title %}PyConZA Online Experience{% endblock %}
+
+{% block content %}
+<section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 lg:pb-20 space-y-12">
+    
+    <!-- Header -->
+    <div class="text-center space-y-4">
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            PyConZA 2026 will bring the conference experience to attendees around the world. Join us online from anywhere!
+        </p>
+    </div>
+
+    <!-- How it works -->
+    <div class="space-y-6">
+        <h2>How the online experience works</h2>
+        <p>
+            We're not just streaming talks at you. The online experience is designed to be interactive and community-focused, so you can participate in discussions, ask questions, and connect with other attendees.
+        </p>
+        <div class="bg-pycon-blue/10 border-l-4 border-pycon-blue p-4 rounded">
+            <p class="font-semibold">Conference dates: October 2026 (dates TBD)</p>
+            <p>What you get: Live streams, recordings, and access to our Discord community</p>
+        </div>
+    </div>
+
+    <!-- How to join -->
+    <div class="space-y-6">
+        <h2>How to join the online experience</h2>
+        
+        <div class="space-y-6">
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <h3 class="text-pycon-blue mb-4">Step 1: Online ticket</h3>
+                <p class="mb-4">Online ticket holders will have access to all live streams, recordings, and our Discord community.</p>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <h3 class="text-pycon-green mb-4">Step 2: Join our Discord server</h3>
+                <p class="mb-4">This is where the community hangs out during the conference - it's where you'll chat about talks, ask questions, and connect with other people.</p>
+                <a href="https://discord.gg/zaAKDnzZGw" target="_blank" class="btn btn-success">Join PyConZA Discord</a>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <h3 class="text-pycon-red mb-4">Step 3: Discord registration</h3>
+                <p>Online attendees will register with our Discord bot to access all event channels and participate in discussions during the conference.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- What you get -->
+    <div class="space-y-8">
+        <h2>What you get with an online ticket</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <h3 class="text-pycon-blue mb-4">All the talks</h3>
+                <p>Watch every session live, or catch up later with the recordings. You'll have access to everything.</p>
+            </div>
+            
+            <div class="bg-white border border-gray-200 rounded-lg p-6">
+                <h3 class="text-pycon-green mb-4">Real interaction</h3>
+                <p>This isn't just passive watching. You can ask questions during talks, join conversations with other attendees, and even set up your own discussion groups.</p>
+            </div>
+        </div>
+        
+        <div class="bg-white border border-gray-200 rounded-lg p-6">
+            <h3 class="text-pycon-red mb-4">Discord community</h3>
+            <p class="mb-4">Join our Discord server where you can:</p>
+            <ul class="space-y-2">
+                <li>Chat in dedicated channels for each talk</li>
+                <li>Ask speakers questions after their presentations</li>
+                <li>Organize your own discussion groups about topics you're interested in</li>
+                <li>Check out what our sponsors are up to (some are hiring)</li>
+                <li>Play games and explore different community spaces</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Watch parties -->
+    <div class="bg-gray-50 rounded-lg p-8 space-y-6">
+        <h2>Watch parties</h2>
+        <p>One of the best parts about the online experience is that you can watch with others. Consider organizing a watch party with your local Python group, colleagues, or friends. It's a great way to make the experience more social and have real-time discussions about what you're learning.</p>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+            <div>
+                <h4>Some ideas:</h4>
+                <ul class="space-y-2">
+                    <li>Get your local meetup group together</li>
+                    <li>Watch with your work team</li>
+                    <li>Set up something at your university</li>
+                    <li>Just invite a few friends over</li>
+                </ul>
+            </div>
+            <div class="bg-white rounded-lg p-6">
+                <p>If you're watching alone, don't worry - you'll still be part of the active Discord community with hundreds of other online attendees.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- What you need -->
+    <div class="bg-green-50 rounded-lg p-8 space-y-6">
+        <h2>What you need</h2>
+        <p>Just a decent internet connection and something to watch on - computer, tablet, or phone all work. You'll also want to join Discord for the community parts. We'll send you setup instructions before the event.</p>
+    </div>
+
+    <!-- After conference -->
+    <div class="space-y-6">
+        <h2>After the conference</h2>
+        <div class="bg-pycon-red/10 border-l-4 border-pycon-red p-4 rounded">
+            <p class="font-semibold">Your ticket includes ongoing access to the recorded talks and our Discord community, so the connections and learning don't stop when the live streams end.</p>
+        </div>
+    </div>
+
+    <!-- Call to action -->
+    <div class="text-center bg-gray-900 rounded-lg p-8 text-white space-y-6">
+        <h2 class="text-white">Join Us Online</h2>
+        <p class="text-gray-300">Whether you're watching from another province or another continent, you'll be a real part of PyConZA. The online experience is designed to be interactive and community-focused.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="space-y-6">
+        <h2>Questions?</h2>
+        
+        <div class="space-y-4">
+            <div class="border-b border-gray-200 pb-4">
+                <p class="font-semibold">Can I upgrade to an in-person ticket later?</p>
+                <p>Get in touch and we'll help you sort that out</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4">
+                <p class="font-semibold">Will I be able to watch everything afterwards?</p>
+                <p>Yes, you'll have access to all the recordings</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4">
+                <p class="font-semibold">How does the Discord thing work?</p>
+                <p>We'll send you a guide before the event</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4">
+                <p class="font-semibold">Can I organize a watch party?</p>
+                <p>Absolutely! Send us pictures :)</p>
+            </div>
+            <div class="border-b border-gray-200 pb-4">
+                <p class="font-semibold">What timezone are the streams in?</p>
+                <p>All our times are in GMT+2 (South African time)</p>
+            </div>
+        </div>
+        
+        <div class="bg-gray-50 rounded-lg p-6">
+            <p class="font-semibold">Need help with anything?</p>
+            <p><a href="/pages/about/contact-us/" class="text-pycon-blue hover:underline">Contact us</a></p>
+        </div>
+    </div>
+
+    <!-- Closing -->
+    <div class="text-center bg-gray-100 rounded-lg p-8">
+        <p class="text-gray-700 italic">
+            Thank you for joining us online - no passport required.
+        </p>
+    </div>
+
+</section>
+{% endblock %}

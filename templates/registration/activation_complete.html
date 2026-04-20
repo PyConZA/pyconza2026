@@ -1,0 +1,26 @@
+{% extends 'wafer/base.html' %}
+{% load i18n %}
+{% block page_title %}
+{% trans 'Activation complete' %}
+{% endblock %}
+
+{% block content %}
+<section class="space-y-3">
+
+    <p>
+        {% url 'auth_login' as login_url %}
+        {% blocktrans trimmed %}
+        Your account is now activated!
+        Please <a href="{{ login_url }}">log in</a>.
+        {% endblocktrans %}
+    </p>
+    <p>
+        {% blocktrans trimmed %}
+        Note that registration for the conference is a separate step.
+        {% endblocktrans %}
+        {% blocktrans trimmed %}
+        You can now log in and start the conference registration process.
+        {% endblocktrans %}
+    </p>
+</section>
+{% endblock %}

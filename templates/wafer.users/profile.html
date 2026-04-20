@@ -1,0 +1,26 @@
+{% extends "wafer/base.html" %}
+{% block title %}{{ object.userprofile.display_name }} - {{ WAFER_CONFERENCE_NAME }}{% endblock %}
+{% block container_class %}userprofile{% endblock %}
+
+{% block page_title %}
+{{ object.userprofile.display_name }}
+{% endblock%}
+
+{% block content %}
+<div class="wafer wafer-profile space-y-5">
+  {% include "wafer.users/snippets/profile_10-preamble.html" %}
+  {% include "wafer.users/snippets/profile_20-bio.html" %}
+  {% include "wafer.users/snippets/profile_30-registered.html" %}
+  {% include "wafer.users/snippets/profile_40-talks.html" %}
+  {% include "wafer.users/snippets/profile_50-epilogue.html" %}
+</div>
+{% endblock content %}
+
+{% block extra_foot %}
+<script type="text/javascript">
+  $(function () {
+    $("#profile-avatar [rel=popover]").attr("data-bs-content", $("#profile-avatar .popover-contents").html());
+    $("a[rel=popover]").popover();
+  })
+</script>
+{% endblock extra_foot %}

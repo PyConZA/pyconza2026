@@ -205,3 +205,33 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+
+
+# Misc
+
+# Downloaded/generated gitignore templates
+gitignore/
+# Third-party frontend libraries
+static/vendor
+# Node.js dependencies
+node_modules/
+# Django collectstatic output (local)
+localstatic/
+# Django media uploads (local)
+localmedia/
+# Local Django settings overrides
+localsettings.py
+# uWSGI config and artifacts
+*uwsgi*
+# Virtualenv (alternative naming)
+ve/
+# WSGI entry point (generated)
+wsgi.py
+# Wafer CMS SQLite database
+wafer.db
+# Claude Code local settings
+.claude/settings.local
+# Local mirror of external resources
+mirror/

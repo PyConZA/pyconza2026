@@ -1,0 +1,21 @@
+{% extends "wafer/base_form.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+{% block page_title %}
+{% trans 'Edit Account' %}
+{% endblock %}
+
+{% block content %}
+
+<section class="space-y-5">
+    {% crispy form %}
+    {% if profile_user == user and profile_user.has_usable_password %}
+    <a href="{% url 'auth_password_change' %}" class="btn btn-secondary">
+        {% trans 'Change Password' %}
+    </a>
+    {% endif %}
+</section>
+
+{% endblock %}

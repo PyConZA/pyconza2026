@@ -1,0 +1,115 @@
+{% extends 'wafer/base.html' %}
+{% load static %}
+
+{% block page_title %}Volunteering{% endblock %}
+
+{% block content %}
+<div class="lg:max-w-7xl mx-auto px-3">
+
+    <!-- Header -->
+    <div class="text-center  pb-14">
+        <h2 class="text-pycon-blue">Thank you for making PyConZA amazing!</h2>
+        <p class="max-w-5xl mx-auto mt-6">
+            PyConZA is a non-profit event, organized by the community, for the community. Everything we do is powered by passionate volunteers who believe in Python and open source.
+        </p>
+    </div>
+
+    <!-- Why Volunteer Section -->
+        <h3 class="text-pycon-green">Why Volunteer?</h3>
+        <p class="mb-4">
+            Volunteering is a fantastic way to connect with fellow Python enthusiasts from across the country, make lasting friendships, and expand your network. You'll be directly contributing to the success of the conference and helping create an inclusive space where knowledge is shared and ideas flourish.
+        </p>
+        
+
+
+
+    <!-- Info Cards -->
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="card alert alert-info text-center">
+            <div class="w-12 h-12 bg-pycon-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-users text-pycon-blue text-xl"></i>
+            </div>
+            <h4>Connect</h4>
+            <p class="text-base">Meet amazing people from across the Python community</p>
+        </div>
+
+        <div class="card alert alert-success text-center">
+            <div class="w-12 h-12 bg-pycon-green/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-heart text-pycon-green text-xl"></i>
+            </div>
+            <h4>Give Back</h4>
+            <p class="text-base">Help create an inclusive and welcoming conference experience</p>
+        </div>
+
+        <div class="card alert alert-danger text-center">
+            <div class="w-12 h-12 bg-pycon-red/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-star text-pycon-red text-xl"></i>
+            </div>
+            <h4>Make an Impact</h4>
+            <p class="text-base">Be part of something that matters to the South African tech community</p>
+        </div>
+    </div>
+
+    <!-- What you can do section -->
+    <div class="mt-12">
+        <h3 class="text-pycon-green">What you can do</h3>
+        <p class="mb-6">
+            We have a lot of different roles available. You can see them documented in detail <a href="https://docs.google.com/document/d/1yo8lV7M8MBbuR-MRcaZz9Lr2en3ebV3YY63F4nx-TtY/edit?usp=sharing" class="text-pycon-blue">here</a>.
+        </p>
+
+        <p class="mb-6">
+            None of the roles require specialized knowledge. We'll show you how to do everything.
+    </p>
+
+        <div class="space-y-6">
+            <div>
+                <h4 class="text-pycon-blue">Setup</h4>
+                <p>Help to lay out our registration area, sponsors area and signage on the morning of the first conference day</p>
+            </div>
+
+            <div>
+                <h4 class="text-pycon-blue">Teardown</h4>
+                <p>Help to pack up all our equipment and signage at the end of the last conference day</p>
+            </div>
+
+            <div>
+                <h4 class="text-pycon-blue">Session Audio/Visual</h4>
+                <p>Monitor the AV equipment, steer the video camera, take care of the microphones. No expert knowledge is required</p>
+            </div>
+
+            <div>
+                <h4 class="text-pycon-blue">Session Chair</h4>
+                <p>Introduce the speakers to the audience, handle Q&A, keep track of time</p>
+            </div>
+
+            <div>
+                <h4 class="text-pycon-blue">Remote Session Chair Assistant</h4>
+                <p>Monitor the Discord channel related to a talk, help select good questions for the session chair to pass onto the speaker</p>
+            </div>
+
+            <div>
+                <h4 class="text-pycon-blue">Remote Help Desk and Vibe</h4>
+                <p>Hang out on our Discord help desk channel and help anyone who asks, make people feel welcome and engaged by chatting on our other channels</p>
+            </div>
+
+            <div>
+                <h4 class="text-pycon-blue">Workshop Monitors</h4>
+                <p>Introduce workshops to the audience and keep an eye on things so they run smoothly</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- How to get involved section -->
+    <div class="mt-12">
+        <h3 class="text-pycon-red">Volunteer for PyConZA 2026</h3>
+
+        <div class="bg-pycon-green/10 border border-pycon-green rounded-lg p-6">
+            <p class="text-gray-700">
+                Want to volunteer at PyConZA 2026 in Cape Town? We'd love your help! Get in touch with us at <a href="mailto:team@za.pycon.org" class="text-pycon-blue hover:underline">team@za.pycon.org</a>.
+            </p>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

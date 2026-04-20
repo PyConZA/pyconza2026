@@ -1,0 +1,277 @@
+@import "tailwindcss";
+
+
+@theme {
+    --color-pycon-yellow: #FFD700;
+    --color-pycon-green: #4CAF50;
+    --color-pycon-blue: #2196F3;
+    --color-pycon-red: #F44336;
+    --color-pycon-light-blue: #90CAF9;
+}
+
+
+@layer base {
+    :root {
+        /* --font-exo-2: "Exo 2", sans-serif; */
+        --font-open-sans: "Open Sans",
+            Helvetica,
+            Arial,
+            sans-serif;
+
+        --font-family-kanchenjunga: 'Kanchenjunga',
+            sans-serif;
+    }
+
+    a,
+    li,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        /* font-family: var(--font-open-sans); */
+        font-family: var(--font-family-kanchenjunga);
+    }
+
+    h1 {
+        @apply font-bold text-4xl lg:text-6xl text-gray-900 mb-6 leading-tight;
+    }
+
+    h2 {
+        @apply font-bold text-3xl lg:text-4xl text-gray-900 mb-6 leading-tight;
+    }
+
+    h3 {
+        @apply font-semibold text-2xl lg:text-3xl text-gray-900 mb-4 leading-tight;
+    }
+
+    h4 {
+        @apply font-semibold text-xl lg:text-2xl text-gray-800 mb-3 leading-tight;
+    }
+
+    h5 {
+        @apply font-semibold text-lg lg:text-xl text-gray-800 mb-3 leading-tight;
+    }
+
+    h6 {
+        @apply font-semibold text-base lg:text-lg text-gray-700 mb-2 leading-tight;
+    }
+
+    a {
+        @apply cursor-pointer underline;
+    }
+
+    button {
+        @apply cursor-pointer
+    }
+
+    p {
+        @apply text-lg
+    }
+
+    ul {
+        @apply list-disc list-inside ml-6 space-y-2
+    }
+
+    ol {
+        @apply list-decimal list-inside space-y-2
+    }
+
+    form {
+        @apply space-y-3
+    }
+
+    table {
+        @apply border border-gray-300 text-left text-sm;
+    }
+
+    thead {
+        @apply bg-gray-100 border-b;
+    }
+
+    th {
+        @apply px-4 py-2 text-gray-700 font-bold;
+    }
+
+    tbody {
+        @apply divide-y divide-gray-200;
+    }
+
+    tr {
+        @apply hover:bg-gray-50;
+    }
+
+    td {
+        @apply px-4 py-2;
+    }
+}
+
+@layer components {
+    /* Heading utility classes for special cases */
+    .heading-hero {
+        @apply font-bold text-4xl lg:text-6xl text-gray-900 mb-6 leading-tight;
+    }
+
+    .heading-section {
+        @apply font-bold text-3xl lg:text-4xl text-gray-900 mb-8 text-center;
+    }
+
+    .heading-card {
+        @apply font-semibold text-xl lg:text-2xl mb-4 leading-tight;
+    }
+
+    .heading-light {
+        @apply text-white;
+    }
+
+    .heading-branded {
+        @apply text-transparent bg-clip-text bg-gradient-to-r from-pycon-green via-pycon-blue to-pycon-red;
+    }
+
+    .nav-item {
+        @apply font-semibold text-gray-200 hover:text-white uppercase no-underline
+    }
+
+    .btn {
+        @apply w-fit px-8 py-3 bg-yellow-600 no-underline rounded-xl text-white font-bold cursor-pointer hover:bg-yellow-500 text-center items-center
+    }
+
+    .btn-small {
+        @apply py-1 px-4;
+    }
+
+
+    .btn-success {
+        @apply bg-green-700 hover:bg-green-600
+    }
+
+    .btn-secondary {
+        @apply bg-orange-700 hover:bg-orange-600;
+    }
+
+    input[type="submit"] {
+        @apply mt-3;
+    }
+
+    .alert {
+        @apply border rounded-2xl p-3;
+    }
+
+    .alert-primary {
+        @apply border-yellow-700 bg-yellow-50
+    }
+
+    .alert-danger {
+        @apply border-orange-700 bg-orange-50
+    }
+
+    .alert-warning {
+        @apply border-yellow-700 bg-yellow-50
+    }
+
+    .alert-success {
+        @apply border-green-700 bg-green-50
+    }
+
+    .alert-info {
+        @apply border-blue-700 bg-blue-50
+    }
+
+    .card {
+        @apply p-3
+    }
+
+    .badge {
+        @apply border rounded-xl px-2 py-1 text-xs
+    }
+
+    .bg-danger {
+        @apply border-orange-700 bg-orange-50
+    }
+
+    .bg-warning {
+        @apply border-yellow-700 bg-yellow-50
+    }
+
+    .bg-success {
+        @apply border-green-700 bg-green-50
+    }
+
+    .bg-info {
+        @apply border-blue-700 bg-blue-50
+    }
+
+    .django-markitup-widget {
+        @apply appearance-none border leading-normal block w-full border-gray-300 bg-white py-2 px-4 text-gray-700 rounded-lg focus:outline-none
+    }
+
+}
+
+@layer utilities {
+    .text-pycon-yellow {
+        color: var(--color-pycon-yellow);
+    }
+
+    .text-pycon-green {
+        color: var(--color-pycon-green);
+    }
+
+    .text-pycon-blue {
+        color: var(--color-pycon-blue);
+    }
+
+    .text-pycon-red {
+        color: var(--color-pycon-red);
+    }
+
+    .text-pycon-light-blue {
+        color: var(--color-pycon-light-blue);
+    }
+
+    .bg-translucent {
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(4px);
+    }
+
+    .list-custom {
+        list-style-type: none;
+        margin-left: 0;
+    }
+
+    .text-outline-white {
+        text-shadow:
+            -1px -1px 0 #fff,
+            1px -1px 0 #fff,
+            -1px 1px 0 #fff,
+            1px 1px 0 #fff;
+    }
+
+    .fa-bluesky {
+        font-family: inherit;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        display: inline-block;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .fa-bluesky::before {
+        content: "";
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        vertical-align: -0.125em;
+        background-color: currentColor;
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640'%3E%3Cpath d='M439.8 358.7C436.5 358.3 433.1 357.9 429.8 357.4C433.2 357.8 436.5 358.3 439.8 358.7zM320 291.1C293.9 240.4 222.9 145.9 156.9 99.3C93.6 54.6 69.5 62.3 53.6 69.5C35.3 77.8 32 105.9 32 122.4C32 138.9 41.1 258 47 277.9C66.5 343.6 136.1 365.8 200.2 358.6C203.5 358.1 206.8 357.7 210.2 357.2C206.9 357.7 203.6 358.2 200.2 358.6C106.3 372.6 22.9 406.8 132.3 528.5C252.6 653.1 297.1 501.8 320 425.1C342.9 501.8 369.2 647.6 505.6 528.5C608 425.1 533.7 372.5 439.8 358.6C436.5 358.2 433.1 357.8 429.8 357.3C433.2 357.7 436.5 358.2 439.8 358.6C503.9 365.7 573.4 343.5 593 277.9C598.9 258 608 139 608 122.4C608 105.8 604.7 77.7 586.4 69.5C570.6 62.4 546.4 54.6 483.2 99.3C417.1 145.9 346.1 240.4 320 291.1z'/%3E%3C/svg%3E");
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640'%3E%3Cpath d='M439.8 358.7C436.5 358.3 433.1 357.9 429.8 357.4C433.2 357.8 436.5 358.3 439.8 358.7zM320 291.1C293.9 240.4 222.9 145.9 156.9 99.3C93.6 54.6 69.5 62.3 53.6 69.5C35.3 77.8 32 105.9 32 122.4C32 138.9 41.1 258 47 277.9C66.5 343.6 136.1 365.8 200.2 358.6C203.5 358.1 206.8 357.7 210.2 357.2C206.9 357.7 203.6 358.2 200.2 358.6C106.3 372.6 22.9 406.8 132.3 528.5C252.6 653.1 297.1 501.8 320 425.1C342.9 501.8 369.2 647.6 505.6 528.5C608 425.1 533.7 372.5 439.8 358.6C436.5 358.2 433.1 357.8 429.8 357.3C433.2 357.7 436.5 358.2 439.8 358.6C503.9 365.7 573.4 343.5 593 277.9C598.9 258 608 139 608 122.4C608 105.8 604.7 77.7 586.4 69.5C570.6 62.4 546.4 54.6 483.2 99.3C417.1 145.9 346.1 240.4 320 291.1z'/%3E%3C/svg%3E");
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+    }
+}

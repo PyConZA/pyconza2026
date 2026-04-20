@@ -1,0 +1,20 @@
+{% extends "wafer/base.html" %}
+{% load i18n %}
+{% block title %}{{ page.name }} - {{ WAFER_CONFERENCE_NAME }}{% endblock %}
+
+{% block page_title %}
+{{page.name}}
+{% endblock %}
+{% block content %}
+<div class="space-y-3">
+  {{ page.cached_render|safe }}
+
+  {% if perms.pages.change_page %}
+  <div class="page-controls clearfix d-print-none">
+    <a href="{{ page.get_absolute_url }}?edit" class="btn btn-secondary">{% trans 'Edit' %}</a>
+    <a href="{{ page.get_absolute_url }}?compare" class="btn btn-secondary">{% trans 'Compare to Previous version'
+      %}</a>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

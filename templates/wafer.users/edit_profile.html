@@ -1,0 +1,17 @@
+{% extends "wafer/base_form.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load tailwind_filters %}
+
+
+{% block page_title %}
+{% trans 'Edit Profile' %}
+{% endblock %}
+
+{% block content %}
+
+<section>
+    {% crispy form %}
+</section>
+
+{% endblock %}
