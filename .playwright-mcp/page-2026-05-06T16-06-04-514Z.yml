@@ -1,0 +1,119 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e6]:
+        - link [ref=e8] [cursor=pointer]:
+          - /url: /
+          - img [ref=e9]
+        - button [ref=e12] [cursor=pointer]
+      - generic [ref=e16]:
+        - figure [ref=e17]:
+          - img "PyConZA 2026 Logo" [ref=e18]
+        - heading "PyConZA 2026 is coming to Cape Town!" [level=1] [ref=e19]
+        - paragraph [ref=e20]: South Africa's premier Python conference returns for days of talks, workshops, and community building.
+        - generic [ref=e21]:
+          - generic [ref=e22]:
+            - generic [ref=e23]: 📍
+            - generic [ref=e24]: Cape Town, South Africa
+          - generic [ref=e25]:
+            - generic [ref=e26]: 📅
+            - generic [ref=e27]: October 2026
+        - link "Stay Tuned" [ref=e29] [cursor=pointer]:
+          - /url: /talks/
+  - contentinfo [ref=e30]:
+    - generic [ref=e32]:
+      - paragraph [ref=e33]: © 2026 Python Software Society of South Africa - PyConZA
+      - navigation [ref=e34]:
+        - link [ref=e35] [cursor=pointer]:
+          - /url: https://bsky.app/profile/za.pycon.org
+        - link [ref=e37] [cursor=pointer]:
+          - /url: https://fosstodon.org/@pyconza
+        - link [ref=e39] [cursor=pointer]:
+          - /url: https://x.com/pyconza
+        - link [ref=e41] [cursor=pointer]:
+          - /url: https://www.linkedin.com/company/pyconza
+        - link [ref=e43] [cursor=pointer]:
+          - /url: https://www.youtube.com/c/PyConSouthAfrica
+        - link [ref=e45] [cursor=pointer]:
+          - /url: https://discord.gg/95FJZswds8
+  - list [ref=e48]:
+    - listitem [ref=e49]:
+      - link "Hide »" [ref=e50] [cursor=pointer]:
+        - /url: "#"
+    - listitem [ref=e51]:
+      - link "Toggle Theme" [ref=e52] [cursor=pointer]:
+        - /url: "#"
+        - text: Toggle Theme
+        - img [ref=e53]
+    - listitem [ref=e55]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e56]
+      - link "History /" [ref=e57] [cursor=pointer]:
+        - /url: "#"
+        - text: History
+        - text: /
+    - listitem [ref=e58]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e59]
+      - link "Versions Django 5.0.12" [ref=e60] [cursor=pointer]:
+        - /url: "#"
+        - text: Versions
+        - text: Django 5.0.12
+    - listitem [ref=e61]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e62]
+      - 'link "Time CPU: 35.16ms (34.97ms)" [ref=e63] [cursor=pointer]':
+        - /url: "#"
+        - text: Time
+        - text: "CPU: 35.16ms (34.97ms)"
+    - listitem [ref=e64]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e65]
+      - link "Settings" [ref=e66] [cursor=pointer]:
+        - /url: "#"
+    - listitem [ref=e67]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e68]
+      - link "Headers" [ref=e69] [cursor=pointer]:
+        - /url: "#"
+    - listitem [ref=e70]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e71]
+      - link "Request PageHome" [ref=e72] [cursor=pointer]:
+        - /url: "#"
+        - text: Request
+        - text: PageHome
+    - listitem [ref=e73]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e74]
+      - link "SQL 8 queries in 0.80ms" [ref=e75] [cursor=pointer]:
+        - /url: "#"
+        - text: SQL
+        - text: 8 queries in 0.80ms
+    - listitem [ref=e76]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e77]
+      - link "Static files 18 files used" [ref=e78] [cursor=pointer]:
+        - /url: "#"
+        - text: Static files
+        - text: 18 files used
+    - listitem [ref=e79]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e80]
+      - link "Templates website/page_home.html" [ref=e81] [cursor=pointer]:
+        - /url: "#"
+        - text: Templates
+        - text: website/page_home.html
+    - listitem [ref=e82]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e83]
+      - link "Alerts" [ref=e84] [cursor=pointer]:
+        - /url: "#"
+    - listitem [ref=e85]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e86]
+      - link "Cache 2 calls in 0.03ms" [ref=e87] [cursor=pointer]:
+        - /url: "#"
+        - text: Cache
+        - text: 2 calls in 0.03ms
+    - listitem [ref=e88]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e89]
+      - link "Signals 93 receivers of 15 signals" [ref=e90] [cursor=pointer]:
+        - /url: "#"
+        - text: Signals
+        - text: 93 receivers of 15 signals
+    - listitem [ref=e91]:
+      - checkbox "Enable for next and successive requests" [ref=e92]
+      - generic [ref=e93]: Intercept redirects
+    - listitem [ref=e94]:
+      - checkbox "Enable for next and successive requests" [ref=e95]
+      - generic [ref=e96]: Profiling

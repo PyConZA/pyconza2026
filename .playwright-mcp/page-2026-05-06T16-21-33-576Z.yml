@@ -1,0 +1,225 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+      - generic [ref=e8]:
+        - button "About" [ref=e10] [cursor=pointer]: About
+        - button "Speaking" [ref=e13] [cursor=pointer]: Speaking
+        - button "Venue" [ref=e16] [cursor=pointer]: Venue
+        - link "Past Events" [ref=e18] [cursor=pointer]:
+          - /url: /pages/past-events/
+        - link "Sign up / Log In" [ref=e19] [cursor=pointer]:
+          - /url: /accounts/login/
+  - main [ref=e20]:
+    - generic [ref=e21]:
+      - heading "PyConZA Sprints" [level=1] [ref=e22]
+      - generic [ref=e23]:
+        - paragraph [ref=e24]: Thank you for joining us for two days of collaborative coding that accelerated open source projects and connected developers with the vibrant Python community across Africa.
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - generic [ref=e27]: When
+            - generic [ref=e28]: October 2026 (dates TBD)
+          - generic [ref=e29]:
+            - generic [ref=e30]: Where
+            - generic [ref=e31]: Cape Town (venue TBD)
+          - generic [ref=e32]:
+            - generic [ref=e33]: Time
+            - generic [ref=e34]: 8:30 AM - 5:00 PM daily
+          - generic [ref=e35]:
+            - generic [ref=e36]: Who
+            - generic [ref=e37]: All skill levels welcome
+        - generic [ref=e38]:
+          - heading "Venue" [level=2] [ref=e39]
+          - generic [ref=e40]:
+            - generic [ref=e41]:
+              - heading "Sprint Venue" [level=3] [ref=e42]
+              - paragraph [ref=e43]:
+                - text: Cape Town, South Africa
+                - text: Venue to be announced
+            - paragraph [ref=e45]: Map will be added once the venue is confirmed
+        - generic [ref=e46]:
+          - heading "What Are Sprints?" [level=2] [ref=e47]
+          - paragraph [ref=e48]: Sprints are intensive, collaborative coding sessions where developers work together on open source projects. As a cornerstone of PyCon conferences worldwide, sprints bring together project maintainers, experienced contributors, and newcomers to make meaningful progress on the tools we all depend on.
+          - heading "What Happens During Sprints?" [level=3] [ref=e49]
+          - generic [ref=e50]:
+            - list [ref=e51]:
+              - listitem [ref=e52]:
+                - generic [ref=e53]: •
+                - generic [ref=e54]: Fix bugs and implement new features
+              - listitem [ref=e55]:
+                - generic [ref=e56]: •
+                - generic [ref=e57]: Improve documentation and write tests
+              - listitem [ref=e58]:
+                - generic [ref=e59]: •
+                - generic [ref=e60]: Review pull requests and onboard new contributors
+            - list [ref=e61]:
+              - listitem [ref=e62]:
+                - generic [ref=e63]: •
+                - generic [ref=e64]: Share knowledge and learn best practices
+              - listitem [ref=e65]:
+                - generic [ref=e66]: •
+                - generic [ref=e67]: Build lasting connections with fellow developers
+        - generic [ref=e68]:
+          - heading "Why Join the Sprints?" [level=2] [ref=e69]
+          - generic [ref=e70]:
+            - generic [ref=e71]:
+              - heading "For Contributors" [level=3] [ref=e72]
+              - list [ref=e73]:
+                - listitem [ref=e74]:
+                  - generic [ref=e75]: ✓
+                  - generic [ref=e76]: "Learn from the best: Work directly with project maintainers and seasoned developers"
+                - listitem [ref=e77]:
+                  - generic [ref=e78]: ✓
+                  - generic [ref=e79]: "Make an impact: Contribute to projects you use every day"
+                - listitem [ref=e80]:
+                  - generic [ref=e81]: ✓
+                  - generic [ref=e82]: "Level up your skills: Discover new tools, technologies, and development practices"
+                - listitem [ref=e83]:
+                  - generic [ref=e84]: ✓
+                  - generic [ref=e85]: "Build your network: Connect with developers across Africa and beyond"
+            - generic [ref=e86]:
+              - heading "For Project Maintainers" [level=3] [ref=e87]
+              - list [ref=e88]:
+                - listitem [ref=e89]:
+                  - generic [ref=e90]: ✓
+                  - generic [ref=e91]: "Accelerate development: Get significant help with features, fixes, and documentation"
+                - listitem [ref=e92]:
+                  - generic [ref=e93]: ✓
+                  - generic [ref=e94]: "Grow your community: Onboard enthusiastic new contributors"
+                - listitem [ref=e95]:
+                  - generic [ref=e96]: ✓
+                  - generic [ref=e97]: "Gain fresh insights: Benefit from diverse perspectives and innovative approaches"
+                - listitem [ref=e98]:
+                  - generic [ref=e99]: ✓
+                  - generic [ref=e100]: "Share the workload: Build a stronger, more distributed contributor base"
+        - generic [ref=e101]:
+          - heading "Sprint Projects" [level=2] [ref=e102]
+          - paragraph [ref=e103]: PyConZA 2026 sprints - details coming soon!
+          - paragraph [ref=e104]: Want to sprint on your open source project at PyConZA 2026? Get in touch with us to propose a sprint project.
+        - generic [ref=e105]:
+          - generic [ref=e106]:
+            - heading "Success Stories" [level=2] [ref=e107]
+            - paragraph [ref=e108]: Previous PyCon sprint participants have achieved remarkable results
+          - generic [ref=e109]:
+            - generic [ref=e110]:
+              - generic [ref=e111]: "15"
+              - generic [ref=e112]: Open Source Projects
+            - generic [ref=e113]:
+              - generic [ref=e114]: 200+
+              - generic [ref=e115]: Pull Requests
+            - generic [ref=e116]:
+              - generic [ref=e117]: 50+
+              - generic [ref=e118]: New Contributors
+            - generic [ref=e119]:
+              - generic [ref=e120]: 25+
+              - generic [ref=e121]: Bugs Fixed
+            - generic [ref=e122]:
+              - generic [ref=e123]: 10+
+              - generic [ref=e124]: New Features
+        - generic [ref=e125]:
+          - heading "Questions?" [level=2] [ref=e126]
+          - paragraph [ref=e127]: We're here to help with any questions about participating in sprints or applying as a project.
+          - link "Contact Us" [ref=e129] [cursor=pointer]:
+            - /url: /pages/about/contact-us/
+          - paragraph [ref=e131]:
+            - strong [ref=e132]: "Note:"
+            - text: Sprint participation is included with your PyConZA conference ticket. Sprint coordinators are not eligible for PyConZA financial grants, as these are reserved for general attendees.
+  - contentinfo [ref=e133]:
+    - generic [ref=e135]:
+      - paragraph [ref=e136]: © 2026 Python Software Society of South Africa - PyConZA
+      - navigation [ref=e137]:
+        - link [ref=e138] [cursor=pointer]:
+          - /url: https://bsky.app/profile/za.pycon.org
+        - link [ref=e140] [cursor=pointer]:
+          - /url: https://fosstodon.org/@pyconza
+        - link [ref=e142] [cursor=pointer]:
+          - /url: https://x.com/pyconza
+        - link [ref=e144] [cursor=pointer]:
+          - /url: https://www.linkedin.com/company/pyconza
+        - link [ref=e146] [cursor=pointer]:
+          - /url: https://www.youtube.com/c/PyConSouthAfrica
+        - link [ref=e148] [cursor=pointer]:
+          - /url: https://discord.gg/95FJZswds8
+  - list [ref=e151]:
+    - listitem [ref=e152]:
+      - link "Hide »" [ref=e153] [cursor=pointer]:
+        - /url: "#"
+    - listitem [ref=e154]:
+      - link "Toggle Theme" [ref=e155] [cursor=pointer]:
+        - /url: "#"
+        - text: Toggle Theme
+        - img [ref=e156]
+    - listitem [ref=e158]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e159]
+      - link "History /sprints" [ref=e160] [cursor=pointer]:
+        - /url: "#"
+        - text: History
+        - text: /sprints
+    - listitem [ref=e161]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e162]
+      - link "Versions Django 5.0.12" [ref=e163] [cursor=pointer]:
+        - /url: "#"
+        - text: Versions
+        - text: Django 5.0.12
+    - listitem [ref=e164]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e165]
+      - 'link "Time CPU: 65.50ms (65.57ms)" [ref=e166] [cursor=pointer]':
+        - /url: "#"
+        - text: Time
+        - text: "CPU: 65.50ms (65.57ms)"
+    - listitem [ref=e167]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e168]
+      - link "Settings" [ref=e169] [cursor=pointer]:
+        - /url: "#"
+    - listitem [ref=e170]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e171]
+      - link "Headers" [ref=e172] [cursor=pointer]:
+        - /url: "#"
+    - listitem [ref=e173]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e174]
+      - link "Request PageSprints" [ref=e175] [cursor=pointer]:
+        - /url: "#"
+        - text: Request
+        - text: PageSprints
+    - listitem [ref=e176]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e177]
+      - link "SQL 1 query in 0.29ms" [ref=e178] [cursor=pointer]:
+        - /url: "#"
+        - text: SQL
+        - text: 1 query in 0.29ms
+    - listitem [ref=e179]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e180]
+      - link "Static files 10 files used" [ref=e181] [cursor=pointer]:
+        - /url: "#"
+        - text: Static files
+        - text: 10 files used
+    - listitem [ref=e182]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e183]
+      - link "Templates website/page_sprints.html" [ref=e184] [cursor=pointer]:
+        - /url: "#"
+        - text: Templates
+        - text: website/page_sprints.html
+    - listitem [ref=e185]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e186]
+      - link "Alerts" [ref=e187] [cursor=pointer]:
+        - /url: "#"
+    - listitem [ref=e188]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e189]
+      - link "Cache 1 call in 0.05ms" [ref=e190] [cursor=pointer]:
+        - /url: "#"
+        - text: Cache
+        - text: 1 call in 0.05ms
+    - listitem [ref=e191]:
+      - checkbox "Disable for next and successive requests" [checked] [ref=e192]
+      - link "Signals 93 receivers of 15 signals" [ref=e193] [cursor=pointer]:
+        - /url: "#"
+        - text: Signals
+        - text: 93 receivers of 15 signals
+    - listitem [ref=e194]:
+      - checkbox "Enable for next and successive requests" [ref=e195]
+      - generic [ref=e196]: Intercept redirects
+    - listitem [ref=e197]:
+      - checkbox "Enable for next and successive requests" [ref=e198]
+      - generic [ref=e199]: Profiling

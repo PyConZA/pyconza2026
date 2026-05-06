@@ -2,105 +2,122 @@
 
 
 @theme {
-    --color-pycon-yellow: #FFD700;
-    --color-pycon-green: #4CAF50;
-    --color-pycon-blue: #2196F3;
-    --color-pycon-red: #F44336;
-    --color-pycon-light-blue: #90CAF9;
+    /* Primary palette */
+    --color-indigo: #1A2B4C;
+    --color-cream: #E8DDC8;
+    --color-pink: #C2185B;
+    --color-olive: #4A6B3F;
+
+    /* Neutral scale */
+    --color-ink-black: #0E1420;
+    --color-off-white: #FAF6EE;
+    --color-grey-700: #3A3F47;
+    --color-grey-500: #6B7280;
+    --color-grey-300: #B9BEC6;
+
+    /* Sanctioned cream tint — schedule alternating rows etc. */
+    --color-cream-tint: #F4EEE1;
+
+    /* Typeface stacks */
+    --font-headline: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Consolas, monospace;
 }
 
 
 @layer base {
-    :root {
-        /* --font-exo-2: "Exo 2", sans-serif; */
-        --font-open-sans: "Open Sans",
-            Helvetica,
-            Arial,
-            sans-serif;
-
-        --font-family-kanchenjunga: 'Kanchenjunga',
-            sans-serif;
+    body {
+        @apply bg-cream text-indigo font-body;
     }
 
-    a,
-    li,
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        /* font-family: var(--font-open-sans); */
-        font-family: var(--font-family-kanchenjunga);
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-headline);
     }
 
     h1 {
-        @apply font-bold text-4xl lg:text-6xl text-gray-900 mb-6 leading-tight;
+        @apply font-bold text-4xl lg:text-5xl text-indigo mb-6 leading-tight tracking-tight;
     }
 
     h2 {
-        @apply font-bold text-3xl lg:text-4xl text-gray-900 mb-6 leading-tight;
+        @apply font-semibold text-3xl lg:text-4xl text-indigo mb-6 leading-snug tracking-tight;
     }
 
     h3 {
-        @apply font-semibold text-2xl lg:text-3xl text-gray-900 mb-4 leading-tight;
+        @apply font-semibold text-2xl lg:text-[28px] text-indigo mb-4 leading-snug;
     }
 
     h4 {
-        @apply font-semibold text-xl lg:text-2xl text-gray-800 mb-3 leading-tight;
+        @apply font-semibold text-xl lg:text-[22px] text-indigo mb-3 leading-snug;
     }
 
     h5 {
-        @apply font-semibold text-lg lg:text-xl text-gray-800 mb-3 leading-tight;
+        @apply font-medium text-base lg:text-lg text-indigo mb-3 leading-snug tracking-wide;
     }
 
     h6 {
-        @apply font-semibold text-base lg:text-lg text-gray-700 mb-2 leading-tight;
+        @apply font-medium text-sm text-indigo mb-2 leading-snug tracking-widest uppercase;
     }
 
     a {
         @apply cursor-pointer underline;
     }
 
+    a:focus-visible {
+        @apply outline-2 outline-offset-2 outline-indigo;
+    }
+
     button {
-        @apply cursor-pointer
+        @apply cursor-pointer;
+    }
+
+    button:focus-visible {
+        @apply outline-2 outline-offset-2 outline-indigo;
+    }
+
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+        @apply outline-2 outline-offset-2 outline-indigo;
     }
 
     p {
-        @apply text-lg
+        @apply text-base leading-relaxed;
     }
 
     ul {
-        @apply list-disc list-inside ml-6 space-y-2
+        @apply list-disc list-inside ml-6 space-y-2;
     }
 
     ol {
-        @apply list-decimal list-inside space-y-2
+        @apply list-decimal list-inside space-y-2;
     }
 
     form {
-        @apply space-y-3
+        @apply space-y-3;
+    }
+
+    code, pre, kbd, samp {
+        font-family: var(--font-mono);
     }
 
     table {
-        @apply border border-gray-300 text-left text-sm;
+        @apply border border-grey-300 text-left text-sm;
     }
 
     thead {
-        @apply bg-gray-100 border-b;
+        @apply bg-cream-tint border-b border-grey-300;
     }
 
     th {
-        @apply px-4 py-2 text-gray-700 font-bold;
+        @apply px-4 py-2 text-indigo font-semibold;
     }
 
     tbody {
-        @apply divide-y divide-gray-200;
+        @apply divide-y divide-grey-300;
     }
 
     tr {
-        @apply hover:bg-gray-50;
+        @apply hover:bg-cream-tint;
     }
 
     td {
@@ -111,44 +128,43 @@
 @layer components {
     /* Heading utility classes for special cases */
     .heading-hero {
-        @apply font-bold text-4xl lg:text-6xl text-gray-900 mb-6 leading-tight;
+        @apply font-bold text-4xl lg:text-5xl text-indigo mb-6 leading-tight tracking-tight;
     }
 
     .heading-section {
-        @apply font-bold text-3xl lg:text-4xl text-gray-900 mb-8 text-center;
+        @apply font-semibold text-3xl lg:text-4xl text-indigo mb-8 text-center;
     }
 
     .heading-card {
-        @apply font-semibold text-xl lg:text-2xl mb-4 leading-tight;
+        @apply font-semibold text-xl lg:text-[22px] mb-4 leading-snug;
     }
 
     .heading-light {
-        @apply text-white;
-    }
-
-    .heading-branded {
-        @apply text-transparent bg-clip-text bg-gradient-to-r from-pycon-green via-pycon-blue to-pycon-red;
+        @apply text-cream;
     }
 
     .nav-item {
-        @apply font-semibold text-gray-200 hover:text-white uppercase no-underline
+        @apply font-medium text-cream hover:text-pink uppercase no-underline tracking-wide;
     }
 
     .btn {
-        @apply w-fit px-8 py-3 bg-yellow-600 no-underline rounded-xl text-white font-bold cursor-pointer hover:bg-yellow-500 text-center items-center
+        @apply w-fit px-8 py-3 bg-indigo no-underline rounded-xl text-cream font-semibold cursor-pointer hover:bg-indigo/90 text-center items-center;
+    }
+
+    .btn:focus-visible {
+        @apply outline-2 outline-offset-2 outline-pink;
     }
 
     .btn-small {
         @apply py-1 px-4;
     }
 
-
     .btn-success {
-        @apply bg-green-700 hover:bg-green-600
+        @apply bg-olive text-cream hover:bg-olive/90;
     }
 
     .btn-secondary {
-        @apply bg-orange-700 hover:bg-orange-600;
+        @apply bg-pink text-off-white hover:bg-pink/90;
     }
 
     input[type="submit"] {
@@ -160,79 +176,60 @@
     }
 
     .alert-primary {
-        @apply border-yellow-700 bg-yellow-50
+        @apply border-indigo bg-cream text-indigo;
     }
 
     .alert-danger {
-        @apply border-orange-700 bg-orange-50
+        @apply border-pink bg-cream-tint text-indigo;
     }
 
     .alert-warning {
-        @apply border-yellow-700 bg-yellow-50
+        @apply border-olive bg-cream-tint text-indigo;
     }
 
     .alert-success {
-        @apply border-green-700 bg-green-50
+        @apply border-olive bg-off-white text-indigo;
     }
 
     .alert-info {
-        @apply border-blue-700 bg-blue-50
+        @apply border-indigo bg-off-white text-indigo;
     }
 
     .card {
-        @apply p-3
+        @apply p-3 bg-off-white border border-grey-300 rounded-xl;
     }
 
     .badge {
-        @apply border rounded-xl px-2 py-1 text-xs
+        @apply border border-grey-300 rounded-xl px-2 py-1 text-xs bg-cream-tint text-indigo;
     }
 
     .bg-danger {
-        @apply border-orange-700 bg-orange-50
+        @apply border-pink bg-cream-tint;
     }
 
     .bg-warning {
-        @apply border-yellow-700 bg-yellow-50
+        @apply border-olive bg-cream-tint;
     }
 
     .bg-success {
-        @apply border-green-700 bg-green-50
+        @apply border-olive bg-off-white;
     }
 
     .bg-info {
-        @apply border-blue-700 bg-blue-50
+        @apply border-indigo bg-off-white;
     }
 
     .django-markitup-widget {
-        @apply appearance-none border leading-normal block w-full border-gray-300 bg-white py-2 px-4 text-gray-700 rounded-lg focus:outline-none
+        @apply appearance-none border leading-normal block w-full border-grey-300 bg-off-white py-2 px-4 text-indigo rounded-lg focus:outline-none;
     }
 
 }
 
 @layer utilities {
-    .text-pycon-yellow {
-        color: var(--color-pycon-yellow);
-    }
-
-    .text-pycon-green {
-        color: var(--color-pycon-green);
-    }
-
-    .text-pycon-blue {
-        color: var(--color-pycon-blue);
-    }
-
-    .text-pycon-red {
-        color: var(--color-pycon-red);
-    }
-
-    .text-pycon-light-blue {
-        color: var(--color-pycon-light-blue);
-    }
-
     .bg-translucent {
-        background-color: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(4px);
+        background-color: rgba(26, 43, 76, 0.55);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
     }
 
     .list-custom {

@@ -4,9 +4,34 @@
 
 The PyConZA 2026 site (Django + Tailwind v4) is currently styled with a legacy palette: yellow/green/blue/red brand colours, generic gradients, gray-700 header, mixed weights and headings. A new 2026 brand identity has been defined across seven brand skills in `.claude/skills/` (`brand-colors`, `brand-css-tokens`, `brand-typography`, `brand-layout`, `brand-voice`, `brand-positioning`, `brand-accessibility`). The goal of this plan is to bring every active surface (templates, CSS, copy) onto the new brand without breaking layout or accessibility.
 
-This plan is written to be executed step-by-step by fresh agents that will not have the conversation history. Each step is self-contained: it lists the files to read, the files to edit, the brand skills to load, and how to validate. **Run phases in order** — later phases assume earlier ones are merged. Human validation gates are interleaved.
+This plan is written to be executed step-by-step by fresh agents that will not have the conversation history. Each step is self-contained: it lists the files to read, the files to edit, the brand skills to load, and how to validate. **Run phases in order** — later phases assume earlier ones are merged. AI Playwright validation gates and human review gates are interleaved.
 
 **Rule for every phase:** load the named brand skill(s) before editing. The skills are the source of truth for hexes, type scale, breakpoints, voice rules, and accessibility floors. Do not duplicate their content into this plan.
+
+## Validation conventions — Playwright + screenshots
+
+Visual validation is performed by the AI via the Playwright MCP tools. The human's job is to review the resulting screenshots (and to do the things only a human can do: screen-reader testing, vision-deficiency emulation, copy approval).
+
+**Screenshot directory:** `screenshots/` at the repo root. Each phase writes into its own subdirectory: `screenshots/phase-1/`, `screenshots/phase-2/`, etc. Create the directory if it does not exist. Do not commit the screenshots unless the user asks — they exist for the review gate.
+
+**Viewports** (matching `brand-layout` breakpoints):
+- `mobile` — 390 × 844
+- `tablet` — 768 × 1024
+- `desktop` — 1280 × 800
+- `wide` — 1536 × 960 (only when wide-screen layout is specifically called out)
+
+**Naming:** `screenshots/phase-N/<page-slug>-<viewport>[-state].png` — e.g. `screenshots/phase-3/home-mobile.png`, `screenshots/phase-6/visa-form-desktop-error.png`, `screenshots/phase-2/nav-mobile-open.png`.
+
+**Playwright loop for each route × viewport:**
+1. `browser_resize` to the target viewport.
+2. `browser_navigate` to the URL.
+3. `browser_wait_for` until network/idle / a known selector is visible.
+4. `browser_take_screenshot` saving to the path above (full page unless a focused state is being captured).
+5. For interaction states (focus ring, hover, mobile menu open, form error), drive with `browser_press_key` / `browser_click` / `browser_fill_form` then screenshot again with a `-state` suffix.
+
+**Before AI validation runs, the user must confirm the dev server is up.** The AI should ask for the base URL (default `http://localhost:8000`) at the start of each validation gate rather than assume it. If Playwright can't reach the URL, stop and report — do not start the server.
+
+**At the end of each validation gate**, the AI lists the screenshots written, flags any visible regressions it noticed, and waits for the human to sign off before the next phase begins.
 
 ---
 
@@ -88,14 +113,17 @@ This plan is written to be executed step-by-step by fresh agents that will not h
     - REMOVE-NOW: delete; later phases replace every usage.
 11. Update `.bg-translucent` to use indigo with a backdrop blur. Leave `.fa-bluesky` alone.
 
-**Validation (AI):**
+**Validation (AI — build):**
 - Rebuild Tailwind. No build errors. Unknown-class errors usually mean a token wasn't exposed in `@theme` — re-check step 2.
 
-**Validation (HUMAN):**
-- [ ] Visit `/`, `/sprints`, `/beginners-day`, `/donations`. Cream background, indigo body text, indigo buttons with cream text, headline font visibly distinct from body.
-- [ ] No invisibly low-contrast text. Check the forbidden pair (Pink + Olive) and the AA-large-only rule (Pink on Cream) per `brand-colors`.
-- [ ] Mobile / tablet / desktop scale correctly. Body stays ≥16px.
-- [ ] If structural breakage (collapsed layouts, missing nav), pause and brief the next AI step.
+**Validation (AI — Playwright):**
+- For each route in `/`, `/sprints`, `/beginners-day`, `/donations`, capture full-page screenshots at mobile / tablet / desktop into `screenshots/phase-1/<slug>-<viewport>.png`.
+- AI smoke-check from the screenshots: cream background, indigo body text, indigo buttons with cream text, headline font visibly distinct from body. Flag any obviously low-contrast text, forbidden pair (Pink + Olive) adjacency, or Pink-on-Cream small text per `brand-colors`. Flag any structural breakage (collapsed layouts, missing nav) and pause before further phases.
+
+**Validation (HUMAN — review):**
+- [ ] Open the screenshots in `screenshots/phase-1/` and confirm the AI's smoke-check.
+- [ ] Body text ≥16px across viewports.
+- [ ] Sign off before Phase 2 begins.
 
 ---
 
@@ -120,11 +148,20 @@ This plan is written to be executed step-by-step by fresh agents that will not h
 5. **`wafer/nav.html`:** verify desktop nav uses the `.nav-item` class. Mobile hamburger gets `focus-visible` cream ring. Mobile dropdown panel `bg-indigo border border-grey-700` with cream items. Same treatment for the user dropdown.
 6. **Skip-to-main-content link:** add as the first child of `<body>` in `_base.html`. Add `id="main"` to the `<main>` element (or wrap `{% block content %}` if no `<main>` exists).
 
-**Validation (HUMAN):**
-- [ ] Header indigo, nav cream, hover pink. Footer as decided.
-- [ ] Tab from URL bar — skip link appears first, every nav link gets a visible cream focus ring.
-- [ ] Mobile hamburger opens an indigo dropdown with cream readable text.
-- [ ] Logo visible. If not, flag for next AI step.
+**Validation (AI — Playwright):**
+- Navigate to `/` at desktop and mobile. Capture:
+  - `screenshots/phase-2/header-desktop.png` — top of page (header).
+  - `screenshots/phase-2/footer-desktop.png` — scrolled to footer.
+  - `screenshots/phase-2/header-mobile.png` and `footer-mobile.png` similarly.
+- Skip-link + focus rings: from the page-loaded state, `browser_press_key` `Tab` once, screenshot to `screenshots/phase-2/skiplink-focus-desktop.png`. `Tab` through the next 3–5 elements, screenshot one focused nav link to `screenshots/phase-2/nav-link-focus-desktop.png`.
+- Mobile menu: at mobile viewport, `browser_click` the hamburger, screenshot the open dropdown to `screenshots/phase-2/nav-mobile-open.png`. Tab into a dropdown item and screenshot focus state to `nav-mobile-focus.png`.
+- Logo presence: from the desktop header screenshot, AI confirms the logo is visible on indigo. If it appears to vanish (dark-on-transparent on indigo) flag for the next step rather than auto-inverting.
+
+**Validation (HUMAN — review):**
+- [ ] Open screenshots in `screenshots/phase-2/`. Header indigo, nav cream, hover/focus pink-or-cream ring as specified. Footer as decided.
+- [ ] Skip-link screenshot shows the link as the first focusable element.
+- [ ] Mobile dropdown is indigo with readable cream items.
+- [ ] Logo visible — or flagged for follow-up.
 
 ---
 
@@ -145,10 +182,16 @@ This plan is written to be executed step-by-step by fresh agents that will not h
 5. **Voice pass** on hero copy per `brand-voice`. Confirm "Cape Town, South Africa" on first mention, "Cape Town" thereafter.
 6. Remove arbitrary inline colour values (`text-[#FFD700]` etc.) — always use brand tokens.
 
-**Validation (HUMAN):**
-- [ ] Mobile / tablet / desktop. Reads "coastal, considered, adult" — indigo dominant, cream breathing room, one pink focal hit, sparse olive (proportions per `brand-colors`).
-- [ ] Read every word; flag marketing-email phrasing for Phase 8.
-- [ ] Contrast-check hero headline + sub-copy against `brand-accessibility` floors.
+**Validation (AI — Playwright):**
+- Capture full-page screenshots of `/` at mobile / tablet / desktop / wide into `screenshots/phase-3/home-<viewport>.png`.
+- Capture an above-the-fold screenshot of the hero only (no scroll) at desktop and mobile → `home-hero-<viewport>.png`.
+- Use `browser_snapshot` on `/` and save the accessibility tree text to the AI report, then read every visible word and list any phrasing that should go to Phase 8 voice review.
+- AI checks against `brand-colors` proportions: indigo dominant, cream breathing room, exactly one pink focal hit, sparse olive. Report deviations rather than fixing on the fly.
+
+**Validation (HUMAN — review):**
+- [ ] Review screenshots in `screenshots/phase-3/`. Reads "coastal, considered, adult" at every viewport.
+- [ ] Confirm AI's voice flags or add your own; defer rewrites to Phase 8.
+- [ ] Contrast-check hero headline + sub-copy against `brand-accessibility` floors (use the screenshots + a contrast tool).
 - [ ] Sparse-feeling wide-screen layouts are intentional — verify against `brand-layout` whitespace philosophy before tightening.
 
 ---
@@ -174,11 +217,17 @@ This plan is written to be executed step-by-step by fresh agents that will not h
 6. Hover effects (`hover:scale-105 transition-transform`) are fine; transitions ≤300ms (project CLAUDE.md).
 7. Voice pass per `brand-voice`. Beginners-day especially has marketing-tone copy.
 
-**Validation (HUMAN):**
-- [ ] Each page at mobile / tablet / desktop. Indigo / cream / off-white dominant, ≤10% pink, ~5% olive.
+**Validation (AI — Playwright):**
+- For each of `/beginners-day`, `/in-person-event`, `/sprints` (use the actual project routes if different), capture full-page screenshots at mobile / tablet / desktop into `screenshots/phase-4/<slug>-<viewport>.png`.
+- AI scans each screenshot and reports:
+  - Any visible gradient blocks remaining.
+  - Any pink-on-cream small text or pink-adjacent-olive surfaces.
+  - Estimate of pink/olive proportion per page; flag pages with more than one pink focal hit.
+
+**Validation (HUMAN — review):**
+- [ ] Review `screenshots/phase-4/`. Indigo / cream / off-white dominant, ≤10% pink, ~5% olive.
 - [ ] No gradients remain.
-- [ ] No pink-on-cream small text, no pink-on-olive adjacency.
-- [ ] Spot-check contrast on one body paragraph and one badge per page.
+- [ ] Spot-check contrast on one body paragraph and one badge per page using the screenshots + a contrast tool.
 
 ---
 
@@ -200,8 +249,13 @@ This plan is written to be executed step-by-step by fresh agents that will not h
 - `page_dinner.html`: gradient block → flat off-white. Italic blockquote is fine (genuine emphasis per `brand-voice`).
 - `page_tickets.html`: short page; voice-pass placeholder copy.
 
-**Validation (HUMAN):**
-- [ ] Each URL. Same checklist as Phase 4. Spot-check on a real phone if possible.
+**Validation (AI — Playwright):**
+- For each of `/donations`, `/remote-experience`, `/volunteering`, `/dinner`, `/tickets` (use actual project routes), capture full-page screenshots at mobile / tablet / desktop into `screenshots/phase-5/<slug>-<viewport>.png`.
+- Apply the same scan as Phase 4: gradients gone, pink/olive proportions, no forbidden pairs.
+- Page-specific flags: yellow alert blocks on donations, dark Discord-ish block on remote, role-card icon palette on volunteering, gradient block on dinner.
+
+**Validation (HUMAN — review):**
+- [ ] Review `screenshots/phase-5/`. Same checklist as Phase 4. Spot-check on a real phone if possible.
 
 ---
 
@@ -231,10 +285,16 @@ This plan is written to be executed step-by-step by fresh agents that will not h
 6. `application_detail.html`: read-only display. Section headings H3.
 7. Voice pass on form copy and helper text.
 
-**Validation (HUMAN):**
-- [ ] Log in, visit `/visa_letters/` and `/opportunity_grants/`. Tab through inputs — indigo focus ring visible.
-- [ ] Submit an invalid form — error uses pink + text + icon, never colour alone.
-- [ ] Detail pages: status badges read clearly.
+**Validation (AI — Playwright):**
+- The user must log in (or supply a session cookie / credentials the AI can use via `browser_fill_form`) before this gate. If the AI hits a login wall, stop and ask.
+- Capture for each form (`/visa_letters/...`, `/opportunity_grants/...`) at desktop and mobile:
+  - Empty form: `screenshots/phase-6/<slug>-<viewport>.png`.
+  - Focus state: tab into the first input via `browser_press_key` `Tab`, screenshot to `<slug>-<viewport>-focus.png`. Confirm a visible indigo ring.
+  - Error state: submit an invalid form (`browser_click` the submit without filling required fields, or fill with bad data), screenshot to `<slug>-<viewport>-error.png`. Confirm pink + text + icon, never colour alone.
+- Detail pages: capture each badge state available (`approved`, `pending`, `rejected`) at desktop into `screenshots/phase-6/<slug>-detail-<state>.png`. If a state isn't reachable on test data, note it.
+
+**Validation (HUMAN — review):**
+- [ ] Review `screenshots/phase-6/`. Focus rings visible, error states use icon + text + pink, status badges read clearly.
 
 ---
 
@@ -258,9 +318,16 @@ This plan is written to be executed step-by-step by fresh agents that will not h
    - Wrapper element: `<main id="main" class="max-w-prose mx-auto px-4 py-8 markdown-body">{{ page.cached_render|safe }}</main>`.
    - Admin "edit / compare" buttons inherit `.btn` updates from Phase 1.
 
-**Validation (HUMAN):**
-- [ ] `/accommodations` cards readable, hover subtle, pagination on-brand.
-- [ ] `/pages/about_us/`, `/pages/code_of_conduct/`, `/pages/speaking_guidelines/` — body ≥16px, sane measure, headings styled, code blocks in mono.
+**Validation (AI — Playwright):**
+- Capture full-page screenshots of `/accommodations` at mobile / tablet / desktop into `screenshots/phase-7/accommodations-<viewport>.png`.
+- Hover state on one card: `browser_hover` over the first card, screenshot to `accommodations-card-hover-desktop.png`.
+- Pagination: if pagination is present, scroll to it and screenshot `accommodations-pagination-desktop.png`.
+- Capture each markdown page (`/pages/about_us/`, `/pages/code_of_conduct/`, `/pages/speaking_guidelines/`) at desktop and mobile into `screenshots/phase-7/<slug>-<viewport>.png`.
+- AI checks: measure ≤72ch on desktop (estimate from screenshot width), code blocks in mono, headings styled.
+
+**Validation (HUMAN — review):**
+- [ ] Review `screenshots/phase-7/`. Accommodations cards readable, hover subtle, pagination on-brand.
+- [ ] Markdown pages: body ≥16px, sane measure, headings styled, code blocks in mono.
 
 ---
 
@@ -294,9 +361,10 @@ This plan is written to be executed step-by-step by fresh agents that will not h
 **AI tasks:**
 1. Automated contrast scan against the dev server (e.g. `pa11y` if available) for all active routes. Report failures with file/line context.
 2. Grep for any remaining off-palette colour usages: `grep -rE "(bg|text|border)-(red|orange|yellow|green|blue|indigo|purple|pink|gray)-[0-9]+" templates/ static/css/ grants/`. Each hit should be a deliberate Tailwind grey, or a leftover to replace with a brand token.
-3. Verify focus rings on every interactive element (tab through, or describe a keyboard test for the human).
+3. Playwright keyboard pass: for each route, navigate via Playwright, then `browser_press_key` `Tab` repeatedly until the focus has visited every interactive element on the visible viewport. Screenshot each focused state to `screenshots/phase-9/<slug>-tab-<n>.png`. Stop and report any element that takes focus without a visible ring.
 4. Verify all `<img>` tags have `alt` (`grep -rEn "<img[^>]*>" templates/ | grep -v "alt="` should be zero hits, or every hit is intentionally `alt=""`).
 5. Verify body text ≥16px per `brand-typography` (search `text-xs`, `text-sm` and confirm uses are non-body — captions, badges).
+6. Final per-route smoke screenshots at mobile / tablet / desktop into `screenshots/phase-9/<slug>-<viewport>.png` so the human review gate has one complete snapshot of the site post-rebrand.
 
 **HUMAN tasks:**
 - [ ] Walk the `brand-accessibility` checklist on each page.
@@ -316,8 +384,11 @@ This plan is written to be executed step-by-step by fresh agents that will not h
 2. If zero, delete the alias rules from `static/css/main.css` (`@theme` legacy entries and `@layer utilities` `.text-pycon-*` / `.bg-pycon-*` rules).
 3. Rebuild Tailwind.
 
-**Validation (HUMAN):**
-- [ ] Smoke-test all pages. Build size should drop slightly.
+**Validation (AI — Playwright):**
+- Re-capture the same per-route mobile / desktop screenshots as Phase 9 into `screenshots/phase-10/<slug>-<viewport>.png`. Diff visually against Phase 9 — they should be identical (alias removal is a no-op on rendered output). Flag any unexpected differences.
+
+**Validation (HUMAN — review):**
+- [ ] Compare `screenshots/phase-10/` to `screenshots/phase-9/`. No visual regressions. Build size should drop slightly.
 
 ---
 
@@ -327,5 +398,6 @@ This plan is written to be executed step-by-step by fresh agents that will not h
 - **Never** introduce a new colour, font, or gradient that isn't sanctioned by the brand. If a design choice isn't covered, ask the user.
 - **Tailwind v4 specific:** colour and font tokens live in `@theme` in `static/css/main.css`. Adding a token means adding a `--color-X` / `--font-X` line there, not extending `tailwind.config.js` (the project doesn't use one).
 - **If a phase reveals scope** the plan didn't anticipate (e.g. hardcoded inline `style="..."` colours), stop and report rather than improvising.
-- **Test responsiveness in the dev server**, not just by reading code. Type-check / build success ≠ visual correctness — `CLAUDE.md` is explicit on this.
+- **Test responsiveness in the dev server via Playwright MCP**, not just by reading code. Type-check / build success ≠ visual correctness — `CLAUDE.md` is explicit on this. Each phase's validation gate spells out what to capture; follow the screenshot directory + naming conventions at the top of this plan.
+- **Playwright MCP tools are deferred** — load their schemas with `ToolSearch` (e.g. `select:browser_navigate,browser_resize,browser_take_screenshot,browser_press_key,browser_click,browser_fill_form,browser_hover,browser_snapshot,browser_wait_for`) before the first call.
 - **Static files:** if a CSS edit doesn't appear in the browser, check whether Tailwind is rebuilding and whether Django's static-file collection needs re-running.
