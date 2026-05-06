@@ -144,7 +144,11 @@
     }
 
     .nav-item {
-        @apply font-medium text-cream hover:text-pink uppercase no-underline tracking-wide;
+        @apply font-medium text-cream hover:text-pink uppercase no-underline tracking-wide rounded-sm;
+    }
+
+    .nav-item:focus-visible {
+        @apply outline-2 outline-offset-4 outline-cream;
     }
 
     .btn {

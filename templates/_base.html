@@ -15,8 +15,10 @@
 
     <link href="{% static 'vendor/main.css' %}" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
-        href="//fonts.googleapis.com/css?family=Kanchenjunga:wght@400;500;600;700&family=Open+Sans:400,300,500,600,700,800">
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
@@ -32,9 +34,13 @@
 
 <body class="">
 
+    <a href="#main"
+       class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-cream focus:text-indigo focus:px-4 focus:py-2 focus:rounded-md focus:outline-2 focus:outline-offset-2 focus:outline-indigo focus:no-underline">
+        Skip to main content
+    </a>
 
     {% block header %}
-    <header class="bg-gray-700">
+    <header class="bg-indigo">
         {% include "partial_header.html" %}
     </header>
     {% endblock %}
@@ -52,25 +58,27 @@
         {% endblock %}
     </main>
 
-    <footer class=" mx-5 pt-10 space-y-3 ">
+    <footer class="bg-indigo text-cream mt-16 pt-10 pb-8 px-5">
 
-        <div class="pb-5  border-b-2 border-gray-200 ">
-            {% sponsors_footer %}
+        <div class="max-w-7xl mx-auto pb-6 mb-6 border-b border-grey-700">
+            <div class="bg-off-white rounded-xl p-6">
+                {% sponsors_footer %}
+            </div>
         </div>
 
 
-        <div class="lg:flex lg:items-center max-w-7xl mx-auto lg:justify-between space-y-3 text-center text-gray-500 ">
+        <div class="lg:flex lg:items-center max-w-7xl mx-auto lg:justify-between space-y-3 text-center">
 
 
 
 
-            <p class="text-sm lg:text-base">
+            <p class="text-sm lg:text-base text-grey-300">
                 &copy; 2026 Python Software Society of South Africa - PyConZA
             </p>
 
             <nav class="text-3xl space-x-1" id="social_media_footer">
                 {% for link in social_links %}
-                <a href="{{link.url}}" target="_blank" class="no-underline hover:text-gray-800">
+                <a href="{{link.url}}" target="_blank" class="text-cream hover:text-pink no-underline">
                     <i class="{{link.icon}}"></i>
                 </a>
                 {% endfor %}

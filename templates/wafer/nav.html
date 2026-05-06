@@ -60,14 +60,15 @@
 
 <div class="lg:hidden block relative pr-4" x-data="{ open: false }">
 
-  <button class="py-3 text-white font-bold cursor-pointer items-center" @click="open = !open">
+  <button class="py-3 text-cream font-bold cursor-pointer items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream rounded-md px-2"
+          aria-label="Toggle navigation menu" @click="open = !open">
 
     <i class="fa fa-bars" aria-hidden="true" x-show="!open" style="display:hidden"></i>
     <i class="fa fa-caret-down" aria-hidden="true" x-show="open" style="display:hidden"></i>
   </button>
 
   <div x-show="open" style="display:hidden;"
-    class="absolute w-80 right-3 mt-2  bg-gray-700 border border-gray-500 rounded-md shadow-lg z-50 flex flex-col gap-5 p-2 "
+    class="absolute w-80 right-3 mt-2 bg-indigo border border-grey-700 rounded-md shadow-lg z-50 flex flex-col gap-5 p-2"
     @click.outside="open = false">
 
     {% for item in WAFER_MENUS.items %}
