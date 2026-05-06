@@ -193,11 +193,6 @@ SOCIAL_LINKS = [
 #                 "label": _("Sprints"),
 #                 "url": reverse_lazy("page_sprints"),
 #             },
-#             {
-#                 "menu": "friends",
-#                 "label": _("Friends of PyConZA (FREE)"),
-#                 "url": reverse_lazy("page_friends_of_pycon_africa"),
-#             },
 #         ],
 #     },
 #     {
@@ -326,7 +321,6 @@ BAKERY_VIEWS = (
     "website.views.PageHome",
     "website.views.PageTickets",
     "website.views.PageSprints",
-    "website.views.PageFriendsOfPyconAfrica",
     "website.views.PageBeginnersDay",
     "website.views.PageDonations",
     "website.views.PageRemoteExperience",
