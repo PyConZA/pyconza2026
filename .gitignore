@@ -235,3 +235,5 @@ wafer.db
 .claude/settings.local
 # Local mirror of external resources
 mirror/
+# Playwright MCP page snapshots
+.playwright-mcp/
