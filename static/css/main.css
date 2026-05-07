@@ -222,6 +222,83 @@
         @apply appearance-none border leading-normal block w-full border-grey-300 bg-off-white py-2 px-4 text-indigo rounded-lg focus:outline-none;
     }
 
+    /* Renders wafer markdown pages — keeps measure ≤72ch and applies brand type. */
+    .markdown-body {
+        max-width: 72ch;
+    }
+
+    .markdown-body h1 {
+        @apply font-bold text-4xl lg:text-5xl text-indigo mb-6 mt-8 leading-tight tracking-tight;
+    }
+
+    .markdown-body h2 {
+        @apply font-semibold text-3xl lg:text-4xl text-indigo mb-4 mt-10 leading-snug tracking-tight;
+    }
+
+    .markdown-body h3 {
+        @apply font-semibold text-2xl lg:text-[28px] text-indigo mb-3 mt-8 leading-snug;
+    }
+
+    .markdown-body h4 {
+        @apply font-semibold text-xl lg:text-[22px] text-indigo mb-3 mt-6 leading-snug;
+    }
+
+    .markdown-body h5 {
+        @apply font-medium text-base lg:text-lg text-indigo mb-2 mt-4 leading-snug tracking-wide;
+    }
+
+    .markdown-body h6 {
+        @apply font-medium text-sm text-indigo mb-2 mt-4 leading-snug tracking-widest uppercase;
+    }
+
+    .markdown-body p {
+        @apply text-base leading-relaxed text-indigo mb-4;
+    }
+
+    .markdown-body a {
+        @apply text-indigo underline underline-offset-2 hover:text-pink;
+    }
+
+    .markdown-body ul {
+        @apply list-disc list-outside ml-6 space-y-2 mb-4 text-indigo;
+    }
+
+    .markdown-body ol {
+        @apply list-decimal list-outside ml-6 space-y-2 mb-4 text-indigo;
+    }
+
+    .markdown-body li {
+        @apply leading-relaxed;
+    }
+
+    .markdown-body blockquote {
+        @apply border-l-4 border-olive bg-off-white pl-4 pr-3 py-2 my-4 text-indigo italic;
+    }
+
+    .markdown-body code {
+        @apply font-mono text-sm bg-cream-tint border border-grey-300 px-1.5 py-0.5 rounded text-indigo;
+    }
+
+    .markdown-body pre {
+        @apply font-mono text-sm bg-off-white border border-grey-300 p-4 rounded-lg overflow-x-auto my-4 text-indigo;
+    }
+
+    .markdown-body pre code {
+        @apply bg-transparent border-0 p-0 rounded-none;
+    }
+
+    .markdown-body hr {
+        @apply border-0 border-t border-grey-300 my-8;
+    }
+
+    .markdown-body img {
+        @apply max-w-full h-auto rounded-lg my-4;
+    }
+
+    .markdown-body table {
+        @apply my-4;
+    }
+
 }
 
 @layer utilities {
