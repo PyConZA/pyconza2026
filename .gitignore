@@ -237,3 +237,5 @@ wafer.db
 mirror/
 # Playwright MCP page snapshots
 .playwright-mcp/
+# Review screenshots
+screenshots/

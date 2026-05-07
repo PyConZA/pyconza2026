@@ -74,11 +74,6 @@
         @apply outline-2 outline-offset-2 outline-indigo;
     }
 
-    input:focus-visible,
-    textarea:focus-visible,
-    select:focus-visible {
-        @apply outline-2 outline-offset-2 outline-indigo;
-    }
 
     p {
         @apply text-base leading-relaxed;
@@ -230,6 +225,50 @@
 }
 
 @layer utilities {
+    /* Brand-align crispy_tailwind form fields. Lives in @layer utilities
+       so cascade order matches `.bg-white` etc. that crispy emits;
+       element+attribute selector specificity (0,1,1) then beats utility (0,1,0). */
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="datetime-local"],
+    input[type="time"],
+    textarea,
+    select {
+        background-color: var(--color-off-white);
+        border-color: var(--color-grey-300);
+        color: var(--color-indigo);
+    }
+
+    /* Visible focus ring — beats crispy's `focus:outline-none`. */
+    input[type="text"]:focus-visible,
+    input[type="email"]:focus-visible,
+    input[type="number"]:focus-visible,
+    input[type="password"]:focus-visible,
+    input[type="url"]:focus-visible,
+    input[type="search"]:focus-visible,
+    input[type="tel"]:focus-visible,
+    input[type="date"]:focus-visible,
+    input[type="datetime-local"]:focus-visible,
+    input[type="time"]:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+        outline: 2px solid var(--color-indigo);
+        outline-offset: 2px;
+    }
+
+    /* Crispy emits `border-red-500` on errored fields — swap to brand pink. */
+    input.border-red-500,
+    textarea.border-red-500,
+    select.border-red-500 {
+        border-color: var(--color-pink);
+    }
+
     .bg-translucent {
         background-color: rgba(26, 43, 76, 0.55);
         backdrop-filter: blur(6px);

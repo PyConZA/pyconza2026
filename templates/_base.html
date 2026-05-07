@@ -86,10 +86,19 @@
 
     {% comment %}
 
+    Tailwind safelist for classes emitted by crispy_tailwind / markitup at runtime
+    that the build scanner cannot otherwise see. Two groups:
+
+    1. Crispy_tailwind defaults — visually overridden by main.css form-input rules,
+       but still need to be present in the build so the markup is valid.
+    2. Brand-aligned classes used in dynamic / template content (badges, alerts).
+
     <div
-        class="text-gray-600 m-3 appearance-none w-full leading-normal border-gray-300 border  bg-white px-4 focus:outline-none block text-gray-700  text-sm font-bold mb-2 py-2 rounded-lg text-red-500 text-xs italic text-sm font-bold mb-2 border border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700 django-markitup-widget">
-        these classes are used by crispy forms. They need to be explicitly included in our html so that the tailwind
-        build will pick them up and draw them
+        class="m-3 mb-3 appearance-none w-full leading-normal border bg-white border-gray-300 px-4 focus:outline-none block text-gray-700 text-sm font-bold mb-2 py-2 rounded-lg border-red-500 text-xs italic rounded-b django-markitup-widget
+               bg-off-white border-grey-300 text-indigo focus:outline-2 focus:outline-offset-2 focus:outline-indigo
+               border-pink bg-cream-tint text-pink border-olive bg-olive text-cream border-indigo">
+        these classes are used by crispy forms / markitup. They need to be present
+        so the tailwind build picks them up.
     </div>
     {% endcomment %}
 
