@@ -2,9 +2,6 @@
 {% load static %}
 
 {% block extra_head %}
-    <link rel="preload" as="image" href="{% static 'img/beginners_day/photo1_optimized.jpg' %}">
-    <link rel="preload" as="image" href="{% static 'img/beginners_day/photo2_optimized.jpg' %}">
-    <link rel="preload" as="image" href="{% static 'img/beginners_day/photo3_optimized.jpg' %}">
     <link rel="preload" as="image" href="{% static 'img/beginners_day/pygame.png' %}">
 {% endblock %}
 
@@ -23,37 +20,6 @@
         </div>
         <p class="text-lg max-w-3xl mx-auto">
             Curious about Python but don't know where to start? Already know a little Python and want to expand? Beginner's Day is built for you.
-        </p>
-    </div>
-
-    <!-- Photo Gallery -->
-    <div class="space-y-6">
-        <h2 class="text-center">Learning, together</h2>
-        <div class="grid md:grid-cols-3 gap-4">
-            <div class="overflow-hidden rounded-xl border border-grey-300">
-                <img src="{% static 'img/beginners_day/photo1_optimized.jpg' %}"
-                     alt="Beginner's Day workshop participants collaborating"
-                     class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                     loading="eager"
-                     decoding="async">
-            </div>
-            <div class="overflow-hidden rounded-xl border border-grey-300">
-                <img src="{% static 'img/beginners_day/photo2_optimized.jpg' %}"
-                     alt="Mentors helping participants with coding challenges"
-                     class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                     loading="eager"
-                     decoding="async">
-            </div>
-            <div class="overflow-hidden rounded-xl border border-grey-300">
-                <img src="{% static 'img/beginners_day/photo3_optimized.jpg' %}"
-                     alt="Participants celebrating their first Python program"
-                     class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                     loading="eager"
-                     decoding="async">
-            </div>
-        </div>
-        <p class="text-center text-grey-700 italic">
-            Moments from previous Beginner's Day events.
         </p>
     </div>
 
@@ -323,7 +289,7 @@
             <div class="text-center">
                 <p class="font-semibold text-lg mb-2">Belmont Square Conference Centre</p>
                 <p class="text-grey-700 mb-4">Cape Town, South Africa</p>
-                <p class="text-sm text-grey-700 mb-4">
+                <p class="text-grey-700 mb-4">
                     Detailed venue information and directions will go out to confirmed participants.
                 </p>
                 <a href="/pages/venue/in_person_venue/" class="text-sm">
@@ -438,7 +404,7 @@
         </div>
 
         <div id="community-footer" class="border-t border-grey-700 pt-6 mt-8">
-            <p class="text-sm text-off-white italic">
+            <p class="text-off-white italic">
                 Beginner's Day is run by volunteers and supported by sponsors and the wider Python community. Thank you for opening doors with us.
             </p>
         </div>

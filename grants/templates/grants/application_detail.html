@@ -37,7 +37,7 @@
                 <div>
                     <strong>Gender:</strong> {{ application.get_gender_display }}
                     {% if application.gender == 'other' and application.gender_details %}
-                        <div class="text-grey-700 text-sm">{{ application.gender_details }}</div>
+                        <div class="text-grey-700">{{ application.gender_details }}</div>
                     {% endif %}
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 <div>
                     <strong>Current Role:</strong> {{ application.get_current_role_display }}
                     {% if application.current_role == 'other' and application.current_role_details %}
-                        <div class="text-grey-700 text-sm">{{ application.current_role_details }}</div>
+                        <div class="text-grey-700">{{ application.current_role_details }}</div>
                     {% endif %}
                 </div>
             </div>

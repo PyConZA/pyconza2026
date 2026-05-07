@@ -65,20 +65,20 @@
                {% endif %}
                {{ package.name }} ({{ package.currency }} {{ package.price|floatformat:0 }})
             </h2>
-            <p class="italic text-gray-600 m-4">{{ package.short_description }}</p>
+            <p class="italic text-grey-700 m-4">{{ package.short_description }}</p>
 
             <!-- <table class="max-w-fit m-4">
                <tr>
                   {% if package.number_available %}
                   <th>{% trans 'Total number available:' %}</th>
-                  <td class="border-r border-gray-300">{{ package.number_available }}</td>
+                  <td class="border-r border-grey-300">{{ package.number_available }}</td>
                   {% endif %}
                   <th>{% trans 'Packages claimed:' %}</th>
                   <td>{{ package.number_claimed }}</td>
                </tr>
             </table> -->
 
-            <div class=" border-gray-300 m-4 rounded space-y-2 ">
+            <div class=" border-grey-300 m-4 rounded space-y-2 ">
                <h3 class="pt-2 pb-3">Details</h3>
                {{ package.description }}
             </div>

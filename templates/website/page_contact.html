@@ -13,7 +13,7 @@
     <div class="space-y-6">
         <h2>Social Media</h2>
         {% for link in social_links %}
-        <div class="flex justify-between items-center py-3 border-b border-gray-200">
+        <div class="flex justify-between items-center py-3 border-b border-grey-300">
             <span class="font-medium">
                 {% if 'mastodon' in link.url %}Mastodon
                 {% elif 'twitter' in link.url or 'x.com' in link.url %}Twitter/X
@@ -24,7 +24,7 @@
                 {% elif 'bsky.app' in link.url %}Bluesky
                 {% else %}Social{% endif %}
             </span>
-            <a href="{{ link.url }}" target="_blank" class="text-pycon-blue hover:underline">
+            <a href="{{ link.url }}" target="_blank" class="hover:underline">
                 <i class="{{ link.icon }} mr-2"></i>Follow Us
             </a>
         </div>
@@ -35,9 +35,9 @@
     <div class="space-y-6">
         <h2>Email</h2>
         {% for key, email in contact_emails.items %}
-        <div class="flex justify-between items-center py-3 border-b border-gray-200">
+        <div class="flex justify-between items-center py-3 border-b border-grey-300">
             <span class="font-medium capitalize">{{ key|title }}</span>
-            <a href="mailto:{{ email }}" class="text-pycon-blue hover:underline">{{ email }}</a>
+            <a href="mailto:{{ email }}" class="hover:underline">{{ email }}</a>
         </div>
         {% endfor %}
     </div>

@@ -66,6 +66,17 @@
         @apply outline-2 outline-offset-2 outline-indigo;
     }
 
+    /* On indigo surfaces (header, footer, any .bg-indigo block) the default
+       indigo focus ring vanishes. Flip to cream there. */
+    header a:focus-visible,
+    footer a:focus-visible,
+    .bg-indigo a:focus-visible,
+    header button:focus-visible,
+    footer button:focus-visible,
+    .bg-indigo button:focus-visible {
+        @apply outline-cream;
+    }
+
     button {
         @apply cursor-pointer;
     }
@@ -164,6 +175,11 @@
 
     .btn-secondary {
         @apply bg-pink text-off-white hover:bg-pink/90;
+    }
+
+    /* Pink ring on a pink button is invisible — switch to indigo. */
+    .btn-secondary:focus-visible {
+        @apply outline-indigo;
     }
 
     input[type="submit"] {

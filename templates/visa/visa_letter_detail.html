@@ -83,14 +83,14 @@
 
         {% if visa_letter.status == 'pending' %}
         <div class="alert alert-info space-y-5 pb-5">
-            <p class="text-sm ">
+            <p>
                 Your visa letter request is being reviewed by our team.
                 Once approved, the visa letter will be sent to your email address.
             </p>
         </div>
         {% elif visa_letter.status == 'approved' %}
         <div class="alert alert-success space-y-5 pb-5">
-            <p class="text-sm ">
+            <p>
                 Your visa letter is approved. Download the PDF below.
             </p>
             <div class="mt-3">
@@ -99,7 +99,7 @@
         </div>
         {% elif visa_letter.status == 'rejected' %}
         <div class="alert alert-warning space-y-5 pb-5">
-            <p class="text-sm ">
+            <p>
                 Your visa letter request requires revision. Please review the rejection reason above and edit your
                 request to address the issues mentioned.
             </p>
@@ -109,10 +109,10 @@
         </div>
         {% elif visa_letter.status == 'permanently rejected' %}
         <div class="alert alert-danger space-y-5 pb-5">
-            <p class="text-sm ">
+            <p>
                 Your visa letter request was permanently rejected and cannot be resubmitted. See the rejection reason above.
             </p>
-            <p class="text-sm font-semibold mt-2">
+            <p class="font-semibold mt-2">
                 No further visa letter requests will be accepted from this account.
             </p>
         </div>
