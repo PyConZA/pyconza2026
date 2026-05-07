@@ -34,10 +34,14 @@
             </div>
 
             <figure class="order-1 lg:order-2 w-40 sm:w-56 lg:w-72 xl:w-80 mx-auto shrink-0">
-                <img src="{% static 'img/protea-on-dark - transparent.png' %}"
-                     alt=""
-                     class="w-full"
-                     loading="lazy" />
+                <picture>
+                    <source srcset="{% static 'img/protea-on-dark - transparent.webp' %}" type="image/webp">
+                    <img src="{% static 'img/protea-on-dark - transparent.png' %}"
+                         alt=""
+                         class="w-full"
+                         width="800" height="894"
+                         loading="lazy" decoding="async" />
+                </picture>
             </figure>
         </div>
     </div>
