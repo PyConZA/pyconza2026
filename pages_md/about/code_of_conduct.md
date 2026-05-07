@@ -6,9 +6,9 @@ menu_order: 2
 
 PyConZA is a community-driven conference designed for networking and collaboration among developers from all over South Africa and beyond.
 
-We highly value each member's participation in the Python community and strive to ensure that all attendees enjoy a fulfilling experience. As such, respect and courtesy are expected from everyone during the conference and at all related events.
+We highly value each member's participation in the Python community. We expect respect and courtesy from everyone during the conference and at all related events.
 
-To clarify the expected behaviour, all staff, attendees, speakers, exhibitors, organizers, and volunteers at any PyConZA event must adhere to the following Code of Conduct. This policy is enforced throughout the event by the organizers.
+To clarify the expected behaviour, all staff, attendees, speakers, exhibitors, organisers, and volunteers at any PyConZA event must adhere to the following Code of Conduct. This policy is enforced throughout the event by the organisers.
 
 ## Our Community
 
@@ -29,7 +29,7 @@ Every member of our community deserves respect, and we are committed to making p
 
 ### Inappropriate Behaviour
 
-Unacceptable behaviors include but are not limited to:
+Unacceptable behaviours include but are not limited to:
 
 - Harassment in any form.
 - Intimidation, stalking, or following.
@@ -45,7 +45,7 @@ No weapons will be allowed at PyConZA events, consistent with venue policies.
 
 ### Consequences
 
-Participants asked to stop any inappropriate behaviour are expected to comply immediately. If a participant engages in behaviour that violates this code, the conference organizers may take any action they deem appropriate, from issuing a warning to the offender to expelling them from the conference with no refund.
+Participants asked to stop any inappropriate behaviour are expected to comply immediately. If a participant engages in behaviour that violates this code, the conference organisers may take any action they deem appropriate, from issuing a warning to the offender to expelling them from the conference with no refund.
 
 ## Scope
 
@@ -54,6 +54,6 @@ This Code of Conduct applies to all participants at PyConZA events, including:
 - Talks, workshops, parties, and any associated social events.
 - Online interactions related to the conference, including posts related to the conference on social media.
 
-The Code of Conduct applies both within conference spaces and in public spaces when an individual is representing PyConZA or its community. Instances of abusive, harassing, or otherwise unacceptable behaviour may be reported by contacting the event organizing team at conduct@za.pycon.org.
+The Code of Conduct applies both within conference spaces and in public spaces when an individual is representing PyConZA or its community. Instances of abusive, harassing, or otherwise unacceptable behaviour may be reported by contacting the event organising team at conduct@za.pycon.org.
 
 **NB:** This code of conduct has been adapted from the [Python Software Foundation](https://www.python.org/psf/), under whose guidance local Python communities operate. The full original code of conduct can be found on their website.
