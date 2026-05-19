@@ -6,7 +6,7 @@
     {% block mugshot %}
     {% with profile.avatar_url as avatar_url %}
     {% if avatar_url != None %}
-    <img src="{{ profile.avatar_url }}" class="">
+    <img src="{{ profile.avatar_url }}" alt="{{ profile.display_name|default:profile.user.username }} avatar" class="">
     {% endif %}
     {% endwith %}
     {% if can_edit %}
@@ -69,7 +69,7 @@
   {% if profile.bio %}
   <div class="bio">
     <h2 class="">Bio</h2>
-    <div class="text-gray-600 px-5">
+    <div class="text-grey-700 px-5">
       {{ profile.bio|linebreaksbr }}
     </div>
   </div>

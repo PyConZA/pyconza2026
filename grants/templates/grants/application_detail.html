@@ -37,7 +37,7 @@
                 <div>
                     <strong>Gender:</strong> {{ application.get_gender_display }}
                     {% if application.gender == 'other' and application.gender_details %}
-                        <div class="text-gray-500 text-sm">{{ application.gender_details }}</div>
+                        <div class="text-grey-700">{{ application.gender_details }}</div>
                     {% endif %}
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 <div>
                     <strong>Current Role:</strong> {{ application.get_current_role_display }}
                     {% if application.current_role == 'other' and application.current_role_details %}
-                        <div class="text-gray-500 text-sm">{{ application.current_role_details }}</div>
+                        <div class="text-grey-700">{{ application.current_role_details }}</div>
                     {% endif %}
                 </div>
             </div>
@@ -76,7 +76,7 @@
                 <li class="pb-2">
                     <strong>Travel:</strong> ${{ application.travel_amount }}
                     {% if application.travel_from %}
-                        <span class="text-gray-500">(from {{ application.travel_from_city }}, {{ application.travel_from_country.name }})</span>
+                        <span class="text-grey-700">(from {{ application.travel_from_city }}, {{ application.travel_from_country.name }})</span>
                     {% endif %}
                 </li>
                 {% endif %}

@@ -138,10 +138,10 @@ class GrantApplicationForm(forms.ModelForm):
             Fieldset(
                 "",
                 HTML(
-                    '<h3 class="text-lg font-semibold pb-3">Application Details <span class="text-red-600">*</span></h3>'
+                    '<h3 class="text-lg font-semibold pb-3">Application details <span class="text-pink" aria-hidden="true">*</span> <span class="sr-only">required</span></h3>'
                 ),
                 HTML(
-                    '<p class="text-gray-600 text-sm mb-3">All fields in this section are required.</p>'
+                    '<p class="text-grey-700 text-sm mb-3">All fields in this section are required.</p>'
                 ),
                 "motivation",
                 "contribution",
@@ -153,7 +153,7 @@ class GrantApplicationForm(forms.ModelForm):
                 "request_travel",
                 Div(
                     HTML(
-                        '<p class="text-gray-600 text-sm mb-3">All travel fields below are required when requesting travel assistance.</p>'
+                        '<p class="text-grey-700 text-sm mb-3">All travel fields below are required when requesting travel assistance.</p>'
                     ),
                     "travel_from_city",
                     "travel_from_country",

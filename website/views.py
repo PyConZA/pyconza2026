@@ -18,11 +18,6 @@ class PageSprints(BuildableTemplateView):
     build_path = "sprints/index.html"
 
 
-class PageFriendsOfPyconAfrica(BuildableTemplateView):
-    template_name = "website/page_friends_of_pycon_africa.html"
-    build_path = "friends-of-pycon-africa/index.html"
-
-
 def page_contact(request):
     from django.conf import settings
     context = {

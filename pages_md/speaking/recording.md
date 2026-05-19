@@ -3,7 +3,7 @@ name: Recording Release
 include_in_menu: True
 ---
 
-Part of the motivation for PyConZA is to help with Python education and advocacy in South Africa, and the world at large. Accordingly, we intend to record all PyCon presentations and release the recordings on the web.
+Part of the motivation for PyConZA is Python education and advocacy in South Africa and beyond. Accordingly, we intend to record all PyCon presentations and release the recordings on the web.
 
 By submitting your talk, you agree to give permission to the Python Software Society of South Africa (PyConZA) to record, edit, and release audio and/or video of your presentation. We also perform interviews with poster presenters and require recording releases to publish them.
 

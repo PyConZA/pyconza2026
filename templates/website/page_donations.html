@@ -8,34 +8,34 @@
 
     <!-- Header -->
     <div class="text-center space-y-4">
-        <h2 class="text-pycon-blue">Support PyConZA 2026</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Help make PyConZA 2026 possible! Your contributions make a real difference in opening doors to the Python community across South Africa.
+        <h2>Support PyConZA 2026</h2>
+        <p class="text-lg max-w-3xl mx-auto">
+            Donations help us open doors to the Python community across South Africa. Even small contributions extend who can attend.
         </p>
     </div>
 
-    <!-- What Support Enabled -->
+    <!-- What Support Enables -->
     <div class="space-y-8">
         <h2 class="text-center">What your support enables</h2>
-        <p class="text-center">Your donations help us:</p>
+        <p class="text-center">Donations help us:</p>
 
         <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-white border border-gray-200 rounded-lg p-6">
-                <h3 class="text-pycon-green mb-4">Beginner's Day</h3>
+            <div class="card p-6">
+                <h3 class="mb-4">Beginner's Day</h3>
                 <p class="mb-4">
-                    We welcome beginners to our <strong>FREE</strong> hands-on workshops, helping them discover new career paths, develop skills, and find a community where they belong.
+                    Run a free, hands-on workshop day for newcomers — helping people find new career paths, build skills, and meet a community.
                 </p>
-                <a href="{% url 'page_beginners_day' %}" class="text-pycon-green hover:underline">Learn more about Beginner's Day →</a>
+                <a href="{% url 'page_beginners_day' %}">Learn more about Beginner's Day →</a>
             </div>
 
-            <div class="bg-white border border-gray-200 rounded-lg p-6">
-                <h3 class="text-pycon-red mb-4">Community members supported</h3>
-                <p class="mb-4">We help people who wouldn't otherwise be able to attend:</p>
+            <div class="card p-6">
+                <h3 class="mb-4">Community members supported</h3>
+                <p class="mb-4">Help people who couldn't otherwise attend:</p>
                 <ul class="space-y-1">
-                    <li>African community members building local tech scenes</li>
-                    <li>Students exploring what's possible</li>
-                    <li>Teachers bringing programming back to classrooms</li>
-                    <li>Young professionals growing their skills</li>
+                    <li>African community members building local tech scenes.</li>
+                    <li>Students working out what's possible.</li>
+                    <li>Teachers bringing programming back to classrooms.</li>
+                    <li>Early-career professionals growing their skills.</li>
                 </ul>
             </div>
         </div>
@@ -43,23 +43,23 @@
 
     <!-- What We Built -->
     <div class="space-y-6">
-        <h2>What we built together</h2>
+        <h2>What we build together</h2>
         <p>
-            PyConZA is more than just a conference. We exist to open doors, connect people, and plant seeds that grow into careers, projects, and stronger communities. As a completely volunteer-run, non-profit event, all money raised goes directly toward making Python more accessible to people who might not otherwise have had the chance to get involved.
+            PyConZA is more than a conference. It exists to open doors, connect people, and plant seeds that grow into careers, projects, and stronger communities. The event is volunteer-run and non-profit — money raised goes directly to making Python more accessible for people who would not otherwise have the chance.
         </p>
-        <div class="bg-pycon-blue/10 border-l-4 border-pycon-blue p-4 rounded">
-            <p class="font-semibold">Your support helps us welcome more people into our community.</p>
+        <div class="bg-off-white border-l-4 border-indigo p-4 rounded">
+            <p class="font-semibold">Your support helps us welcome more people into the community.</p>
         </div>
     </div>
 
     <!-- How We Work -->
-    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-8 space-y-4">
+    <div class="bg-off-white border border-grey-300 rounded-xl p-8 space-y-4">
         <h2 class="text-center">How we work</h2>
         <p class="text-center">
-            Since we're completely volunteer-run, donations go directly to participants and programming. Our organizers contribute their time because they believe in what we're building.
+            PyConZA is run by volunteers. Donations go directly to participants and programming. Organisers contribute their time because they believe in what we are building.
         </p>
         <p class="text-center font-semibold">
-            We don't have overhead costs or salaries eating into contributions. Donations fund opportunities, experiences, and futures.
+            No overhead, no salaries — donations pay for tickets, travel, and the Beginner's Day workshops.
         </p>
     </div>
 
@@ -67,13 +67,22 @@
     <div class="space-y-6">
         <h2>Why this matters</h2>
         <p>
-            Technology is growing rapidly across South Africa, but learning opportunities aren't equally available everywhere. Your support for PyConZA helps remove barriers that prevent talented people from getting involved in tech.
+            Tech is growing across South Africa, but learning opportunities are not equally available everywhere. Supporting PyConZA helps remove barriers that keep talented people out.
         </p>
         <p>
-            You also helped build bridges between developers who might otherwise work in isolation, and created the kind of catalyst experiences that turn curiosity into careers and careers into community leadership.
+            It also builds bridges between developers who would otherwise work in isolation. For some attendees, PyConZA is the event that turns Python from a hobby into a career — and turns career into contribution.
         </p>
-        <div class="bg-pycon-red/10 border-l-4 border-pycon-red p-4 rounded">
-            <p class="font-semibold">The people we supported go on to support others in their own communities. The impact multiplies.</p>
+        <div class="bg-off-white border-l-4 border-indigo p-4 rounded">
+            <p class="font-semibold">The people we support go on to support others in their own communities. The impact multiplies.</p>
+        </div>
+    </div>
+
+    <!-- Donate CTA -->
+    <div class="bg-indigo rounded-xl p-8 text-center text-cream space-y-6">
+        <h2 class="text-cream">Make a donation</h2>
+        <p>Email us to make a contribution or set up a recurring donation. We will reply with the details and an invoice if you need one.</p>
+        <div>
+            <a href="mailto:team@za.pycon.org?subject=Donation%20to%20PyConZA%202026" class="btn btn-secondary">Donate to PyConZA</a>
         </div>
     </div>
 
@@ -82,26 +91,26 @@
         <h2>Questions?</h2>
 
         <div class="space-y-4">
-            <div class="border-b border-gray-200 pb-4">
-                <p class="font-semibold">Is this tax deductible?</p>
-                <p>We are a non profit so we can provide an invoice if needed. Please email us and we'll sort you out! <a href="mailto:team@za.pycon.org" class="text-pycon-blue hover:underline">team@za.pycon.org</a></p>
+            <div class="border-b border-grey-300 pb-4">
+                <p class="font-semibold">Can I get an invoice?</p>
+                <p>PyConZA is run by a non-profit and we can issue an invoice on request. Email <a href="mailto:team@za.pycon.org">team@za.pycon.org</a>.</p>
             </div>
-            <div class="border-b border-gray-200 pb-4">
+            <div class="border-b border-grey-300 pb-4">
                 <p class="font-semibold">How will I know it made a difference?</p>
-                <p>We will publish a report that details the event and its impact</p>
+                <p>We publish a post-conference report covering attendance, programming, and how donations were spent.</p>
             </div>
         </div>
 
-        <div class="bg-gray-50 rounded-lg p-6">
-            <p class="font-semibold">For larger partnerships or sponsorship opportunities:</p>
-            <p>Email us at <a href="mailto:sponsorship@za.pycon.org" class="text-pycon-blue hover:underline">sponsorship@za.pycon.org</a></p>
+        <div class="bg-off-white border border-grey-300 rounded-xl p-6">
+            <p class="font-semibold">For larger partnerships or sponsorship:</p>
+            <p>Email <a href="mailto:sponsorship@za.pycon.org">sponsorship@za.pycon.org</a>.</p>
         </div>
     </div>
 
     <!-- Closing -->
-    <div class="text-center bg-gray-100 rounded-lg p-8">
-        <p class="text-gray-700 italic">
-            PyConZA exists because people believe technology should be accessible to everyone. Thank you for being part of that.
+    <div class="text-center bg-off-white border border-grey-300 rounded-xl p-8">
+        <p class="italic">
+            PyConZA exists because people believe technology should be accessible to everyone. Thanks for being part of that.
         </p>
     </div>
 

@@ -6,15 +6,15 @@
 {{page.name}}
 {% endblock %}
 {% block content %}
-<div class="space-y-3">
+<main id="main" class="max-w-prose mx-auto px-4 py-8 markdown-body">
   {{ page.cached_render|safe }}
 
   {% if perms.pages.change_page %}
-  <div class="page-controls clearfix d-print-none">
+  <div class="page-controls clearfix d-print-none mt-8 flex flex-wrap gap-3">
     <a href="{{ page.get_absolute_url }}?edit" class="btn btn-secondary">{% trans 'Edit' %}</a>
     <a href="{{ page.get_absolute_url }}?compare" class="btn btn-secondary">{% trans 'Compare to Previous version'
       %}</a>
   </div>
   {% endif %}
-</div>
+</main>
 {% endblock %}

@@ -6,31 +6,31 @@
 <section class="wafer wafer-speakers px-4 space-y-10">
       {% for talk_type, type_rows in speaker_rows.items %}
         {% if talk_type is None %}
-          <h2 class="heading-section text-gray-900 mb-12">{% trans 'Speakers' %}</h2>
+          <h2 class="heading-section mb-12">{% trans 'Speakers' %}</h2>
         {% else %}
-          <h2 class="heading-section text-gray-900 mb-12">{% blocktrans %}{{ talk_type }} Speakers{% endblocktrans %}</h2>
+          <h2 class="heading-section mb-12">{% blocktrans %}{{ talk_type }} Speakers{% endblocktrans %}</h2>
         {% endif %}
-        
+
         <div class="max-w-7xl mx-auto">
             <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {% for row in type_rows %}
               {% for user_profile in row %}
 
-                  
-                      <div class="bg-white rounded-xl shadow-md hover:shadow-xl p-6 border border-gray-100 hover:border-gray-200 transition-all duration-300 flex flex-col items-center text-center space-y-4">
+
+                      <div class="bg-off-white rounded-xl shadow-md hover:shadow-lg p-6 border border-grey-300 transition-all duration-300 flex flex-col items-center text-center space-y-4">
                           <div class="flex-shrink-0">
-                              <img class="w-24 h-24 object-cover rounded-full border-4 border-gray-100 aspect-square" src="{{ user_profile.avatar_url }}" alt="{{ user_profile.user.username }}" loading="eager">
+                              <img class="w-24 h-24 object-cover rounded-full border-4 border-grey-300 aspect-square" src="{{ user_profile.avatar_url }}" alt="{{ user_profile.user.username }}" loading="eager">
                           </div>
-                          
+
                           <div class="flex-grow space-y-3">
                               <a href="{% url 'wafer_user_profile' username=user_profile.user.username %}" class="no-underline">
-                                  <h3 class="text-xl font-bold text-gray-900 hover:text-pycon-blue transition-colors duration-200">{{ user_profile.display_name }}</h3>
+                                  <h3 class="text-xl font-bold text-indigo">{{ user_profile.display_name }}</h3>
                               </a>
-                              
+
                               <div class="space-y-2">
                                   {% for talk in user_profile.accepted_talks.all %}
                                       <a href="{% url 'wafer_talk' pk=talk.pk slug=talk.slug %}" class="block no-underline">
-                                          <p class="text-sm text-gray-600 hover:text-pycon-green transition-colors duration-200 bg-gray-50 hover:bg-gray-100 rounded-lg px-3 py-2">{{ talk.title }}</p>
+                                          <p class="text-grey-700 bg-cream-tint rounded-lg px-3 py-2">{{ talk.title }}</p>
                                       </a>
                                   {% endfor %}
                               </div>
@@ -39,7 +39,7 @@
 
                           </div>
                       </div>
-                  
+
 
               {% endfor %}
           {% endfor %}
@@ -48,9 +48,9 @@
 
       {% empty %}
         <div class="max-w-7xl mx-auto text-center py-16">
-            <h2 class="heading-section text-gray-900 mb-8">{% trans 'Speakers' %}</h2>
-            <div class="bg-white rounded-xl shadow-md p-8 border border-gray-100">
-                <p class="text-lg text-gray-600">No accepted talks yet</p>
+            <h2 class="heading-section mb-8">{% trans 'Speakers' %}</h2>
+            <div class="bg-off-white rounded-xl shadow-md p-8 border border-grey-300">
+                <p class="text-lg text-grey-700">No accepted talks yet.</p>
             </div>
         </div>
       {% endfor %}

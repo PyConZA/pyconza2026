@@ -6,30 +6,30 @@ menu_order: 1
 
 PyConZA is the annual gathering for the community using and developing the open-source Python programming language in South Africa.
 
-PyConZA 2026 aims to bring together professionals, industry experts, researchers, students, enthusiasts, core developers, sysadmins, operations personnel, and many others from around the country and the world to give talks, host tutorials, run hackathons/sprints, collaborate on projects, learn, share innovative ideas, breakthroughs and best practices.
+PyConZA 2026 brings developers, researchers, students, sysadmins, and educators together for talks, tutorials, and sprints. Attendees come from across South Africa, the wider continent, and beyond.
 
-Python is an essential tool used by individuals from diverse backgrounds and careers, including programmers, mathematicians, doctors, scientists, security researchers, hardware designers, and many others. In recent times, Python has been playing a major role in the recent advancement in technology across various industries and fields. We are committed to ensuring the conference reflects the diversity of our community and fosters the exchange of ideas, knowledge, and experiences to enrich the community further.
+Python is used by programmers, mathematicians, scientists, security researchers, and educators alike. PyConZA aims to be a conference where that range of backgrounds is visible — in the speaker line-up, in the audience, and in the conversations between sessions.
 
-Unlike many developer conferences, PyConZA is a non-profit conference, run entirely by volunteers dedicated to contributing to the growth of technology in South Africa.
+PyConZA is a non-profit conference, run entirely by volunteers.
 
-We are excited to welcome everyone to PyConZA 2026 in Cape Town. The safety of our community is our highest priority, and we will implement comprehensive Health and Safety Guidelines for all attendees. These measures are designed to allow our community to connect in a safe and secure manner at the event.
+We are glad you're considering PyConZA 2026 in Cape Town, South Africa. The conference follows public health and safety guidelines — details on the Health and safety page.
 
 ## About PyConZA
 
-PyConZA is a well established Python programming conference based in South Africa. It has been running every year since 2012.
+PyConZA has run every year since 2012.
 
-## The Program 
+## The Program
 
 Throughout the conference, you can expect:
 
-- Talks delivered by speakers from across South Africa and the world.
-- Interactive sessions with influential Pythonistas.
+- Talks from speakers across South Africa, the wider continent, and beyond.
+- Tutorials and workshops with experienced Python developers.
 - Open source Python projects and community collaboration.
 
-PyConZA is a diverse conference dedicated to providing an enjoyable experience for everyone. Help us ensure this by following our code of conduct.
+PyConZA aims to be welcoming to everyone. Read the code of conduct before attending.
 
-## The team 
+## The team
 
 The organising team of PyConZA 2026 includes experienced Python community conference organisers from South Africa and beyond.
 
-You can check out our Team's page for more details.
+See the team page for more details.

@@ -1,16 +1,16 @@
 {% extends 'wafer/base.html' %}
 {% load static %}
 
-{% block page_title %}Dinner for Speakers, Organizers and Sponsor Reps{% endblock %}
+{% block page_title %}Dinner for Speakers, Organisers and Sponsor Reps{% endblock %}
 
 {% block content %}
 <div class="lg:max-w-7xl mx-auto px-3">
 
     <!-- Header -->
     <div class="text-center pb-14">
-        <h2 class="text-pycon-blue">Thank You Dinner</h2>
+        <h2>Thank-you dinner</h2>
         <p class="max-w-3xl mx-auto mt-6">
-            Join us for a special evening to celebrate our amazing speakers, organizers, and sponsor representatives.
+            An evening to recognise our speakers, organisers, and sponsor representatives.
         </p>
     </div>
 
@@ -20,45 +20,45 @@
         <!-- Event Details -->
         <div class="alert alert-info">
             <div class="flex items-center space-x-3 mb-4">
-                <span class="text-3xl">🍽️</span>
-                <h3 class="text-pycon-green">Special Dinner Event</h3>
+                <span class="text-3xl" aria-hidden="true">🍽️</span>
+                <h3 class="mb-0">A dinner together</h3>
             </div>
             <p class="mb-4">
-                We will be hosting a special dinner for speakers, organizers and sponsor representatives during the conference.
+                We host a dinner for speakers, organisers, and sponsor representatives during the conference.
             </p>
             <p class="font-semibold">
-                This was to say thank you for everything you did to make our conference possible!
+                It's our way of saying thank you for the work that makes PyConZA possible.
             </p>
         </div>
 
         <!-- Getting Details -->
-        <div class="bg-white border border-gray-200 rounded-lg p-8 text-center">
+        <div class="card p-8 text-center">
             <div class="mb-6">
-                <span class="text-4xl">📧</span>
+                <span class="text-4xl" aria-hidden="true">📧</span>
             </div>
-            <h3 class="text-pycon-red mb-4">About the Dinner</h3>
+            <h3 class="mb-4">About the dinner</h3>
             <p class="mb-6">
-                The dinner is for speakers, organizers and sponsor representatives as a thank you for their contributions to PyConZA 2026.
+                The dinner is for speakers, organisers, and sponsor representatives, in recognition of their contributions to PyConZA 2026.
             </p>
 
-            <div class="bg-pycon-blue/5 border-l-4 border-pycon-blue p-4 rounded-r text-left">
-                <p class="font-semibold text-gray-800">
-                    Who should attend:
+            <div class="bg-off-white border-l-4 border-indigo p-4 rounded-r text-left">
+                <p class="font-semibold">
+                    Who attends:
                 </p>
                 <ul class="mt-2 space-y-1">
-                    <li>Conference speakers</li>
-                    <li>Event organizers</li>
-                    <li>Sponsor representatives</li>
+                    <li>Conference speakers.</li>
+                    <li>Event organisers.</li>
+                    <li>Sponsor representatives.</li>
                 </ul>
             </div>
         </div>
 
         <!-- Appreciation Message -->
-        <div class="text-center bg-gradient-to-r from-pycon-green/10 to-pycon-blue/10 rounded-lg p-8">
-            <h3 class="text-pycon-green mb-4">Our Appreciation</h3>
-            <p class="text-xl text-gray-700 italic">
-                "Without our incredible speakers, dedicated organizers, and generous sponsors, PyConZA wouldn't be possible. This dinner is our way of saying thank you for making magic happen."
-            </p>
+        <div class="text-center bg-off-white border border-grey-300 rounded-xl p-8">
+            <h3 class="mb-4">Our thanks</h3>
+            <blockquote class="text-xl italic">
+                Without our speakers, organisers, and sponsors, PyConZA would not happen. This dinner is one small way of saying thank you.
+            </blockquote>
         </div>
 
     </div>

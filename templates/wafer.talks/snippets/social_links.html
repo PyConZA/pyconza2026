@@ -1,9 +1,9 @@
 <div class="space-y-1">
-    <div class="bg-white flex items-center justify-center gap-2 flex-wrap self-end">
+    <div class="flex items-center justify-center gap-2 flex-wrap self-end">
         {% for social in user_profile.kv.all %}
             {% if social.group.name == "Online Profiles" %}
                 <a href="{{ social.value }}"
-                    class="p-2 rounded-lg flex items-center border border-gray-300 justify-center transition-all duration-500 hover:border-gray-100 hover:bg-gray-100">
+                    class="p-2 rounded-lg flex items-center border border-grey-300 justify-center transition-all duration-300 hover:bg-cream-tint">
 
                     {% if social.key == 'twitter' %}
                         <i class="fa-brands fa-twitter"></i>
@@ -30,7 +30,7 @@
         <!-- add website link if added -->
         {% if user_profile.homepage %}
             <a href="{{ user_profile.homepage }}"
-               class="p-2 rounded-lg flex items-center border border-gray-300 justify-center transition-all duration-500 hover:border-gray-100 hover:bg-gray-100">
+               class="p-2 rounded-lg flex items-center border border-grey-300 justify-center transition-all duration-300 hover:bg-cream-tint">
                 <i class="fa-solid fa-home"></i>
             </a>
         {% endif %}

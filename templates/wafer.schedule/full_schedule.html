@@ -36,7 +36,7 @@
     {# Schedule is incomplete / invalid, so show nothing #}
     <div class="text-center py-12">
       {% blocktrans trimmed %}
-        <p class="text-xl text-gray-600">The final schedule has not been published yet.</p>
+        <p class="text-xl text-grey-700">The final schedule has not been published yet.</p>
       {% endblocktrans %}
     </div>
   {% else %}
@@ -60,11 +60,11 @@
 
     <div class="space-y-8">
       {% for page in schedule_pages %}
-        <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div class="bg-off-white rounded-lg shadow-md border border-grey-300 overflow-hidden">
           {# Day header #}
-          <div class="bg-pycon-blue text-white p-4">
+          <div class="bg-indigo text-cream p-4">
             <h3 class="heading-light text-center">
-              <a href="?block={{ page.block.id }}" class="text-white no-underline hover:underline">
+              <a href="?block={{ page.block.id }}" class="text-cream no-underline hover:underline">
                 {{ page.block.start_time|date:"l, F d, Y" }}
               </a>
             </h3>
@@ -79,35 +79,35 @@
                   <col class="flex-1">
                 {% endfor %}
               </colgroup>
-              <thead class="bg-gray-100">
+              <thead class="bg-cream-tint">
                 <tr>
-                  <th class="text-center p-2 lg:p-4 font-semibold text-gray-700 border-r border-gray-200 text-sm lg:text-base">
+                  <th class="text-center p-2 lg:p-4 font-semibold text-indigo border-r border-grey-300 text-base">
                     {% trans "Time" %}
                   </th>
                   {% for venue in page.venues %}
-                    <th class="text-center p-2 lg:p-4 font-semibold text-gray-700 border-r border-gray-200 last:border-r-0 text-sm lg:text-base
-                       {% if venue.pk == highlight_venue_pk %}bg-pycon-blue/10{% endif %}">
-                      <a href="{{ venue.get_absolute_url }}" class="text-pycon-blue hover:underline">
+                    <th class="text-center p-2 lg:p-4 font-semibold text-indigo border-r border-grey-300 last:border-r-0 text-base
+                       {% if venue.pk == highlight_venue_pk %}bg-indigo/10{% endif %}">
+                      <a href="{{ venue.get_absolute_url }}" class="hover:underline">
                         {{ venue.name }}
                       </a>
                     </th>
                   {% endfor %}
                 </tr>
               </thead>
-              <tbody class="divide-y divide-gray-200">
+              <tbody class="divide-y divide-grey-300">
                 {% for row in page.rows %}
-                  <tr class="hover:bg-gray-50">
-                    <td class="p-2 lg:p-4 font-medium text-gray-800 border-r border-gray-200 bg-gray-50/50 whitespace-nowrap text-center text-xs lg:text-sm">
+                  <tr class="hover:bg-cream-tint">
+                    <td class="p-2 lg:p-4 font-medium text-indigo border-r border-grey-300 bg-cream-tint/60 whitespace-nowrap text-center font-mono">
                       {{ row.slot.get_start_time|time:"H:i" }} - {{ row.slot.end_time|time:"H:i" }}
                     </td>
                     {% for item in row.get_sorted_items %}
                       {% if item.item == "unavailable" %}
                         <td colspan="{{ item.colspan }}" rowspan="{{ item.rowspan }}"
-                            class="p-2 lg:p-4 bg-gray-100 border-r border-gray-200 last:border-r-0 text-center"></td>
+                            class="p-2 lg:p-4 bg-cream-tint border-r border-grey-300 last:border-r-0 text-center"></td>
                       {% else %}
                         <td colspan="{{ item.colspan }}" rowspan="{{ item.rowspan }}"
-                            class="p-2 lg:p-4 border-r border-gray-200 last:border-r-0 text-center text-xs lg:text-sm {{ item.item.get_css_classes|join:' ' }}
-                            {% if item.item.venue.pk == highlight_venue_pk %}bg-pycon-blue/5{% endif %}">
+                            class="p-2 lg:p-4 border-r border-grey-300 last:border-r-0 text-center {{ item.item.get_css_classes|join:' ' }}
+                            {% if item.item.venue.pk == highlight_venue_pk %}bg-indigo/5{% endif %}">
                           {% include "wafer.schedule/schedule_item.html" with item=item.item %}
                         </td>
                       {% endif %}
@@ -119,20 +119,20 @@
           </div>
 
           {# Mobile card-based layout #}
-          <div class="md:hidden divide-y divide-gray-200">
+          <div class="md:hidden divide-y divide-grey-300">
             {% for row in page.rows %}
               <div class="p-4 space-y-3">
                 <div class="flex items-center justify-between mb-3">
-                  <span class="font-semibold text-pycon-blue text-sm">
+                  <span class="font-semibold text-indigo font-mono">
                     {{ row.slot.get_start_time|time:"H:i" }} - {{ row.slot.end_time|time:"H:i" }}
                   </span>
                 </div>
 
                 {% for item in row.get_sorted_items %}
                   {% if item.item != "unavailable" %}
-                    <div class="bg-gray-50 rounded-lg p-3 border border-gray-200 {{ item.item.get_css_classes|join:' ' }}
-                         {% if item.item.venue.pk == highlight_venue_pk %}ring-2 ring-pycon-blue/30{% endif %}">
-                      <div class="text-xs font-semibold text-pycon-blue mb-1">
+                    <div class="bg-cream-tint rounded-lg p-3 border border-grey-300 {{ item.item.get_css_classes|join:' ' }}
+                         {% if item.item.venue.pk == highlight_venue_pk %}ring-2 ring-indigo/30{% endif %}">
+                      <div class="font-semibold text-indigo mb-1">
                         {% for venue in page.venues %}
                           {% if venue == item.item.venue %}
                             <a href="{{ venue.get_absolute_url }}" class="hover:underline">
@@ -141,7 +141,7 @@
                           {% endif %}
                         {% endfor %}
                       </div>
-                      <div class="text-sm text-gray-800">
+                      <div class="text-indigo">
                         {% include "wafer.schedule/schedule_item.html" with item=item.item %}
                       </div>
                     </div>

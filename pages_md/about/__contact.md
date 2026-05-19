@@ -4,7 +4,7 @@ include_in_menu: True
 menu_order: 1
 ---
 
-If you have a general question, or would like to volunteer to be an MC or video assistant at the in-person conference, please email us at our main address, team@za.pycon.org.
+If you have a general question, or would like to volunteer to be a master of ceremonies (MC) or video assistant at the in-person conference, please email us at our main address, team@za.pycon.org.
 
 During the conference, we will also be reachable through the Discord server.
 
