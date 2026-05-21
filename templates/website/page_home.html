@@ -7,34 +7,45 @@
 <!-- ============================================================
      HERO
 ============================================================ -->
-<section class="bg-indigo">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-16 lg:py-24">
-        <div class="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-16">
-            <div class="flex flex-col gap-y-6 text-center lg:text-left lg:w-3/5 order-2 lg:order-1">
-                <h1 class="text-cream text-4xl lg:text-6xl font-bold leading-tight tracking-tight">
-                    PyConZA 2026
+<section class="relative overflow-hidden bg-indigo text-cream">
+    <div class="pointer-events-none absolute inset-0"
+         style="background-image: radial-gradient(circle at 1px 1px, rgba(232, 221, 200, 0.07) 1px, transparent 0); background-size: 32px 32px;"
+         aria-hidden="true"></div>
+
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-16 lg:pt-24 pb-24 lg:pb-32">
+        <div class="grid lg:grid-cols-[1.35fr_1fr] gap-10 lg:gap-16 items-center">
+            <div class="text-center lg:text-left order-2 lg:order-1">
+                <p class="inline-flex items-center gap-3 font-mono text-sm font-medium text-cream/85 px-3 py-1.5 border border-cream/25 rounded-full mb-7">
+                    <span class="w-2 h-2 rounded-full bg-pink animate-pulse" aria-hidden="true"></span>
+                    Cape Town · 14–18 October 2026
+                </p>
+
+                <h1 class="font-headline font-bold text-cream text-6xl lg:text-8xl leading-[0.98] tracking-tight mb-6">
+                    PyConZA<br><span class="text-pink">2026.</span>
                 </h1>
 
-                <p class="text-cream text-lg lg:text-xl leading-relaxed">
+                <p class="text-cream/90 text-xl lg:text-2xl leading-relaxed max-w-[28em] mx-auto lg:mx-0 mb-4">
                     South Africa's Python conference — Cape Town, South Africa. 14–18 October 2026.
                 </p>
 
-                <p class="text-off-white text-base lg:text-lg leading-relaxed">
+                <p class="text-cream/70 text-base lg:text-lg leading-relaxed max-w-[28em] mx-auto lg:mx-0 mb-9">
                     Three days of talks, tutorials, and conversation. Tickets to be confirmed.
                 </p>
 
-                <ul class="list-custom space-y-3 text-cream">
-                    <li class="flex items-center gap-3 justify-center lg:justify-start">
-                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                        <span>Belmont Square, Cape Town</span>
-                    </li>
-                    <li class="flex items-center gap-3 justify-center lg:justify-start">
-                        <i class="fa-solid fa-calendar" aria-hidden="true"></i>
-                        <span class="font-mono">14–18 October 2026</span>
-                    </li>
-                </ul>
-
-                
+                <dl class="grid grid-cols-1 sm:grid-cols-3 max-w-[640px] mx-auto lg:mx-0 border-y border-cream/20 text-left">
+                    <div class="py-4 sm:pr-7 border-b sm:border-b-0 sm:border-r border-cream/20">
+                        <dt class="font-headline font-medium text-xs uppercase tracking-[0.08em] text-cream/65 mb-1.5">Dates</dt>
+                        <dd class="font-mono text-base text-cream">14–18 Oct 2026</dd>
+                    </div>
+                    <div class="py-4 sm:px-7 border-b sm:border-b-0 sm:border-r border-cream/20">
+                        <dt class="font-headline font-medium text-xs uppercase tracking-[0.08em] text-cream/65 mb-1.5">City</dt>
+                        <dd class="font-mono text-base text-cream">Cape Town, ZA</dd>
+                    </div>
+                    <div class="py-4 sm:pl-7">
+                        <dt class="font-headline font-medium text-xs uppercase tracking-[0.08em] text-cream/65 mb-1.5">Venue</dt>
+                        <dd class="font-mono text-base text-cream">Belmont Square</dd>
+                    </div>
+                </dl>
             </div>
 
             <figure class="order-1 lg:order-2 w-40 sm:w-56 lg:w-72 xl:w-80 mx-auto shrink-0">
@@ -49,6 +60,11 @@
             </figure>
         </div>
     </div>
+
+    <svg class="absolute bottom-0 left-0 w-full h-24 text-cream/10" viewBox="0 0 1200 96"
+         preserveAspectRatio="none" aria-hidden="true">
+        <path fill="currentColor" d="M0 96 L0 70 L80 70 L130 56 L210 56 L240 68 L380 68 L420 40 L560 40 L580 60 L720 60 L740 30 L760 18 L780 12 L800 18 L820 30 L860 60 L1000 60 L1040 44 L1140 44 L1170 60 L1200 60 L1200 96 Z"></path>
+    </svg>
 </section>
 
 
@@ -81,4 +97,75 @@
     </div>
   </div>
 </section>
+
+
+<!-- ============================================================
+     PROGRAMME AT A GLANCE
+============================================================ -->
+<section class="programme" id="programme">
+  <div class="container">
+    <div class="head">
+      <div>
+        <p class="eyebrow">The week, at a glance</p>
+        <h2>Five days, three modes of working together.</h2>
+      </div>
+      <p class="note">A free Beginner's day, a two-day main conference, and two days of community sprints.</p>
+    </div>
+
+    <div class="day-grid">
+      <article class="day-card is-tutorial">
+        <span class="pip" aria-hidden="true"></span>
+        <p class="num">14</p>
+        <p class="month">Wed · Oct 2026</p>
+        <p class="weekday">Day 1</p>
+        <p class="label">Beginner's Day</p>
+        <p class="desc">A free, full-day introduction to Python for first-timers. Bring a laptop; no prior experience required.</p>
+      </article>
+
+      <article class="day-card is-main">
+        <span class="pip" aria-hidden="true"></span>
+        <p class="num">15</p>
+        <p class="month">Thu · Oct 2026</p>
+        <p class="weekday">Day 2</p>
+        <p class="label">Main conference</p>
+        <p class="desc">Keynotes, 25-minute talks, and 90-minute tutorials across three rooms. Lunch and coffee in the atrium.</p>
+      </article>
+
+      <article class="day-card is-main">
+        <span class="pip" aria-hidden="true"></span>
+        <p class="num">16</p>
+        <p class="month">Fri · Oct 2026</p>
+        <p class="weekday">Day 3</p>
+        <p class="label">Main conference</p>
+        <p class="desc">Day two of the programme, ending with lightning talks and the closing keynote. Conference dinner in the evening.</p>
+      </article>
+
+      <article class="day-card is-sprint">
+        <span class="pip" aria-hidden="true"></span>
+        <p class="num">17</p>
+        <p class="month">Sat · Oct 2026</p>
+        <p class="weekday">Day 4</p>
+        <p class="label">Sprints</p>
+        <p class="desc">Open-source sprints — bring a project, join one, or pair with a maintainer. Free, all welcome.</p>
+      </article>
+
+      <article class="day-card is-sprint">
+        <span class="pip" aria-hidden="true"></span>
+        <p class="num">18</p>
+        <p class="month">Sun · Oct 2026</p>
+        <p class="weekday">Day 5</p>
+        <p class="label">Sprints</p>
+        <p class="desc">Day two of sprints. Wrap-up demos in the late afternoon, then we hand the keys back to Belmont Square.</p>
+      </article>
+    </div>
+
+    <div class="day-legend">
+      <span><i class="l-tut"></i>Beginner / tutorials</span>
+      <span><i class="l-main"></i>Main conference</span>
+      <span><i class="l-spr"></i>Sprints</span>
+    </div>
+  </div>
+</section>
+
+
 {% endblock %}
