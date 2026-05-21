@@ -58,30 +58,8 @@
         {% endblock %}
     </main>
 
-    <footer class="bg-indigo text-cream mt-16 pt-10 pb-8 px-5">
 
-        {% sponsors_footer %}
-
-
-        <div class="lg:flex lg:items-center max-w-7xl mx-auto lg:justify-between space-y-3 text-center">
-
-
-
-
-            <p class="text-sm lg:text-base text-grey-300">
-                &copy; 2026 Python Software Society of South Africa - PyConZA
-            </p>
-
-            <nav class="text-3xl space-x-1" id="social_media_footer">
-                {% for link in social_links %}
-                <a href="{{link.url}}" target="_blank" class="text-cream hover:text-pink no-underline">
-                    <i class="{{link.icon}}"></i>
-                </a>
-                {% endfor %}
-            </nav>
-        </div>
-
-    </footer>
+        {% include "partial_footer.html" %}
 
 
     {% comment %}

@@ -329,3 +329,6 @@ BAKERY_VIEWS = (
     "website.views.PageDinner",
     "accommodations.views.Accommodations",
 )
+
+
+CFP_DEADLINE = "2026-07-31"

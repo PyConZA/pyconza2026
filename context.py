@@ -1,3 +1,5 @@
+from datetime import date
+
 from django.conf import settings
 
 
@@ -7,4 +9,5 @@ def context(request):
         "social_links": settings.SOCIAL_LINKS,
         "GRANT_APPLICATIONS_OPEN": settings.GRANT_APPLICATIONS_OPEN,
         "VISA_LETTER_REQUESTS_OPEN": settings.VISA_LETTER_REQUESTS_OPEN,
+        "CFP_DEADLINE": date.fromisoformat(settings.CFP_DEADLINE),
     }
