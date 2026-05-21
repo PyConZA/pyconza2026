@@ -329,3 +329,6 @@ BAKERY_VIEWS = (
     "website.views.PageDinner",
     "accommodations.views.Accommodations",
 )
+
+
+SPONSORSHIP_PROSPECTUS_URL="https://drive.google.com/file/d/1CQrIYV61BMyWmTrqtzegSbSBolXNtDcQ/view?usp=sharing"
