@@ -21,3 +21,7 @@ uv sync
 - Test responsive breakpoints: mobile, tablet, desktop
 - Ensure Cotton components have sensible defaults
 - Validate that Tailwind classes exist (no arbitrary values without config)
+
+## DO NOT
+
+- Don't add placeholder links and buttons that don't do anything. Everything should work.  

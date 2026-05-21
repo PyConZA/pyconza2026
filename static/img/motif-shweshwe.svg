@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 60" fill="none">
+  
+  <rect width="480" height="60" fill="#E8DDC8"></rect>
+  <g fill="#1A2B4C">
+    
+    <g>
+      <path d="M30 10 L50 30 L30 50 L10 30 Z"></path>
+      <path d="M70 14 h10 v10 h10 v10 h-10 v10 h-10 v-10 h-10 v-10 h10 z"></path>
+      <circle cx="105" cy="15" r="2.5"></circle>
+      <circle cx="115" cy="15" r="2.5"></circle>
+      <circle cx="105" cy="30" r="2.5"></circle>
+      <circle cx="115" cy="30" r="2.5"></circle>
+      <circle cx="105" cy="45" r="2.5"></circle>
+      <circle cx="115" cy="45" r="2.5"></circle>
+    </g>
+    <g transform="translate(120 0)">
+      <path d="M30 10 L50 30 L30 50 L10 30 Z"></path>
+      <path d="M70 14 h10 v10 h10 v10 h-10 v10 h-10 v-10 h-10 v-10 h10 z"></path>
+      <circle cx="105" cy="15" r="2.5"></circle>
+      <circle cx="115" cy="15" r="2.5"></circle>
+      <circle cx="105" cy="30" r="2.5"></circle>
+      <circle cx="115" cy="30" r="2.5"></circle>
+      <circle cx="105" cy="45" r="2.5"></circle>
+      <circle cx="115" cy="45" r="2.5"></circle>
+    </g>
+    <g transform="translate(240 0)">
+      <path d="M30 10 L50 30 L30 50 L10 30 Z"></path>
+      <path d="M70 14 h10 v10 h10 v10 h-10 v10 h-10 v-10 h-10 v-10 h10 z"></path>
+      <circle cx="105" cy="15" r="2.5"></circle>
+      <circle cx="115" cy="15" r="2.5"></circle>
+      <circle cx="105" cy="30" r="2.5"></circle>
+      <circle cx="115" cy="30" r="2.5"></circle>
+      <circle cx="105" cy="45" r="2.5"></circle>
+      <circle cx="115" cy="45" r="2.5"></circle>
+    </g>
+    <g transform="translate(360 0)">
+      <path d="M30 10 L50 30 L30 50 L10 30 Z"></path>
+      <path d="M70 14 h10 v10 h10 v10 h-10 v10 h-10 v-10 h-10 v-10 h10 z"></path>
+      <circle cx="105" cy="15" r="2.5"></circle>
+      <circle cx="115" cy="15" r="2.5"></circle>
+      <circle cx="105" cy="30" r="2.5"></circle>
+      <circle cx="115" cy="30" r="2.5"></circle>
+      <circle cx="105" cy="45" r="2.5"></circle>
+      <circle cx="115" cy="45" r="2.5"></circle>
+    </g>
+  </g>
+</svg>
