@@ -71,12 +71,10 @@
         @apply outline-2 outline-offset-2 outline-indigo;
     }
 
-    /* On indigo surfaces (header, footer, any .bg-indigo block) the default
+    /* On indigo surfaces (footer, any .bg-indigo block) the default
        indigo focus ring vanishes. Flip to cream there. */
-    header a:focus-visible,
     footer a:focus-visible,
     .bg-indigo a:focus-visible,
-    header button:focus-visible,
     footer button:focus-visible,
     .bg-indigo button:focus-visible {
         @apply outline-cream;
@@ -176,11 +174,20 @@
     }
 
     .nav-item {
-        @apply font-medium text-cream hover:text-pink uppercase no-underline tracking-wide rounded-sm;
+        @apply font-medium text-[15px] text-indigo hover:text-pink no-underline rounded-sm;
     }
 
     .nav-item:focus-visible {
-        @apply outline-2 outline-offset-4 outline-cream;
+        @apply outline-2 outline-offset-4 outline-indigo;
+    }
+
+    /* Inside dark dropdown panels the nav links sit on indigo. */
+    .bg-indigo .nav-item {
+        @apply text-cream hover:text-pink;
+    }
+
+    .bg-indigo .nav-item:focus-visible {
+        @apply outline-cream;
     }
 
     /* Base button mechanics — mirrors the design system's .btn. */
