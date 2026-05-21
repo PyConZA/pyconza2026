@@ -35,7 +35,7 @@ The submission deadline is 31 July 2026.
 
 1. Create a PyConZA account (or login if you already have one) by clicking on the [Create an account](/accounts/login/) button on the top right.
 2. On your profile page, click `Edit User` and fill in your name if you didn't do so during account creation.
-3. On your profile page, click `Edit Biography` and fill in a contact number. Contact numbers are never displayed on the site but organizers need them in case they need to contact speakers urgently (e.g. shortly before or during the conference).
+3. On your profile page, click `Edit Biography` and fill in your bio.
 4. On your profile page, click `Submit talk proposal` on the right.
 5. Fill in the title and abstract for your talk and select the appropriate speaker (or speakers).
 6. Select the appropriate talk type for your proposal.
