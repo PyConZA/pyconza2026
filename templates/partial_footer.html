@@ -1,26 +1,54 @@
 {% load sponsors %}
+{% load static %}
+{% sponsors_footer %}
 
-    <footer class="bg-indigo text-cream mt-16 pt-10 pb-8 px-5">
+<footer class="bg-indigo text-cream pt-20 pb-8 px-5 lg:px-12 mt-16">
+  <div class="max-w-7xl mx-auto">
 
-        {% sponsors_footer %}
+    <div class="grid grid-cols-2 gap-8 md:grid-cols-5">
 
+      <div class="col-span-2">
+        <a href="/" class="flex items-center gap-3 no-underline mb-4" aria-label="PyConZA 2026 home">
+          <img src="{% static 'img/pyconza-logo.png' %}" alt="" class="h-10 w-auto" />
+          <span class="font-headline font-bold text-xl text-cream">PyConZA <span class="text-pink">2026</span></span>
+        </a>
+        <p class="text-sm leading-relaxed text-grey-300 max-w-sm">
+          South Africa's Python conference. Cape Town, 14&ndash;18 October 2026.
+        </p>
+      </div>
 
-        <div class="lg:flex lg:items-center max-w-7xl mx-auto lg:justify-between space-y-3 text-center">
+      {% for column in FOOTER_MENUS %}
+      <div>
+        <h4 class="font-headline font-medium text-xs uppercase tracking-wider text-cream/70 mb-4">
+          {{ column.label }}
+        </h4>
+        <ul class="list-none p-0 space-y-2.5">
+          {% for item in column.items %}
+          <li>
+            <a href="{{ item.url }}" class="text-cream/90 hover:text-pink no-underline text-base">
+              {{ item.label }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
 
+    </div>
 
+    <div class="border-t border-cream/20 mt-14 pt-6 flex flex-wrap justify-between items-center gap-4 font-mono text-sm text-cream/80">
+      <p>
+        &copy; 2026 Python Software Society of South Africa - PyConZA
+      </p>
 
+      <nav class="text-2xl space-x-1" id="social_media_footer">
+        {% for link in social_links %}
+        <a href="{{ link.url }}" target="_blank" class="text-cream hover:text-pink no-underline">
+          <i class="{{ link.icon }}"></i>
+        </a>
+        {% endfor %}
+      </nav>
+    </div>
 
-            <p class="text-sm lg:text-base text-grey-300">
-                &copy; 2026 Python Software Society of South Africa - PyConZA
-            </p>
-
-            <nav class="text-3xl space-x-1" id="social_media_footer">
-                {% for link in social_links %}
-                <a href="{{link.url}}" target="_blank" class="text-cream hover:text-pink no-underline">
-                    <i class="{{link.icon}}"></i>
-                </a>
-                {% endfor %}
-            </nav>
-        </div>
-
-    </footer>
+  </div>
+</footer>
