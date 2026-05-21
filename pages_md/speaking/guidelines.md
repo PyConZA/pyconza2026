@@ -32,7 +32,7 @@ There are also international community members who have blogged about the talk p
     - What will attendees get out of your talk? When they leave the room, what will they know that they didn't know before?
 - Your outline should be an enumeration of what you intend to say.
 - It is not necessary to have completely written your talk already, but you should have an idea of what the points you intend to make are and roughly how long you will spend on each one.
-- Include 5-10 minute discussion/Q&A time within your allocated timeslot.
+- Your allocated time slot includes 5-10 minutes for discussions and questions. Your talks should thus be 5-10 minutes *shorter* than the full time slot.
 - PyConZA is a general Python conference with a diverse audience, and we prefer talks that appeal to a non-trivial set of our attendees. If we feel your talk is too narrowly focused, we may ask you to justify why you believe this is a good fit for the conference, or ask you to broaden the scope of the talk to better fit with the conference.
 - Include links to source code, articles, blog posts, videos, or other resources that add context to your proposal.
 - If you've given a talk, tutorial, or other presentation before, especially at an earlier PyCon or another conference, include that information as well as a link to slides or a video if they're available.

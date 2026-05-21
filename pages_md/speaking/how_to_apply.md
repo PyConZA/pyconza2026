@@ -19,7 +19,7 @@ Speakers will be expected to be available for a short Q&A session after the pres
 
 ## What topics are we accepting?
 
-We are interested in a wide variety of talk topics. The only hard requirement is that your talk must be related to Python.
+We are interested in a wide variety of talk topics. The only hard requirement is that your talk must be relevant to Python.
 
 We have a number of tracks available: Data Science, Teaching and Learning with Python, Web, Scientific Computing, Testing, and Other (which includes all talks that don't fall under the mentioned tracks). If you are keen to talk but you are struggling to come up with a topic check out our [guidelines](https://za.pycon.org/pages/speaking/guidelines/).
 
