@@ -150,7 +150,7 @@
     }
 
     .nav-item {
-        @apply font-medium text-cream hover:text-pink uppercase no-underline tracking-wide rounded-sm;
+        @apply font-medium text-white hover:text-pink uppercase no-underline tracking-wide rounded-sm;
     }
 
     .nav-item:focus-visible {
