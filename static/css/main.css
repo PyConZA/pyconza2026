@@ -59,7 +59,12 @@
     }
 
     a {
-        @apply cursor-pointer underline;
+        @apply cursor-pointer text-pink underline underline-offset-2;
+        text-decoration-thickness: 1px;
+    }
+
+    a:hover {
+        text-decoration-thickness: 2px;
     }
 
     a:focus-visible {
@@ -88,6 +93,7 @@
 
     p {
         @apply text-base leading-relaxed;
+        text-wrap: pretty;
     }
 
     ul {
@@ -149,6 +155,26 @@
         @apply text-cream;
     }
 
+    /* Tracked, uppercase kicker that sits above a heading. */
+    .eyebrow {
+        font-family: var(--font-headline);
+        @apply font-medium text-sm uppercase text-pink;
+        letter-spacing: 0.06em;
+    }
+
+    .lead {
+        @apply text-lg leading-8;
+    }
+
+    .text-small {
+        @apply text-sm leading-snug;
+    }
+
+    .text-caption {
+        @apply text-[13px] leading-tight;
+        letter-spacing: 0.01em;
+    }
+
     .nav-item {
         @apply font-medium text-cream hover:text-pink uppercase no-underline tracking-wide rounded-sm;
     }
@@ -157,29 +183,58 @@
         @apply outline-2 outline-offset-4 outline-cream;
     }
 
+    /* Base button mechanics — mirrors the design system's .btn. */
     .btn {
-        @apply w-fit px-8 py-3 bg-indigo no-underline rounded-xl text-cream font-semibold cursor-pointer hover:bg-indigo/90 text-center items-center;
+        @apply inline-flex items-center justify-center gap-2.5 w-fit
+               px-[22px] py-3.5 min-h-12 rounded-lg border border-transparent
+               no-underline text-base font-medium leading-none text-center
+               cursor-pointer bg-pink text-off-white;
+        transition: background-color 180ms cubic-bezier(0.2, 0, 0, 1),
+                    color 180ms cubic-bezier(0.2, 0, 0, 1),
+                    border-color 180ms cubic-bezier(0.2, 0, 0, 1),
+                    transform 120ms cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    .btn:hover {
+        background-color: #a8124e;
+    }
+
+    .btn:active {
+        @apply translate-y-px;
     }
 
     .btn:focus-visible {
-        @apply outline-2 outline-offset-2 outline-pink;
+        @apply outline-2 outline-offset-2 outline-indigo;
     }
 
     .btn-small {
-        @apply py-1 px-4;
+        @apply py-1 px-4 min-h-0;
     }
 
     .btn-success {
-        @apply bg-olive text-cream hover:bg-olive/90;
+        @apply bg-olive text-cream;
     }
 
+    .btn-success:hover {
+        @apply bg-olive/90;
+    }
+
+    /* Outlined secondary — transparent until hovered. */
     .btn-secondary {
-        @apply bg-pink text-off-white hover:bg-pink/90;
+        @apply bg-transparent text-indigo border-indigo;
     }
 
-    /* Pink ring on a pink button is invisible — switch to indigo. */
-    .btn-secondary:focus-visible {
-        @apply outline-indigo;
+    .btn-secondary:hover {
+        @apply bg-indigo text-cream;
+    }
+
+    /* On indigo surfaces the secondary outline flips to cream. */
+    .btn-on-dark.btn-secondary {
+        @apply text-cream border-cream;
+    }
+
+    .btn-on-dark.btn-secondary:hover {
+        @apply bg-cream text-indigo;
     }
 
     input[type="submit"] {
@@ -211,11 +266,17 @@
     }
 
     .card {
-        @apply p-3 bg-off-white border border-grey-300 rounded-xl;
+        @apply p-6 bg-off-white border border-grey-300 rounded-xl;
+        transition: border-color 180ms cubic-bezier(0.2, 0, 0, 1),
+                    transform 180ms cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    .card:hover {
+        @apply border-indigo -translate-y-0.5;
     }
 
     .badge {
-        @apply border border-grey-300 rounded-xl px-2 py-1 text-xs bg-cream-tint text-indigo;
+        @apply inline-flex items-center border border-grey-300 rounded px-2 py-1 text-xs bg-cream-tint text-indigo;
     }
 
     .bg-danger {
@@ -336,6 +397,9 @@
         background-color: var(--color-off-white);
         border-color: var(--color-grey-300);
         color: var(--color-indigo);
+        min-height: 48px;
+        border-radius: 4px;
+        padding: 12px 14px;
     }
 
     /* Visible focus ring — beats crispy's `focus:outline-none`. */
@@ -360,6 +424,18 @@
     textarea.border-red-500,
     select.border-red-500 {
         border-color: var(--color-pink);
+    }
+
+    .surface-dark {
+        @apply bg-indigo text-cream;
+    }
+
+    .surface-cream {
+        @apply bg-cream text-indigo;
+    }
+
+    .surface-paper {
+        @apply bg-off-white text-indigo;
     }
 
     .bg-translucent {
