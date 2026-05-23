@@ -3,37 +3,52 @@
 
 
 {% block main %}
-<section class="bg-indigo">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-16 lg:py-24">
-        <div class="flex flex-col lg:flex-row lg:items-center gap-10 lg:gap-16">
-            <div class="flex flex-col gap-y-6 text-center lg:text-left lg:w-3/5 order-2 lg:order-1">
-                <h1 class="text-cream text-4xl lg:text-6xl font-bold leading-tight tracking-tight">
-                    PyConZA 2026
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="relative overflow-hidden bg-indigo text-cream">
+    <div class="pointer-events-none absolute inset-0"
+         style="background-image: radial-gradient(circle at 1px 1px, rgba(232, 221, 200, 0.07) 1px, transparent 0); background-size: 32px 32px;"
+         aria-hidden="true"></div>
+
+    <div class="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-16 lg:pt-24 pb-24 lg:pb-32">
+        <div class="grid lg:grid-cols-[1.35fr_1fr] gap-10 lg:gap-16 items-center">
+            <div class="text-center lg:text-left order-2 lg:order-1">
+                <p class="inline-flex items-center gap-3 font-mono text-sm font-medium text-cream/85 px-3 py-1.5 border border-cream/25 rounded-full mb-7">
+                    <span class="w-2 h-2 rounded-full bg-pink animate-pulse" aria-hidden="true"></span>
+                    Cape Town · 14–18 October 2026
+                </p>
+
+                <h1 class="font-headline font-bold text-cream text-6xl lg:text-8xl leading-[0.98] tracking-tight mb-6">
+                    PyConZA<br><span class="text-pink">2026.</span>
                 </h1>
 
-                <p class="text-cream text-lg lg:text-xl leading-relaxed">
+                <p class="text-cream/90 text-xl lg:text-2xl leading-relaxed max-w-[28em] mx-auto lg:mx-0 mb-4">
                     South Africa's Python conference — Cape Town, South Africa. 14–18 October 2026.
                 </p>
 
-                <p class="text-off-white text-base lg:text-lg leading-relaxed">
+                <p class="text-cream/70 text-base lg:text-lg leading-relaxed max-w-[28em] mx-auto lg:mx-0 mb-9">
                     Three days of talks, tutorials, and conversation. Tickets to be confirmed.
                 </p>
 
-                <ul class="list-custom space-y-3 text-cream">
-                    <li class="flex items-center gap-3 justify-center lg:justify-start">
-                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                        <span>Belmont Square, Cape Town</span>
-                    </li>
-                    <li class="flex items-center gap-3 justify-center lg:justify-start">
-                        <i class="fa-solid fa-calendar" aria-hidden="true"></i>
-                        <span class="font-mono">14–18 October 2026</span>
-                    </li>
-                </ul>
-
-                
+                <dl class="grid grid-cols-1 sm:grid-cols-3 max-w-[640px] mx-auto lg:mx-0 border-y border-cream/20 text-left">
+                    <div class="py-4 sm:pr-7 border-b sm:border-b-0 sm:border-r border-cream/20">
+                        <dt class="font-headline font-medium text-xs uppercase tracking-[0.08em] text-cream/65 mb-1.5">Dates</dt>
+                        <dd class="font-mono text-base text-cream">14–18 Oct 2026</dd>
+                    </div>
+                    <div class="py-4 sm:px-7 border-b sm:border-b-0 sm:border-r border-cream/20">
+                        <dt class="font-headline font-medium text-xs uppercase tracking-[0.08em] text-cream/65 mb-1.5">City</dt>
+                        <dd class="font-mono text-base text-cream">Cape Town, ZA</dd>
+                    </div>
+                    <div class="py-4 sm:pl-7">
+                        <dt class="font-headline font-medium text-xs uppercase tracking-[0.08em] text-cream/65 mb-1.5">Venue</dt>
+                        <dd class="font-mono text-base text-cream">Belmont Square</dd>
+                    </div>
+                </dl>
             </div>
 
-            <figure class="order-1 lg:order-2 w-40 sm:w-56 lg:w-72 xl:w-80 mx-auto shrink-0">
+            <figure class="order-1 lg:order-2 w-56 sm:w-72 lg:w-96 xl:w-[28rem] mx-auto shrink-0">
                 <picture>
                     <source srcset="{% static 'img/protea-on-dark - transparent.webp' %}" type="image/webp">
                     <img src="{% static 'img/protea-on-dark - transparent.png' %}"
@@ -45,5 +60,206 @@
             </figure>
         </div>
     </div>
+
+    <!-- <svg class="absolute bottom-0 left-0 w-full h-24 text-cream/10" viewBox="0 0 1200 96"
+         preserveAspectRatio="none" aria-hidden="true">
+        <path fill="currentColor" d="M0 96 L0 70 L80 70 L130 56 L210 56 L240 68 L380 68 L420 40 L560 40 L580 60 L720 60 L740 30 L760 18 L780 12 L800 18 L820 30 L860 60 L1000 60 L1040 44 L1140 44 L1170 60 L1200 60 L1200 96 Z"></path>
+    </svg> -->
 </section>
+
+
+
+<div class="shweshwe-strip" aria-hidden="true"></div>
+
+
+<!-- ============================================================
+     STAT STRIP
+============================================================ -->
+<section class="bg-off-white border-y border-grey-300 py-12" aria-label="Conference at a glance">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+      <div class="flex flex-col gap-1.5">
+        <p class="font-headline font-bold text-[44px] leading-none tracking-tight text-indigo">5<span class="font-mono text-base font-medium text-pink ml-1">days</span></p>
+        <p class="eyebrow text-grey-700">14 – 18 October</p>
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <p class="font-headline font-bold text-[44px] leading-none tracking-tight text-indigo">3<span class="font-mono text-base font-medium text-pink ml-1">tracks</span></p>
+        <p class="eyebrow text-grey-700">Talks, tutorials, sprints</p>
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <p class="font-headline font-bold text-[44px] leading-none tracking-tight text-indigo">Main<span class="font-mono text-base font-medium text-pink ml-1">venue</span></p>
+        <p class="eyebrow text-grey-700">Belmont Square, Rondebosch</p>
+      </div>
+      <div class="flex flex-col gap-1.5">
+        <p class="font-headline font-bold text-[44px] leading-none tracking-tight text-indigo">15<span class="font-mono text-base font-medium text-pink ml-1">th year</span></p>
+        <p class="eyebrow text-grey-700">Of PyConZA</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PROGRAMME AT A GLANCE
+============================================================ -->
+<section class="py-16 md:py-24" id="programme">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="grid md:grid-cols-[1fr_auto] gap-4 md:gap-12 items-end mb-12">
+      <div>
+        <p class="eyebrow">The week, at a glance</p>
+        <h2 class="font-headline font-semibold text-[32px] md:text-[44px] leading-[1.1] tracking-tight text-indigo mt-2 mb-0 max-w-[14em]">Five days, three modes of working together.</h2>
+      </div>
+      <p class="text-base text-grey-700 max-w-[28em]">A free Beginner's day, a two-day main conference, and two days of community sprints.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <article class="card relative flex flex-col min-h-[240px]">
+        <span class="absolute top-6 right-6 w-2 h-2 rounded-full bg-olive" aria-hidden="true"></span>
+        <p class="font-headline font-bold text-[56px] leading-none text-indigo mb-1">14</p>
+        <p class="font-mono text-[13px] font-medium tracking-[0.04em] text-grey-700 mb-6">Wed · Oct 2026</p>
+        <p class="font-headline font-medium text-[13px] uppercase tracking-[0.06em] text-grey-700 mb-2">Day 1</p>
+        <p class="font-headline font-semibold text-[22px] leading-tight text-indigo mb-3">Beginner's Day</p>
+        <p class="text-sm leading-[1.45] text-grey-700">A free, full-day introduction to Python for first-timers. Bring a laptop; no prior experience required. RSVP CRITICAL</p>
+      </article>
+
+      <article class="card relative flex flex-col min-h-[240px]">
+        <span class="absolute top-6 right-6 w-2 h-2 rounded-full bg-pink" aria-hidden="true"></span>
+        <p class="font-headline font-bold text-[56px] leading-none text-pink mb-1">15</p>
+        <p class="font-mono text-[13px] font-medium tracking-[0.04em] text-grey-700 mb-6">Thu · Oct 2026</p>
+        <p class="font-headline font-medium text-[13px] uppercase tracking-[0.06em] text-grey-700 mb-2">Day 2</p>
+        <p class="font-headline font-semibold text-[22px] leading-tight text-indigo mb-3">Main conference</p>
+        <p class="text-sm leading-[1.45] text-grey-700">Keynote, 3 tracks of talks, fantastic sponsors and open spaces.</p>
+      </article>
+
+      <article class="card relative flex flex-col min-h-[240px]">
+        <span class="absolute top-6 right-6 w-2 h-2 rounded-full bg-pink" aria-hidden="true"></span>
+        <p class="font-headline font-bold text-[56px] leading-none text-pink mb-1">16</p>
+        <p class="font-mono text-[13px] font-medium tracking-[0.04em] text-grey-700 mb-6">Fri · Oct 2026</p>
+        <p class="font-headline font-medium text-[13px] uppercase tracking-[0.06em] text-grey-700 mb-2">Day 3</p>
+        <p class="font-headline font-semibold text-[22px] leading-tight text-indigo mb-3">Main conference</p>
+        <p class="text-sm leading-[1.45] text-grey-700">Day two of the programme, ending with lightning talks and the closing keynote</p>
+      </article>
+
+      <article class="card relative flex flex-col min-h-[240px]">
+        <span class="absolute top-6 right-6 w-2 h-2 rounded-full bg-indigo" aria-hidden="true"></span>
+        <p class="font-headline font-bold text-[56px] leading-none text-indigo mb-1">17</p>
+        <p class="font-mono text-[13px] font-medium tracking-[0.04em] text-grey-700 mb-6">Sat · Oct 2026</p>
+        <p class="font-headline font-medium text-[13px] uppercase tracking-[0.06em] text-grey-700 mb-2">Day 4</p>
+        <p class="font-headline font-semibold text-[22px] leading-tight text-indigo mb-3">Sprints</p>
+        <p class="text-sm leading-[1.45] text-grey-700">Open-source sprints — bring a project, join one, or pair with a maintainer. Free, all welcome.</p>
+      </article>
+
+      <article class="card relative flex flex-col min-h-[240px]">
+        <span class="absolute top-6 right-6 w-2 h-2 rounded-full bg-indigo" aria-hidden="true"></span>
+        <p class="font-headline font-bold text-[56px] leading-none text-indigo mb-1">18</p>
+        <p class="font-mono text-[13px] font-medium tracking-[0.04em] text-grey-700 mb-6">Sun · Oct 2026</p>
+        <p class="font-headline font-medium text-[13px] uppercase tracking-[0.06em] text-grey-700 mb-2">Day 5</p>
+        <p class="font-headline font-semibold text-[22px] leading-tight text-indigo mb-3">Sprints</p>
+        <p class="text-sm leading-[1.45] text-grey-700">Day two of sprints.</p>
+      </article>
+    </div>
+
+    <div class="flex flex-wrap gap-6 mt-8 font-mono text-[13px] text-grey-700">
+      <span class="inline-flex items-center gap-2"><i class="w-2 h-2 rounded-full inline-block bg-olive"></i>Beginner / tutorials</span>
+      <span class="inline-flex items-center gap-2"><i class="w-2 h-2 rounded-full inline-block bg-pink"></i>Main conference</span>
+      <span class="inline-flex items-center gap-2"><i class="w-2 h-2 rounded-full inline-block bg-indigo"></i>Sprints</span>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============================================================
+     CFP
+============================================================ -->
+<section class="relative overflow-hidden bg-indigo text-cream py-16 md:py-24" id="cfp">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="grid lg:grid-cols-[1.5fr_1fr] gap-10 lg:gap-16 items-center">
+      <div>
+        <p class="eyebrow">Call for proposals</p>
+        <h2 class="font-headline font-semibold text-[32px] md:text-[44px] leading-[1.05] tracking-tight text-cream mt-3 mb-5">The CFP is open. We'd like to hear from you.</h2>
+        <p class="text-cream/90 text-lg leading-relaxed max-w-[32em] mb-3">We're looking for talks, tutorials, and posters from across the African Python community and beyond. First-time speakers are especially welcome — tick the mentorship box on the form and we'll pair you with an experienced reviewer for one round of feedback before the deadline.</p>
+        <p class="text-cream/90 text-lg leading-relaxed max-w-[32em]">Talks are 25 minutes. Tutorials run 90 minutes. Posters display for both main-conference days.</p>
+        <div class="flex flex-wrap gap-3.5 mt-7">
+          <a class="btn btn-primary" href="{% url 'wafer_page' 'speaking/how_to_apply' %}">Submit a proposal</a>
+          <a class="btn btn-secondary btn-on-dark" href="{% url 'wafer_page' 'speaking/guidelines' %}">Read the speaker handbook</a>
+        </div>
+      </div>
+
+      <aside class="bg-cream/[0.06] border border-cream/20 rounded-xl p-7" aria-label="Submission deadline">
+        <p class="font-headline font-medium text-xs uppercase tracking-[0.08em] text-cream/70 mb-2.5">Submissions close</p>
+        <p class="font-headline font-bold text-4xl leading-tight tracking-tight text-cream mb-1.5">{{ CFP_DEADLINE|date:"j F Y" }}</p>
+        <p class="font-mono text-sm font-medium text-pink mb-5" id="countdown">— calculating —</p>
+        <a class="btn btn-primary w-full" href="{% url 'wafer_page' 'speaking/how_to_apply' %}">Start a submission</a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============================================================
+     VENUE
+============================================================ -->
+<!-- <section class="bg-cream py-16 md:py-24" id="venue">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-center">
+      <div>
+        <p class="eyebrow">Venue</p>
+        <h2 class="font-headline font-semibold text-[32px] md:text-[44px] leading-[1.1] tracking-tight text-indigo mt-3 mb-5">Belmont Square, Rondebosch.</h2>
+        <p class="text-[17px] leading-relaxed text-grey-700">A quiet conference centre on the edge of the University of Cape Town campus, ten minutes from the city by train and a short walk from Newlands. Three lecture-style halls, a workshop room, and an atrium where most of the conference actually happens.</p>
+        <ul class="grid gap-3 mt-6">
+          <li class="grid grid-cols-[24px_1fr] gap-3 text-[15px] text-indigo">
+            <svg class="w-5 h-5 stroke-pink" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Belmont Road, Rondebosch, Cape Town 7700</span>
+          </li>
+          <li class="grid grid-cols-[24px_1fr] gap-3 text-[15px] text-indigo">
+            <svg class="w-5 h-5 stroke-pink" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h18M5 21h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2Z"></path><path d="M8 3v4M16 3v4"></path></svg>
+            <span>Step-free access on every floor; assisted listening on request.</span>
+          </li>
+          <li class="grid grid-cols-[24px_1fr] gap-3 text-[15px] text-indigo">
+            <svg class="w-5 h-5 stroke-pink" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+            <span>Rondebosch station 8 min walk · MyCiti N2 stop 12 min · ample parking.</span>
+          </li>
+        </ul>
+        <div class="flex flex-wrap gap-3.5 mt-8">
+          <a class="btn btn-secondary" href="https://www.belmontsquare.co.za/" target="_blank" rel="noopener">belmontsquare.co.za ↗</a>
+          <a class="btn btn-secondary" href="{% url 'wafer_page' 'venue' %}">Travel &amp; accommodation</a> 
+        </div>
+      </div>
+
+      <div class="relative overflow-hidden aspect-[4/3] rounded-xl border border-grey-300 bg-indigo text-cream p-8" role="img" aria-label="Stylised Cape Town ridge — Table Mountain and Lion's Head">
+        <div class="relative z-[2] flex gap-4 items-start justify-between">
+          <p class="font-headline font-semibold text-[26px] leading-[1.15] text-cream max-w-[16ch] m-0">Belmont Square Conference Centre<small class="block font-mono text-[13px] font-medium text-cream/75 mt-2">Rondebosch · Cape Town</small></p>
+          <span class="shrink-0 inline-flex items-center gap-2 font-mono text-[13px] bg-pink text-off-white px-3.5 py-2 rounded-full whitespace-nowrap">Cape Town · ZA</span>
+        </div>
+        <svg class="absolute -left-[2%] -right-[2%] bottom-0 w-[104%] h-[70%] z-[1]" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true">
+          <path fill="rgba(232,221,200,0.10)" d="M0 600 L0 380 L120 380 L160 350 L260 350 L320 360 L420 280 L520 220 L600 200 L680 220 L780 280 L880 360 L980 350 L1080 350 L1120 380 L1200 380 L1200 600 Z"></path>
+          <path fill="rgba(232,221,200,0.18)" d="M0 600 L0 460 L80 460 L160 420 L260 410 L340 440 L460 360 L540 320 L640 320 L760 380 L880 440 L1000 430 L1080 460 L1200 460 L1200 600 Z"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- <div class="shweshwe-strip" aria-hidden="true"></div> -->
+
+
+
+
+<script>
+  (function () {
+    const deadline = new Date('{{ CFP_DEADLINE|date:"Y-m-d" }}T23:59:00+02:00').getTime();
+    const days = Math.max(0, Math.ceil((deadline - Date.now()) / 86400000));
+    const el = document.getElementById('countdown');
+    if (!el) return;
+    if (days > 1)        el.textContent = days + ' days remaining · 23:59 SAST';
+    else if (days === 1) el.textContent = '1 day remaining · 23:59 SAST';
+    else if (days === 0) el.textContent = 'Closes today · 23:59 SAST';
+    else                 el.textContent = 'Submissions closed';
+  })();
+</script>
+
+
+
 {% endblock %}

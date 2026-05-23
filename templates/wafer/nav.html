@@ -1,7 +1,7 @@
 {% load i18n %}
 
 
-<div class="space-x-4 hidden lg:block">
+<div class="space-x-7 hidden lg:block">
 
 
   {% for item in WAFER_MENUS.items %}
@@ -60,7 +60,7 @@
 
 <div class="lg:hidden block relative pr-4" x-data="{ open: false }">
 
-  <button class="py-3 text-cream font-bold cursor-pointer items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream rounded-md px-2"
+  <button class="py-3 text-indigo font-bold cursor-pointer items-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo rounded-md px-2"
           aria-label="Toggle navigation menu" @click="open = !open">
 
     <i class="fa fa-bars" aria-hidden="true" x-show="!open" style="display:hidden"></i>

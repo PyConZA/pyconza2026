@@ -234,6 +234,41 @@ SOCIAL_LINKS = [
 WAFER_MENUS = ()
 
 
+# Curated link columns for the site footer. Distinct from WAFER_MENUS, which
+# drives the header nav. Each entry is a column: a label and a list of links.
+FOOTER_MENUS = [
+    {
+        "label": _("Attend"),
+        "items": [
+            # {"label": _("Tickets"), "url": reverse_lazy("page_tickets")},
+            {
+                "label": _("In Person Conference"),
+                "url": reverse_lazy("page_in_person_event"),
+            },
+            {
+                "label": _("Online Conference"),
+                "url": reverse_lazy("page_remote_experience"),
+            },
+        ],
+    },
+    {
+        "label": _("The Programme"),
+        "items": [
+            {"label": _("Beginners Day"), "url": reverse_lazy("page_beginners_day")},
+            {"label": _("Sprints"), "url": reverse_lazy("page_sprints")},
+            {"label": _("Speakers' Dinner"), "url": reverse_lazy("page_dinner")},
+        ],
+    },
+    {
+        "label": _("Get Involved"),
+        "items": [
+            {"label": _("Volunteering"), "url": reverse_lazy("page_volunteering")},
+            # {"label": _("Donations"), "url": reverse_lazy("page_donations")},
+        ],
+    },
+]
+
+
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 
 CRISPY_TEMPLATE_PACK = "tailwind"
@@ -331,4 +366,5 @@ BAKERY_VIEWS = (
 )
 
 
+CFP_DEADLINE = "2026-07-31"
 SPONSORSHIP_PROSPECTUS_URL="https://drive.google.com/file/d/1CQrIYV61BMyWmTrqtzegSbSBolXNtDcQ/view?usp=sharing"
