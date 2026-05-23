@@ -367,3 +367,4 @@ BAKERY_VIEWS = (
 
 
 CFP_DEADLINE = "2026-07-31"
+SPONSORSHIP_PROSPECTUS_URL="https://drive.google.com/file/d/1CQrIYV61BMyWmTrqtzegSbSBolXNtDcQ/view?usp=sharing"

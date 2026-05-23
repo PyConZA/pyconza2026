@@ -12,7 +12,7 @@
    <div class="space-y-3 pb-5">
 
       <p>
-         Sponsorship of PyConZA will give your organisation global visibility and recognition. It is an excellent
+         Sponsorship of PyConZA will give your organisation broad visibility and recognition. It is an excellent
          way
          to
          support the Python community, promote your products to our hundreds of delegates, and meet Python developers
@@ -22,6 +22,32 @@
       </p>
 
       <p>
+         Your sponsorship reaches a broad, growing community &mdash; across South Africa, Southern Africa, the wider
+         African continent, and beyond:
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-6">
+         <div class="card">
+            <h4>South Africa</h4>
+            <p>Corporate teams and academics from across the country join us in person, our largest delegate base.</p>
+         </div>
+         <div class="card">
+            <h4>Southern Africa</h4>
+            <p>A special financial assistance programme helps delegates from Southern African communities attend in
+               person.</p>
+         </div>
+         <div class="card">
+            <h4>Africa</h4>
+            <p>Free online tickets shared with other African communities widen our reach and impact across the
+               continent.</p>
+         </div>
+         <div class="card">
+            <h4>Beyond</h4>
+            <p>International guests join us every year, both online and in person.</p>
+         </div>
+      </div>
+
+      <p>
 
          In return for your support, we will ensure that your company is given exposure before, during, and after the
          event,
@@ -29,7 +55,7 @@
          we will work with you so that you get exactly what you're looking for out of sponsoring the conference.
       </p>
 
-      <p>Please contact <a href="mailto:sponsorship@za.pycon.org">sponsorship@za.pycon.org</a> if you are interested in
+      <p>Please contact <a href="mailto:{{ CONTACT_US_EMAILS.sponsorship }}">{{ CONTACT_US_EMAILS.sponsorship }}</a> if you are interested in
          sponsoring PyConZA 2026, or if you have
          any questions about sponsorship.</p>
 
@@ -39,19 +65,15 @@
          benefits.
       </p>
 
-      <div class="alert alert-primary my-10">
-         <h4>Regional Packages for African Organisations</h4>
-         <p>You'll notice that most packages come have 2 versions. The standard packages are priced in US Dollars, and
-            Regional packages are priced in South African Rands. The regional packages are there to make participation
-            possible for African companies.</p>
-      </div>
+     
       <div class="mx-auto w-fit py-5">
 
-         <a href="https://drive.google.com/file/d/1CuFVg6sk7IDENoA8HKOMRGeuRHlXLOGo/view" target="_blank"
+         <a href="{{ SPONSORSHIP_PROSPECTUS_URL }}" target="_blank"
             class="btn btn-primary">Download Full Prospectus</a>
       </div>
 
    </div>
+
    {% block package_list %}
    <div class="space-y-5">
       {% for package in sponsorshippackage_list %}
@@ -94,33 +116,13 @@
 
    <div class="space-y-3 pt-5">
 
-      <p>
-
-         ** <strong>Named Travel Grant Awardees*</strong> - In addition to listed sponsorship recognition, have your
-         company exclusively
-         recognized by the grant awarded to selected delegates named after your organization. Exclusive media coverage
-         and
-         promotion of named grant awardees included.
-      </p>
-
-      <p>
-
-         <strong>*Privacy policy*</strong> - Participant details will not be shared without their explicit permission.
-         Participants are
-         allowed to
-         share their information with you at
-         your stall. Give them a good reason to do so. Make a compelling pitch for yourself or offer goodies in exchange
-         for
-         contact information.
-      </p>
-
-      <p>Please contact <a href="mailto:sponsorship@za.pycon.org">sponsorship@za.pycon.org</a> if you are interested in
+      <p>Please contact <a href="mailto:{{ CONTACT_US_EMAILS.sponsorship }}">{{ CONTACT_US_EMAILS.sponsorship }}</a> if you are interested in
          sponsoring PyConZA 2026, or if you have
          any questions about sponsorship.</p>
 
       <div class="mx-auto w-fit pt-5">
 
-         <a href="https://drive.google.com/file/d/1CuFVg6sk7IDENoA8HKOMRGeuRHlXLOGo/view" target="_blank"
+         <a href="{{ SPONSORSHIP_PROSPECTUS_URL }}" target="_blank"
             class="btn btn-primary">Download Full Prospectus</a>
       </div>
    </div>

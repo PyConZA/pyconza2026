@@ -5,7 +5,9 @@ include_in_menu: True
 
 We are glad you are interested in speaking at PyConZA!
 
-This document is a guide to help you submit the best possible proposal for PyConZA 2026 and offers tips to make your proposal more likely to be accepted. Please note that we receive many more proposals for talks, tutorials, and posters than we can accept. However, following the recommendations provided here can increase your chances of acceptance.
+This document is a guide to help you submit the best possible proposal for PyConZA 2026 and offers tips to make your proposal more likely to be accepted. Please note that we are unable to accept all submissions, but, following the recommendations provided here can increase your chances of acceptance.
+
+PyConZA offers a mentorship program for inexperienced speakers. If you would like help preparing your submission, email [team@za.pycon.org](mailto:team@za.pycon.org) with a rough draft of your talk proposal, and we'll find a suitable, experienced speaker to act as a mentor.
 
 ## Topics and advice
 
@@ -24,15 +26,14 @@ There are also international community members who have blogged about the talk p
 
 ## Good ideas
 
-- Submit your proposal early. The programme committee will endeavour to provide feedback to talks that come into our system, and we will work with you to improve your proposal if we have issues with it, but this is only feasible if your proposal is submitted well before the deadline.
+- Submit your proposal early. The programme committee will endeavour to provide feedback on proposals, and we will work with you to improve your proposal if we have issues with it, but this is only feasible if your proposal is submitted well before the deadline.
 - Be sure to answer some basic questions:
     - Who is the intended audience for your talk? (Be specific; "Python programmers" is not a good answer.)
     - What will attendees get out of your talk? When they leave the room, what will they know that they didn't know before?
-- Your outline should be an enumeration of what you intend to say, along with time estimates.
+- Your outline should be an enumeration of what you intend to say.
 - It is not necessary to have completely written your talk already, but you should have an idea of what the points you intend to make are and roughly how long you will spend on each one.
-- If you are requesting a 45-minute slot, remember that these are in very limited supply. Be sure to explain how you will change your talk if we can only offer you a 30-minute slot.
-- Your time allocated slot includes 5-10 minute discussions/Q&A.
-- Ensure that your talk will be relevant to a non-trivial set of people. If your talk is on a particular Python package or piece of software, it should be something that a significant number of people use or want to use. If your talk is about a package that you are writing, ensure that it's gained some acceptance before submitting a talk. If a tool you're excited about is not used widely, consider shifting the focus of your talk to a related best practice or theme which will have broader applicability and a larger audience.
+- Your allocated time slot includes 5-10 minutes for discussions and questions. Your talks should thus be 5-10 minutes *shorter* than the full time slot.
+- PyConZA is a general Python conference with a diverse audience, and we prefer talks that appeal to a non-trivial set of our attendees. If we feel your talk is too narrowly focused, we may ask you to justify why you believe this is a good fit for the conference, or ask you to broaden the scope of the talk to better fit with the conference.
 - Include links to source code, articles, blog posts, videos, or other resources that add context to your proposal.
 - If you've given a talk, tutorial, or other presentation before, especially at an earlier PyCon or another conference, include that information as well as a link to slides or a video if they're available.
 
