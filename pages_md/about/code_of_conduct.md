@@ -29,7 +29,7 @@ Every member of our community deserves respect, and we are committed to making p
 
 ### Inappropriate Behaviour
 
-Unacceptable behaviours include but are not limited to:
+Unacceptable behaviours include, but are not limited to:
 
 - Harassment in any form.
 - Intimidation, stalking, or following.
@@ -54,6 +54,11 @@ This Code of Conduct applies to all participants at PyConZA events, including:
 - Talks, workshops, parties, and any associated social events.
 - Online interactions related to the conference, including posts related to the conference on social media.
 
-The Code of Conduct applies both within conference spaces and in public spaces when an individual is representing PyConZA or its community. Instances of abusive, harassing, or otherwise unacceptable behaviour may be reported by contacting the event organising team at conduct@za.pycon.org.
+The Code of Conduct applies both within conference spaces and in public spaces when an individual is representing PyConZA or its community. Instances of abusive, harassing, or otherwise unacceptable behaviour may be reported by contacting the event organising team at <a href="mailto:conduct@za.pycon.org">conduct@za.pycon.org</a>.
 
 **NB:** This code of conduct has been adapted from the [Python Software Foundation](https://www.python.org/psf/), under whose guidance local Python communities operate. The full original code of conduct can be found on their website.
+
+## Contact Information
+Contact details for the code of conduct team:  
+**E-mail**: [conduct@za.pycon.org](mailto:conduct@za.pycon.org)  
+Discord: Direct message anyone with the **@Organizer** role.
