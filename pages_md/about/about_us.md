@@ -33,3 +33,13 @@ PyConZA aims to be welcoming to everyone. Read the code of conduct before attend
 The organising team of PyConZA 2026 includes experienced Python community conference organisers from South Africa and beyond.
 
 See the team page for more details.
+
+## PyConZA on the Web
+
+- [Mastodon](https://fosstodon.org/@pyconza)
+- [Twitter](https://twitter.com/pyconza/)
+- [YouTube](https://www.youtube.com/channel/UCu-El65PtQm46aSbXkzykYQ/)
+- [Internet Archive](https://archive.org/search.php?query=pyconza)
+- [Twitter (Videos)](https://twitter.com/pyconzavideo/)
+- [Speakerdeck](https://speakerdeck.com/pyconza/)
+- [Flickr](https://www.flickr.com/photos/pyconza/)
