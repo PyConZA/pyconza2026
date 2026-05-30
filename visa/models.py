@@ -93,6 +93,7 @@ class VisaInvitationLetter(models.Model):
         """Send email based on current status of the visa letter."""
 
         context = {
+            "user": self.full_name,
             "full_name": self.full_name,
             "conference_name": settings.CONFERENCE_NAME,
             "conference_dates": settings.CONFERENCE_DATES,

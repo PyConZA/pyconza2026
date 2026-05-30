@@ -1,108 +1,197 @@
 {% load i18n %}
 <!doctype html>
-<html lang="en">
+<html
+  lang="und"
+  dir="auto"
+>
+  <head>
+    <title>{{ site.name }} {{ site.domain }} {% block title %}{% endblock %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-<head>
-    <title>{{ site.name }}
-        {% block title %}
-        {% endblock title %}
-    </title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .email-container {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .header {
-            background-color: #ffd343;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .logo {
-            max-width: 200px;
-            height: auto;
-        }
-
-        .content {
-            padding: 25px;
-            background-color: #ffffff;
-        }
-
-        .button-container {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .verification-button {
-            background-color: #3776ab;
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            display: inline-block;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .verification-button:hover {
-            background-color: #2d5f8b;
-        }
-
-        .verification-link {
-            margin-top: 15px;
-            word-break: break-all;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .footer {
-            background-color: #f7f7f7;
-            padding: 15px;
-            text-align: center;
-            font-size: 14px;
-            color: #777;
-        }
-
-        .divider {
-            border-top: 1px solid #eeeeee;
-            margin: 20px 0;
-        }
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);
+      @import url(https://fonts.googleapis.com/css?family=Oswald);
     </style>
-</head>
+    
+    <style type="text/css">      
+      #outlook a {
+        padding: 0;
+      }
 
-<body>
-    <div class="email-container">
-        <div class="header">
-            <img src="https://za.pycon.org/static/img/pyconza-logo.png" alt="PyConZA Logo" class="logo">
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+
+      .button-container {
+        text-align: center;
+        margin: 30px 0;
+      }
+
+      .email-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Header */
+      .email-header {
+        background: #edddc4;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .email-header .conf-title {
+        font-family: Oswald, "Trebuchet MS", Arial;
+        font-size: 40px;
+        color: #1b2e4e;
+        line-height: 1;
+        margin-bottom: 10px;
+      }
+
+      .email-header .conf-subtitle {
+        font-family: Oswald, "Trebuchet MS", Arial;
+        font-size: 30px;
+        color: #1b2e4e;
+        line-height: 1;
+        margin-bottom: 15px;
+      }
+
+      .email-header img {
+        width: 100%;
+        max-width: 550px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .email-body {
+        font-family: Verdana, Aerial;
+        font-size: 13px;
+        line-height: 1.2;
+        text-align: left;
+        color:#000000;
+        background: #edddc4;
+        padding: 20px 25px;
+      }
+
+      .email-body h2 {
+        margin-bottom: 15px;
+        font-family: Oswald, "Trebuchet MS", Arial;
+        font-size: 30px;
+        line-height: 1;
+        font-weight: normal;
+        text-align: left;
+        color:#1b2e4e
+      }
+
+      .email-body p, ul {
+        margin-bottom: 13px;
+        color: #000;
+      }
+
+      .email-footer {
+        background: #1b2e4e;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .email-footer .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+
+      .email-footer .social-links a img {
+        width: 20px;
+        height: 20px;
+        border-radius: 3px;
+        display: block;
+      }
+
+      .email-footer p {
+        font-size: 14px;
+        color: #edddc4;
+      }
+
+      a { color: #c32e66; }
+      a:hover { color: #ff8c42; }
+      ul {
+        padding-left: 14px;
+      }
+
+      @media (max-width: 479px) {
+        .email-header .conf-title { font-size: 28px; }
+        .email-header .conf-subtitle { font-size: 20px; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="email-wrapper" role="article" aria-label="PyConZA" aria-roledescription="email">
+
+      <div class="email-header">
+        <div class="conf-title">PYCONZA 2026</div>
+        <div class="conf-subtitle">Rondebosch, Cape Town, 14-16 October 2026</div>
+        <a href="https://za.pycon.org/" target="_blank">
+          <img src="https://d33xevxtx8rl5e.cloudfront.net/email-header.png" alt="PyConZA logo" />
+        </a>
+      </div>
+
+      <div class="email-body">
+        <h2>{% block heading %}{% endblock %}</h2>
+        {% block greeting %}
+        <p>
+          {% trans "Hello," %}
+          {% if user.get_full_name %}
+            {{ user.get_full_name }}!
+          {% else %}
+            {{ user }}!
+          {% endif %}</p>
+        {% endblock %}
+
+        {% block content %}{% endblock %}
+
+        {% block signature %}
+          <p>
+            {% blocktrans with site_domain=site.domain %}
+              Sincerely,<br>
+              {{ site_domain }} Management
+            {% endblocktrans %}
+          </p>
+        {% endblock %}
+        
+      </div>
+
+      <div class="email-footer">
+        <div class="social-links">
+          <a href="https://twitter.com/pyconza" target="_blank">
+            <img src="https://d3q92ym5gvt1q6.cloudfront.net/twitter.png" alt="Twitter" />
+          </a>
+          <a href="https://fosstodon.org/@pyconza" target="_blank">
+            <img src="https://d3q92ym5gvt1q6.cloudfront.net/mastodon.png" alt="Mastodon" />
+          </a>
         </div>
-        <div class="content">
-            <h2>{% block heading %}{% endblock heading %}</h2>
+        <p>&copy; {% now "Y" %} PyConZA. {% trans "All rights reserved." %}</p>
+      </div>
 
-            <p>{% trans "Hello," %}</p>
-
-            {% block content %}
-            {% endblock content %}
-
-        </div>
-        <div class="footer">
-            <p>© {% now "Y" %} PyConZA. {% trans "All rights reserved." %}</p>
-        </div>
     </div>
-</body>
-
+  </body>
 </html>
