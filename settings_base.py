@@ -13,6 +13,29 @@ BASE_DIR = Path(__file__).resolve().parent
 ROOT_URLCONF = "urls"
 
 
+MARKITUP_FILTER = (
+    "markdown.markdown",
+    {
+        "safe_mode": False,
+        "extensions": [
+            "mdx_outline",
+            "attr_list",
+            "mdx_attr_cols",
+            "markdown.extensions.tables",
+            "markdown.extensions.codehilite",
+            "mdx_variables",
+            "mdx_staticfiles",
+        ],
+        "extension_configs": {
+            "mdx_variables": {
+                "vars": {
+                }
+            }
+        },
+    },
+)
+WAFER_PAGE_MARKITUP_FILTER = MARKITUP_FILTER
+
 INSTALLED_APPS = (
     "template_partials",
     "django_cotton",
