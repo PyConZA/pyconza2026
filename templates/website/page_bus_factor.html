@@ -1,58 +1,236 @@
 {% extends 'wafer/base.html' %}
 {% load static %}
 
-{% block page_title %}Opportunity Grants - The Bus Factor Project{% endblock %}
+{% block page_title %}The Bus Factor Project — Opportunity Grants{% endblock %}
 
 
+{% block main %}
 
-{% block content %}
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<section class="relative overflow-hidden bg-indigo text-cream">
+    <div class="pointer-events-none absolute inset-0"
+         style="background-image: radial-gradient(circle at 1px 1px, rgba(232, 221, 200, 0.07) 1px, transparent 0); background-size: 32px 32px;"
+         aria-hidden="true"></div>
 
-# The Bus Factor Project
+    <div class="relative max-w-6xl mx-auto px-5 sm:px-8 lg:px-12 py-12 md:py-16">
+        <p class="inline-flex items-center gap-2.5 font-mono text-sm font-medium text-cream/85 px-3 py-1.5 border border-cream/25 rounded-full mb-6">
+            <span class="w-2 h-2 rounded-full bg-pink" aria-hidden="true"></span>
+            PyConZA Opportunity Grants · 2026
+        </p>
 
-In software, a project's "bus factor" is the number of people it could lose - to a bus, or to anything else - before it grinds to a halt. The more people who carry the knowledge, the stronger the project. This year we're working on the bus factor of the Southern African Python community. And yes, we're doing it with actual buses.
+        <h1 class="font-headline font-bold text-cream text-3xl md:text-5xl leading-[1.05] tracking-tight mb-5">
+            The Bus Factor <span class="text-pink">Project</span>
+        </h1>
 
-The Bus Factor Project is PyConZA's opportunity grants program. For 2026, it's focused entirely on supporting Python communities across Southern Africa.
-
-Here's how it works: you can apply for a bus ticket, a free conference ticket, and accommodation. We'll book the bus and pay for a hostel. It won't be glamorous, but it'll get you to Cape Town and back.
-
-## Why Southern Africa?
-
-PyConZA was the first PyCon in Africa. We've been running for about 15 years, and we've figured a few things out. We know we're in a privileged position, and we'd rather use that position to support the people around us. By focusing our grants on Southern Africa, we can:
-
-- support more people — a bus ticket costs far less than a flight, so the same money reaches more of you
-- give regional communities a boost, sending people home with new knowledge, connections, and ideas
-- put more African role models on our stage, to inspire the next generation of Pythonistas and community leaders
-
-## How to apply
-
-1. Make an account on this website.
-2. Go to your profile. You'll see a button on the right to start an application.
-3. Fill in the form.
-
-Tell us what you need — accommodation, transport, a conference ticket, or some combination. Please ask for only what you need, and chip in where you can. Our grants team works with limited resources and has some hard choices to make: if you ask us to fund a whole trip while someone else asks only for accommodation, we may need to support the person who asked for less. We say this not to discourage you — ask for what you need, and we'll genuinely try to help — but so you understand how the decisions get made.
-
-We'll let you know whether your application was successful as soon as we can. Sometimes this takes a while: we're still raising funds, and we open doors as the funding comes in.
-
-## You can help
-
-We're accepting donations and looking for sponsors. You can also help by telling people about the project.
-
-Donations go through our [ticketing page](https://za.pycon.org/pages/tickets/buy-tickets/).
-
-## FAQ
-
-**Can I buy the bus ticket or pay for accommodation myself and get paid back?**
-
-No. We book and pay for these ourselves rather than reimbursing you. Moving money across African borders isn't always easy, and currency conversion and bank charges can eat into a grant.
-
-**Do you cover food or a daily allowance?**
-
-No. The grant covers three things: your bus ticket, your accommodation, and your conference ticket. Meals, a daily allowance, and other costs are up to you. We'll get you here and give you a place to stay — please budget for the rest.
-
-**Can I apply if I'm not in Southern Africa?**
-
-Regretfully, no. We'd love to open the doors wider, but we believe that concentrating our efforts on Southern Africa lets us build something that lasts.
+        <p class="text-cream/90 text-lg leading-relaxed max-w-[60ch]">
+            In software, a project's "bus factor" is the number of people it could lose — to a bus, or to anything else — before it grinds to a halt. The more people who carry the knowledge, the stronger the project. This year we're working on the bus factor of the Southern African Python community. And yes, we're doing it with actual buses.
+        </p>
+    </div>
+</section>
 
 
+<!-- ============================================================
+     WHAT THE GRANT COVERS
+============================================================ -->
+<section class="py-14 md:py-20">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
+        <p class="eyebrow">Opportunity grants</p>
+        <h2 class="font-headline font-semibold text-2xl md:text-3xl tracking-tight text-indigo mt-2 mb-4">
+            What the grant covers
+        </h2>
+        <p class="text-lg leading-relaxed text-grey-700 max-w-[65ch] mb-10">
+            The Bus Factor Project is PyConZA's opportunity grants program. For 2026, it's focused entirely on supporting Python communities across Southern Africa. Apply and we'll get you to Cape Town and back.
+        </p>
+
+        <div class="grid sm:grid-cols-3 gap-4">
+            <article class="card flex flex-col">
+                <span class="font-mono text-[13px] font-medium text-pink mb-3">01</span>
+                <p class="font-headline font-semibold text-[19px] leading-tight text-indigo mb-2">Bus ticket</p>
+                <p class="text-sm leading-[1.55] text-grey-700">A return bus ticket to Cape Town — we book it for you.</p>
+            </article>
+            <article class="card flex flex-col">
+                <span class="font-mono text-[13px] font-medium text-pink mb-3">02</span>
+                <p class="font-headline font-semibold text-[19px] leading-tight text-indigo mb-2">Conference ticket</p>
+                <p class="text-sm leading-[1.55] text-grey-700">A free ticket to the main conference, on us.</p>
+            </article>
+            <article class="card flex flex-col">
+                <span class="font-mono text-[13px] font-medium text-pink mb-3">03</span>
+                <p class="font-headline font-semibold text-[19px] leading-tight text-indigo mb-2">Accommodation</p>
+                <p class="text-sm leading-[1.55] text-grey-700">A hostel bed, booked and paid for you.</p>
+            </article>
+        </div>
+
+        <p class="text-grey-700 leading-relaxed max-w-[65ch] mt-6">
+            It won't be glamorous, but it'll get you to PyConZA and back.
+        </p>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     WHY SOUTHERN AFRICA
+============================================================ -->
+<section class="bg-off-white border-y border-grey-300 py-14 md:py-20">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
+        <p class="eyebrow">Why Southern Africa?</p>
+        <h2 class="font-headline font-semibold text-2xl md:text-3xl tracking-tight text-indigo mt-2 mb-4">
+            Using our position to lift the region.
+        </h2>
+        <p class="text-lg leading-relaxed text-grey-700 max-w-[65ch] mb-10">
+            PyConZA was the first PyCon in Africa. We've been running for about 15 years, and we've figured a few things out. We know we're in a privileged position, and we'd rather use it to support the people around us. By focusing our grants on Southern Africa, we can:
+        </p>
+
+        <div class="grid sm:grid-cols-3 gap-4">
+            <article class="card relative flex flex-col min-h-[180px]">
+                <span class="absolute top-6 right-6 w-2 h-2 rounded-full bg-pink" aria-hidden="true"></span>
+                <p class="font-headline font-semibold text-[19px] leading-tight text-indigo mb-3">Support more people</p>
+                <p class="text-sm leading-[1.55] text-grey-700">A bus ticket costs far less than a flight, so the same money reaches more of you.</p>
+            </article>
+            <article class="card relative flex flex-col min-h-[180px]">
+                <span class="absolute top-6 right-6 w-2 h-2 rounded-full bg-olive" aria-hidden="true"></span>
+                <p class="font-headline font-semibold text-[19px] leading-tight text-indigo mb-3">Boost regional communities</p>
+                <p class="text-sm leading-[1.55] text-grey-700">Send people home with new knowledge, connections, and ideas.</p>
+            </article>
+            <article class="card relative flex flex-col min-h-[180px]">
+                <span class="absolute top-6 right-6 w-2 h-2 rounded-full bg-indigo" aria-hidden="true"></span>
+                <p class="font-headline font-semibold text-[19px] leading-tight text-indigo mb-3">Grow African role models</p>
+                <p class="text-sm leading-[1.55] text-grey-700">Put more African role models on our stage, to inspire the next generation of Pythonistas and community leaders.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     HOW TO APPLY
+============================================================ -->
+<section class="py-14 md:py-20">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
+        <p class="eyebrow">How to apply</p>
+        <h2 class="font-headline font-semibold text-2xl md:text-3xl tracking-tight text-indigo mt-2 mb-8">
+            Three steps to get started.
+        </h2>
+
+        <ol class="list-custom space-y-6 m-0 max-w-[65ch]">
+            <li class="grid grid-cols-[2.5rem_1fr] gap-4 items-baseline">
+                <span class="font-headline font-bold text-3xl leading-none text-pink">1</span>
+                <span class="text-[17px] leading-relaxed text-grey-700">Make an account on this website.</span>
+            </li>
+            <li class="grid grid-cols-[2.5rem_1fr] gap-4 items-baseline">
+                <span class="font-headline font-bold text-3xl leading-none text-pink">2</span>
+                <span class="text-[17px] leading-relaxed text-grey-700">Go to your profile page and choose to apply.</span>
+            </li>
+            <li class="grid grid-cols-[2.5rem_1fr] gap-4 items-baseline">
+                <span class="font-headline font-bold text-3xl leading-none text-pink">3</span>
+                <span class="text-[17px] leading-relaxed text-grey-700">Fill in the form.</span>
+            </li>
+        </ol>
+
+        <div class="mt-10">
+            <div class="bg-off-white border-l-4 border-olive rounded-r-lg p-6">
+                <p class="font-headline font-semibold text-indigo mb-2">Ask for only what you need, and chip in where you can.</p>
+                <p class="text-grey-700 leading-relaxed">
+                    Tell us what you need — accommodation, transport, a conference ticket, or some combination. Our grants team works with limited resources and has some hard choices to make: if you ask us to fund a whole trip while someone else asks only for accommodation, we may need to support the person who asked for less. We say this not to discourage you — ask for what you need, and we'll genuinely try to help — but so you understand how the decisions get made.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     HEARING BACK
+============================================================ -->
+<section class="bg-off-white border-y border-grey-300 py-14 md:py-20">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
+        <p class="eyebrow">After you apply</p>
+        <h2 class="font-headline font-semibold text-2xl md:text-3xl tracking-tight text-indigo mt-2 mb-4">
+            How you'll hear back.
+        </h2>
+        <p class="text-lg leading-relaxed text-grey-700 max-w-[65ch]">
+            Once you've applied, we'll let you know whether your application was successful as soon as we can. Sometimes this takes a while: we're still raising funds, and we open doors as the funding comes in. So if you don't hear from us right away, don't worry — we haven't forgotten about you.
+        </p>
+    </div>
+</section>
+
+
+<div class="shweshwe-strip" aria-hidden="true"></div>
+
+
+<!-- ============================================================
+     YOU CAN HELP
+============================================================ -->
+<section class="relative overflow-hidden bg-indigo text-cream py-14 md:py-20">
+    <div class="pointer-events-none absolute inset-0"
+         style="background-image: radial-gradient(circle at 1px 1px, rgba(232, 221, 200, 0.07) 1px, transparent 0); background-size: 32px 32px;"
+         aria-hidden="true"></div>
+
+    <div class="relative max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="grid lg:grid-cols-[1.4fr_1fr] gap-8 lg:gap-16 items-center">
+            <div>
+                <p class="eyebrow">You can help</p>
+                <h2 class="font-headline font-semibold text-2xl md:text-3xl tracking-tight text-cream mt-2 mb-4">
+                    Put someone on a bus.
+                </h2>
+                <p class="text-cream/90 text-lg leading-relaxed max-w-[50ch]">
+                    We're accepting donations and looking for sponsors. You can also help by simply telling people about the project.
+                </p>
+            </div>
+
+            <aside class="bg-cream/[0.06] border border-cream/20 rounded-xl p-7" aria-label="Donate">
+                <p class="font-headline font-medium text-xs uppercase tracking-[0.08em] text-cream/70 mb-2.5">Donations</p>
+                <p class="text-cream/85 leading-relaxed mb-5">Donations go through our ticketing page.</p>
+                <a class="btn btn-primary w-full" href="https://za.pycon.org/pages/tickets/buy-tickets/">Donate via the ticketing page</a>
+            </aside>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     FAQ
+============================================================ -->
+<section class="py-14 md:py-20">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="font-headline font-semibold text-2xl md:text-3xl tracking-tight text-indigo mt-2 mb-8">
+            Questions, answered.
+        </h2>
+
+        <div class="max-w-[65ch] divide-y divide-grey-300 border-t border-grey-300">
+            <details class="group py-5">
+                <summary class="flex items-center justify-between gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden marker:content-none">
+                    <span class="font-headline font-semibold text-lg text-indigo">Can I buy the bus ticket or pay for accommodation myself and get paid back?</span>
+                    <span class="shrink-0 text-pink text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p class="text-grey-700 leading-relaxed mt-4">
+                    No. We book and pay for these ourselves rather than reimbursing you. Moving money across African borders isn't always easy, and currency conversion and bank charges can eat into a grant.
+                </p>
+            </details>
+
+            <details class="group py-5">
+                <summary class="flex items-center justify-between gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden marker:content-none">
+                    <span class="font-headline font-semibold text-lg text-indigo">Do you cover food or a daily allowance?</span>
+                    <span class="shrink-0 text-pink text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p class="text-grey-700 leading-relaxed mt-4">
+                    No. The grant covers three things: your bus ticket, your accommodation, and your conference ticket. Meals, a daily allowance, and other costs are up to you. We'll get you here and give you a place to stay — please budget for the rest.
+                </p>
+            </details>
+
+            <details class="group py-5">
+                <summary class="flex items-center justify-between gap-4 cursor-pointer list-none [&::-webkit-details-marker]:hidden marker:content-none">
+                    <span class="font-headline font-semibold text-lg text-indigo">Can I apply if I'm not in Southern Africa?</span>
+                    <span class="shrink-0 text-pink text-2xl leading-none transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <p class="text-grey-700 leading-relaxed mt-4">
+                    Regretfully, no. We'd love to open the doors wider, but we believe that concentrating our efforts on Southern Africa lets us build something that lasts.
+                </p>
+            </details>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
