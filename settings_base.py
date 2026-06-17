@@ -254,7 +254,19 @@ SOCIAL_LINKS = [
 #     },
 # )
 
-WAFER_MENUS = ()
+WAFER_MENUS = (
+    {
+        "menu": "about",
+        "label": _("About"),
+        "items": [
+            {
+                "menu": "bus_factor",
+                "label": _("Opportunity Grants"),
+                "url": reverse_lazy("page_bus_factor"),
+            },
+        ],
+    },
+)
 
 
 # Curated link columns for the site footer. Distinct from WAFER_MENUS, which

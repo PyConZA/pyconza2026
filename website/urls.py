@@ -13,5 +13,6 @@ urlpatterns = [
     path("in-person-event", views.PageInPersonEvent.as_view(), name="page_in_person_event"),
     path("volunteering", views.PageVolunteering.as_view(), name="page_volunteering"),
     path("dinner", views.PageDinner.as_view(), name="page_dinner"),
+    path("bus-factor", views.PageBusFactor.as_view(), name="page_bus_factor"),
     path("accommodations", include('accommodations.urls'))
 ]
