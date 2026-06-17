@@ -17,9 +17,7 @@ class GrantApplicationForm(forms.ModelForm):
             "gender_details",
             "current_role",
             "current_role_details",
-            "transportation_type",
             "request_travel",
-            "travel_amount",
             "travel_from_city",
             "travel_from_country",
             "request_accommodation",
@@ -75,19 +73,10 @@ class GrantApplicationForm(forms.ModelForm):
                     "placeholder": "Please specify...",
                 }
             ),
-            "transportation_type": forms.Select(attrs={"class": "form-select"}),
             "request_travel": forms.CheckboxInput(
                 attrs={
                     "class": "form-check-input",
                     "x-on:change": "request_travel=$event.target.checked",
-                }
-            ),
-            "travel_amount": forms.NumberInput(
-                attrs={
-                    "class": "form-control",
-                    "step": "0.01",
-                    "min": "0",
-                    "placeholder": "0.00",
                 }
             ),
             "travel_from_city": forms.TextInput(
@@ -149,16 +138,14 @@ class GrantApplicationForm(forms.ModelForm):
             ),
             Fieldset(
                 "",
-                HTML('<h3 class="text-lg font-semibold pb-3">Travel Information</h3>'),
+                HTML('<h3 class="text-lg font-semibold pb-3">Bus Ticket</h3>'),
                 "request_travel",
                 Div(
                     HTML(
-                        '<p class="text-grey-700 text-sm mb-3">All travel fields below are required when requesting travel assistance.</p>'
+                        '<p class="text-grey-700 text-sm mb-3">Tell us where you\'ll be travelling from so we can book your return bus ticket to Cape Town.</p>'
                     ),
                     "travel_from_city",
                     "travel_from_country",
-                    "travel_amount",
-                    "transportation_type",
                     x_show="request_travel",
                     css_class="",
                 ),
@@ -191,36 +178,22 @@ class GrantApplicationForm(forms.ModelForm):
         cleaned_data = super().clean()
 
         request_travel = cleaned_data.get("request_travel")
-        travel_amount = cleaned_data.get("travel_amount")
         travel_from_city = cleaned_data.get("travel_from_city")
         travel_from_country = cleaned_data.get("travel_from_country")
-        transportation_type = cleaned_data.get("transportation_type")
 
         if request_travel:
-            if not travel_amount:
-                self.add_error(
-                    "travel_amount",
-                    _("Travel amount is required when requesting travel assistance."),
-                )
             if not travel_from_city:
                 self.add_error(
                     "travel_from_city",
                     _(
-                        "Travel from city is required when requesting travel assistance."
+                        "Travel from city is required when requesting a bus ticket."
                     ),
                 )
             if not travel_from_country:
                 self.add_error(
                     "travel_from_country",
                     _(
-                        "Travel from country is required when requesting travel assistance."
-                    ),
-                )
-            if not transportation_type:
-                self.add_error(
-                    "transportation_type",
-                    _(
-                        "Transportation type is required when requesting travel assistance."
+                        "Travel from country is required when requesting a bus ticket."
                     ),
                 )
 

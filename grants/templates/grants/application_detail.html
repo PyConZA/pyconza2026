@@ -51,16 +51,6 @@
             </div>
         </div>
 
-        <!-- Transportation Section -->
-        {% if application.request_travel and application.transportation_type %}
-        <div class="py-3">
-            <h3 class="text-xl font-semibold">Transportation</h3>
-            <div class="pt-2">
-                <strong>Preferred transportation:</strong> {{ application.get_transportation_type_display }}
-            </div>
-        </div>
-        {% endif %}
-
         <!-- Additional Information Section -->
         {% if application.additional_info %}
         <div class="py-3">
@@ -74,7 +64,7 @@
             <ul class="list-none pt-2">
                 {% if application.request_travel %}
                 <li class="pb-2">
-                    <strong>Travel:</strong> ${{ application.travel_amount }}
+                    <strong>Bus ticket:</strong> Yes
                     {% if application.travel_from %}
                         <span class="text-grey-700">(from {{ application.travel_from_city }}, {{ application.travel_from_country.name }})</span>
                     {% endif %}
