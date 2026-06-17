@@ -138,7 +138,9 @@ class GrantApplicationForm(forms.ModelForm):
             ),
             Fieldset(
                 "",
-                HTML('<h3 class="text-lg font-semibold pb-3">Bus Ticket</h3>'),
+                 HTML(
+                    '<h3 class="text-lg font-semibold pb-3">What do you need?</h3>'
+                ),
                 "request_travel",
                 Div(
                     HTML(
@@ -152,20 +154,16 @@ class GrantApplicationForm(forms.ModelForm):
             ),
             Fieldset(
                 "",
-                HTML('<h3 class="text-lg font-semibold pb-3">Accommodation</h3>'),
                 "request_accommodation",
                 Div("accommodation_nights", x_show="request_accommodation"),
             ),
             Fieldset(
                 "",
-                HTML('<h3 class="text-lg font-semibold pb-3">Conference Ticket</h3>'),
                 "request_ticket",
             ),
             Fieldset(
                 "",
-                HTML(
-                    '<h3 class="text-lg font-semibold pb-3">Additional Information</h3>'
-                ),
+               
                 "additional_info",
             ),
             Submit("submit", "Submit Application", css_class="btn"),
