@@ -1,0 +1,26 @@
+{% load crispy_forms_filters %}
+{% load tailwind_filters %}
+{% load l10n %}
+
+{# Overrides crispy_tailwind's select template. The upstream copy lives in the
+   virtualenv, which Tailwind's content scan skips, so its chevron-positioning
+   utilities (inset-y-0/right-0/fill-current) were never generated and the
+   dropdown arrow dropped below the field. Keeping the template here means those
+   classes are scanned and built. Colours/padding/radius come from the global
+   `select` rule in main.css, so we only add what that rule can't supply. #}
+<div class="relative">
+    <select class="appearance-none block w-full border {% if field.errors %}border-red-500 {% endif %}leading-normal" name="{{ field.html_name }}" {{ field|build_attrs }}>
+        {% for group, options, index in field|optgroups %}
+            {% if group %}<optgroup label="{{ group }}">{% endif %}
+            {% for option in options %}
+                {% include "tailwind/layout/select_option.html" %}
+            {% endfor %}
+            {% if group %}</optgroup>{% endif %}
+        {% endfor %}
+    </select>
+    {% if not field.field.widget.allow_multiple_selected %}
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-indigo">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+        </div>
+    {% endif %}
+</div>
