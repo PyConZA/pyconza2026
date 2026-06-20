@@ -8,7 +8,7 @@ menu_order: 6
 
 PyConZA is a well established Python programming conference based in South Africa. You can see previous editions here:
 
-- [2025 (PyCon Africa)](https://africa.pycon.org)
+- [2025 (PyCon Africa)](https://2025.za.pycon.org/)
 - [2024](https://2024.za.pycon.org/)
 - [2023](https://2023.za.pycon.org/)
 - [2022](https://2022.za.pycon.org/)
@@ -27,7 +27,7 @@ PyConZA is a well established Python programming conference based in South Afric
 
 PyCon Africa is a roaming Python programming conference, for the continent of Africa.
 
-- [2025](https://africa.pycon.org)
+- [2025](https://2025.za.pycon.org/)
 - [2024](https://africa.pycon.org/2024/)
 - [2020](https://africa.pycon.org/2020/)
 - [2019](https://africa.pycon.org/2019/report/)
