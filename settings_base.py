@@ -254,7 +254,19 @@ SOCIAL_LINKS = [
 #     },
 # )
 
-WAFER_MENUS = ()
+WAFER_MENUS = (
+    {
+        "menu": "about",
+        "label": _("About"),
+        "items": [
+            {
+                "menu": "bus_factor",
+                "label": _("Opportunity Grants"),
+                "url": reverse_lazy("page_bus_factor"),
+            },
+        ],
+    },
+)
 
 
 # Curated link columns for the site footer. Distinct from WAFER_MENUS, which
@@ -329,8 +341,8 @@ BUILD_DIR = str(BASE_DIR / "mirror")
 # Hide non-speaker profiles
 WAFER_PUBLIC_ATTENDEE_LIST = False
 
-GRANT_APPLICATIONS_OPEN = False
-VISA_LETTER_REQUESTS_OPEN = False
+GRANT_APPLICATIONS_OPEN = True
+VISA_LETTER_REQUESTS_OPEN = True
 
 
 VISA_ORGANISER_NAME = "Adam Piskorski"

@@ -10,11 +10,11 @@ from import_export.admin import ImportExportModelAdmin
 @admin.register(GrantApplication)
 class GrantApplicationAdmin(ImportExportModelAdmin):
     list_display = [
-        'user', 'full_name', 'travel_from_display', 'travel_amount', 
+        'user', 'full_name', 'travel_from_display',
         'request_travel', 'request_accommodation', 'request_ticket', 'created_at'
     ]
     list_filter = [
-        'gender', 'transportation_type', 
+        'gender',
         'request_travel', 'request_accommodation', 'request_ticket',
         'created_at'
     ]
@@ -37,8 +37,8 @@ class GrantApplicationAdmin(ImportExportModelAdmin):
         ('Application Details', {
             'fields': ('motivation', 'contribution', 'financial_need')
         }),
-        ('Travel Information', {
-            'fields': ('request_travel', 'travel_from_city', 'travel_from_country', 'travel_amount', 'transportation_type')
+        ('Bus Ticket', {
+            'fields': ('request_travel', 'travel_from_city', 'travel_from_country')
         }),
         ('Accommodation & Ticket', {
             'fields': ('request_accommodation', 'accommodation_nights', 'request_ticket')
@@ -56,10 +56,10 @@ class GrantApplicationAdmin(ImportExportModelAdmin):
         
         headers = [
             'Username', 'First Name', 'Last Name', 'Email', 'Gender', 'Gender Details',
-            'Current Role', 'Current Role Details', 'Motivation', 'Contribution', 
+            'Current Role', 'Current Role Details', 'Motivation', 'Contribution',
             'Financial Need', 'Request Travel', 'Travel From City', 'Travel From Country',
-            'Travel Amount', 'Transportation Type', 'Request Accommodation', 
-            'Accommodation Nights', 'Request Ticket', 'Additional Info', 'Created At'
+            'Request Accommodation', 'Accommodation Nights', 'Request Ticket',
+            'Additional Info', 'Created At'
         ]
         
         for col, header in enumerate(headers, 1):
@@ -80,13 +80,11 @@ class GrantApplicationAdmin(ImportExportModelAdmin):
             ws.cell(row=row, column=12, value=application.request_travel)
             ws.cell(row=row, column=13, value=application.travel_from_city)
             ws.cell(row=row, column=14, value=application.travel_from_country.name)
-            ws.cell(row=row, column=15, value=application.travel_amount)
-            ws.cell(row=row, column=16, value=application.transportation_type)
-            ws.cell(row=row, column=17, value=application.request_accommodation)
-            ws.cell(row=row, column=18, value=application.accommodation_nights)
-            ws.cell(row=row, column=19, value=application.request_ticket)
-            ws.cell(row=row, column=20, value=application.additional_info)
-            ws.cell(row=row, column=21, value=application.created_at.strftime('%Y-%m-%d %H:%M:%S') if application.created_at else '')
+            ws.cell(row=row, column=15, value=application.request_accommodation)
+            ws.cell(row=row, column=16, value=application.accommodation_nights)
+            ws.cell(row=row, column=17, value=application.request_ticket)
+            ws.cell(row=row, column=18, value=application.additional_info)
+            ws.cell(row=row, column=19, value=application.created_at.strftime('%Y-%m-%d %H:%M:%S') if application.created_at else '')
         
         for col in range(1, len(headers) + 1):
             column_letter = get_column_letter(col)

@@ -55,3 +55,8 @@ class PageVolunteering(BuildableTemplateView):
 class PageDinner(BuildableTemplateView):
     template_name = "website/page_dinner.html"
     build_path = "dinner/index.html"
+
+
+class PageBusFactor(BuildableTemplateView):
+    template_name = "website/page_bus_factor.html"
+    build_path = "bus-factor/index.html"
