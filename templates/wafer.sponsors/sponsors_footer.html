@@ -1,13 +1,13 @@
 {% load sponsors %}
 {% if sponsors %}
-<div class="max-w-7xl mx-auto pb-6 mb-6 border-b border-grey-700">
+<div class="max-w-7xl mx-auto pb-6 my-12 mb-6 border-b border-grey-700">
   <div class="bg-off-white rounded-xl p-6">
     <div id="wafer-sponsors" class="container text-center mx-auto space-y-3">
       <h2 class="text-grey-700 pb-2">Our sponsors</h2>
       {% for package in packages %}
       {% if package.sponsors.exists %}
 
-      <div class="flex flex-col lg:flex-row gap-3 justify-center">
+      <div class="flex flex-col lg:flex-row gap-3 justify-center items-center">
         {% for sponsor in package.sponsors.all %}
         {% sponsor_tagged_image sponsor "footer_logo" as logo_url %}
         {% spaceless %}
