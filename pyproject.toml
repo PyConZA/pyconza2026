@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "PyCon South Africa 2026 website"
 requires-python = ">=3.12"
 dependencies = [
-    "wafer==0.16.1",
+    "wafer==0.17.0",
     "Django==5.0.12",
     "psycopg2-binary==2.9.10",
     "mdx_variables",

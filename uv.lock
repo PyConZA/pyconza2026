@@ -841,7 +841,7 @@ requires-dist = [
     { name = "psycopg2-binary", specifier = "==2.9.10" },
     { name = "python-frontmatter", specifier = "==1.1.0" },
     { name = "setuptools", specifier = "<78" },
-    { name = "wafer", specifier = "==0.16.1" },
+    { name = "wafer", specifier = "==0.17.0" },
     { name = "weasyprint", specifier = "==65.1" },
 ]
 
@@ -1079,7 +1079,7 @@ wheels = [
 
 [[package]]
 name = "wafer"
-version = "0.16.1"
+version = "0.17.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "bleach" },
@@ -1103,10 +1103,11 @@ dependencies = [
     { name = "pylibravatar" },
     { name = "pytz" },
     { name = "requests" },
+    { name = "setuptools" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/33/9d/118d326ec4a3f6d6f2436bf1ef17a81bd8823602a63cc201d85507bbb08d/wafer-0.16.1.tar.gz", hash = "sha256:6ea8ae7bed9617e259f4747a76661fd4b11fc1aac655d6a407e2654f3549a4b7", size = 352230, upload-time = "2024-03-11T08:53:57.623Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/42/ec/f018fab60c8ef2ca1384a04232a66266a95902eba29730f01f405a0d654f/wafer-0.17.0.tar.gz", hash = "sha256:7e373a271a24c7ae83a41e12b2afb259e480358272e39020bf15986ba1309a6e", size = 342102, upload-time = "2026-08-10T14:26:50.146Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/7e/ae/596429274d8cd3e4c87069440e35157ce9783a206f5a094e806eb1e15f20/wafer-0.16.1-py3-none-any.whl", hash = "sha256:957335d31f3f288081748cb3d8477fa8564f09a4172259b4d35faa8a5bdc5916", size = 440632, upload-time = "2024-03-11T08:53:53.867Z" },
+    { url = "https://files.pythonhosted.org/packages/39/f4/59c6fbe1b95fd2b36ca8e748e9ffbb4b4ebdaad7a0ccf9759a9c754b95d3/wafer-0.17.0-py3-none-any.whl", hash = "sha256:895406d4c17d6f2b6da8a0124446ba8027bd10aaa34a13b464a51ee0fa2d2495", size = 422423, upload-time = "2026-08-10T14:26:47.965Z" },
 ]
 
 [[package]]
