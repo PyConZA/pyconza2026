@@ -6,8 +6,7 @@
 {{ media }}
 {% endblock %}
 
-{% block bodyclass %}{{ block.super }} app-{{ opts.app_label }} model-{{ opts.model_name }} delete-confirmation{%
-endblock %}
+{% block bodyclass %}{{ block.super }} app-{{ opts.app_label }} model-{{ opts.model_name }} delete-confirmation{% endblock %}
 
 {% block breadcrumbs %}
 <div class="breadcrumbs">
@@ -34,8 +33,8 @@ endblock %}
 <h3>The following visa letter requests will be rejected:</h3>
 <ul>
     {% for letter in queryset %}
-    <li>{{ letter.full_name }} ({{ letter.user.email }}) from {{ letter.country_of_origin }} - Status: {{ letter.status
-        }}</li>
+    <li>{{ letter.full_name }} ({{ letter.user.email }}) from {{ letter.country_of_origin }} - Status:
+       {{ letter.status }}</li>
     {% endfor %}
 </ul>
 {% endblock %}

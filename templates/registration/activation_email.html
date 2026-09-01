@@ -15,18 +15,21 @@
     {% blocktrans with site_domain=site.domain %}
     You (or someone pretending to be you) have asked to register an account at
     <strong>{{ site_domain }}</strong>.
-    If this wasn't you, please ignore this email and your address will be removed from our records.
+    If this wasn't you, please ignore this email and your address will be removed
+    from our records.
     {% endblocktrans %}
 </p>
 
 <div class="button-container">
-    <a href="https://{{ site.domain }}{% url 'registration_activate' activation_key %}" class="verification-button">{%
-        trans "Verify Email Address" %}</a>
+    <a href="https://{{ site.domain }}{% url 'registration_activate' activation_key %}" class="verification-button">
+       {% trans "Verify Email Address" %}</a>
 </div>
 
 <p class="verification-link">
-    {% trans "If the button above doesn't work, please copy and paste the following link into your browser:"
-    %}
+    {% blocktrans with site_domain=site.domain %}
+    If the button above doesn't work, please copy and paste the following link
+    into your browser:"
+    {% endblocktrans %}
 </p>
 <p class="verification-link">
     https://{{ site.domain }}{% url 'registration_activate' activation_key %}
