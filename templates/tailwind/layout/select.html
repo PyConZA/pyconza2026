@@ -2,12 +2,14 @@
 {% load tailwind_filters %}
 {% load l10n %}
 
-{# Overrides crispy_tailwind's select template. The upstream copy lives in the
+{% comment %}
+   Overrides crispy_tailwind's select template. The upstream copy lives in the
    virtualenv, which Tailwind's content scan skips, so its chevron-positioning
    utilities (inset-y-0/right-0/fill-current) were never generated and the
    dropdown arrow dropped below the field. Keeping the template here means those
    classes are scanned and built. Colours/padding/radius come from the global
-   `select` rule in main.css, so we only add what that rule can't supply. #}
+   `select` rule in main.css, so we only add what that rule can't supply.
+{% endcomment %}
 <div class="relative">
     <select class="appearance-none block w-full border {% if field.errors %}border-red-500 {% endif %}leading-normal" name="{{ field.html_name }}" {{ field|build_attrs }}>
         {% for group, options, index in field|optgroups %}

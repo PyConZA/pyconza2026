@@ -33,7 +33,7 @@ class VisaLetterUserFlowTests(TestCase):
         self.assertContains(response, "embassy_address")
 
         # Check submit button
-        self.assertContains(response, "Request Visa Letter")
+        self.assertContains(response, "Visa Letter Request")
 
     def test_create_form_submission_success(self):
         """Test successful visa letter creation through form"""
@@ -125,8 +125,7 @@ class VisaLetterUserFlowTests(TestCase):
         url = reverse("visa:visa_letter_detail")
         response = self.client.get(url)
 
-        # Should have yellow styling for pending
-        self.assertContains(response, "bg-yellow-100 text-yellow-800")
+        self.assertContains(response, "bg-cream-tint text-indigo")
         self.assertContains(response, "being reviewed by our team")
 
         # Test approved status
@@ -134,8 +133,8 @@ class VisaLetterUserFlowTests(TestCase):
         visa_letter.save()
 
         response = self.client.get(url)
-        self.assertContains(response, "bg-green-100 text-green-800")
-        self.assertContains(response, "has been approved")
+        self.assertContains(response, "bg-olive text-cream")
+        self.assertContains(response, "visa letter is approved")
 
         # Test rejected status
         visa_letter.status = "rejected"
@@ -143,8 +142,8 @@ class VisaLetterUserFlowTests(TestCase):
         visa_letter.save()
 
         response = self.client.get(url)
-        self.assertContains(response, "bg-red-100 text-red-800")
-        self.assertContains(response, "Rejection Reason")
+        self.assertContains(response, "bg-pink text-off-white")
+        self.assertContains(response, "Rejection reason")
         self.assertContains(response, "Incomplete documentation")
 
     def test_update_form_displays_existing_data(self):
@@ -285,7 +284,7 @@ class VisaLetterUserFlowTests(TestCase):
         # Follow redirect to create form
         response = self.client.get(reverse("visa:visa_letter_form"))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Request Visa Letter")
+        self.assertContains(response, "Visa Letter Request")
 
     def test_navigation_flow_existing_user(self):
         """Test navigation flow for user with existing visa letter"""
