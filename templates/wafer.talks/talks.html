@@ -43,16 +43,16 @@
                     {% if talk.submitted %}
                     <span class="badge bg-info" title="{% trans 'Submitted' %}">{% trans 'Submitted' %}</span>
                     {% elif talk.under_consideration %}
-                    <span class="badge bg-info" title="{% trans 'Under consideration' %}">{% trans 'Under consideration'
-                        %}</span>
+                    <span class="badge bg-info" title="{% trans 'Under consideration' %}">
+                       {% trans 'Under consideration' %}</span>
                     {% elif talk.reject %}
                     <span class="badge bg-danger" title="{% trans 'Not accepted' %}">{% trans 'Not accepted' %}</span>
                     {% elif talk.cancelled %}
-                    <span class="badge bg-warning" title="{% trans 'Talk Cancelled' %}">{% trans 'Talk Cancelled'
-                        %}</span>
+                    <span class="badge bg-warning" title="{% trans 'Talk Cancelled' %}">
+                       {% trans 'Talk Cancelled' %}</span>
                     {% elif talk.provisional %}
-                    <span class="badge bg-success" title="{% trans 'Provisionally Accepted' %}">{% trans 'Provisionally
-                        Accepted' %}</span>
+                    <span class="badge bg-success" title="{% trans 'Provisionally Accepted' %}">
+                       {% trans 'Provisionally Accepted' %}</span>
                     {% endif %}
                     {% reviewed_badge user talk %}
                 </td>

@@ -3,12 +3,11 @@
 {% block side_menu %}
 {% if can_edit %}
 <nav class="flex flex-col space-y-3 text-center pb-5">
-  <a href="{% url 'wafer_user_edit' object.username %}" class="btn btn-secondary w-full">{% trans 'Edit Account'
-    %}</a>
+  <a href="{% url 'wafer_user_edit' object.username %}" class="btn btn-secondary w-full">
+     {% trans 'Edit Account' %}</a>
 
-  <a href="{% url 'wafer_user_edit_profile' object.username %}" class="btn btn-secondary w-full">{% trans 'Edit
-    Profile'
-    %}</a>
+  <a href="{% url 'wafer_user_edit_profile' object.username %}" class="btn btn-secondary w-full">
+      {% trans 'Edit Profile' %}</a>
   {% if WAFER_REGISTRATION_OPEN %}
   {% if WAFER_REGISTRATION_MODE == 'ticket' and not profile.is_registered %}
   {% url 'wafer_ticket_claim' as register_url %}
@@ -18,8 +17,10 @@
   {% url 'unregister' as unregister_url %}
   {% endif %}
   {% if register_url %}
-  <a href="{{ register_url }}" class="btn btn-secondary w-full">{% if profile.is_registered %}{% trans 'Update
-    registration' context "conference" %}{% else %}{% trans 'Register' context "conference" %}{% endif %}</a>
+  <a href="{{ register_url }}" class="btn btn-secondary w-full">{% if profile.is_registered %}
+     {% trans 'Update registration' context "conference" %}
+     {% else %}
+     {% trans 'Register' context "conference" %}{% endif %}</a>
   {% endif %}
   {% if unregister_url and profile.is_registered %}
   <a href="{{ unregister_url }}" class="btn btn-secondary w-full">{% trans 'Unregister' context "conference" %}</a>

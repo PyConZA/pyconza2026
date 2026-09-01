@@ -7,8 +7,8 @@
 <div class="breadcrumbs">
     <a href="{% url 'admin:index' %}">{% trans 'Home' %}</a>
     &rsaquo; <a href="{% url 'admin:app_list' app_label=opts.app_label %}">{{ opts.app_config.verbose_name }}</a>
-    &rsaquo; <a href="{% url 'admin:visa_visainvitationletter_changelist' %}">{{ opts.verbose_name_plural|capfirst
-        }}</a>
+    &rsaquo; <a href="{% url 'admin:visa_visainvitationletter_changelist' %}">
+       {{ opts.verbose_name_plural|capfirst }}</a>
     &rsaquo; <a href="{% url 'admin:visa_visainvitationletter_change' visa_letter.pk %}">{{ visa_letter }}</a>
     &rsaquo; {% if is_permanent %}{% trans 'Permanently Reject' %}{% else %}{% trans 'Reject' %}{% endif %}
 </div>
@@ -51,8 +51,8 @@
             value="{% if is_permanent %}{% trans 'Permanently Reject Visa Letter' %}{% else %}{% trans 'Reject Visa Letter' %}{% endif %}"
             class="default" {% if is_permanent %}style="background-color: #dc3545;" {% endif %} />
         <p class="deletelink-box">
-            <a href="{% url 'admin:visa_visainvitationletter_change' visa_letter.pk %}" class="deletelink">{% trans
-                'Cancel' %}</a>
+            <a href="{% url 'admin:visa_visainvitationletter_change' visa_letter.pk %}" class="deletelink">
+               {% trans 'Cancel' %}</a>
         </p>
     </div>
 </form>
