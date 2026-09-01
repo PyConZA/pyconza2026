@@ -115,7 +115,6 @@ class GrantApplicationAdmin(ImportExportModelAdmin):
     travel_from_display.short_description = 'Travel From'
 
 
-
 class GrantInline(admin.StackedInline):
     model = GrantApplication
     can_delete = False
