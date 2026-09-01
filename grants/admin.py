@@ -1,10 +1,13 @@
 from django.contrib import admin
 from django.http import HttpResponse
 from django.utils import timezone
+from django.contrib.auth import get_user_model
 import openpyxl
 from openpyxl.utils import get_column_letter
 from .models import GrantApplication
 from import_export.admin import ImportExportModelAdmin
+
+from wafer.users.admin import UserAdmin, UserProfileInline
 
 
 @admin.register(GrantApplication)
@@ -110,4 +113,23 @@ class GrantApplicationAdmin(ImportExportModelAdmin):
     def travel_from_display(self, obj):
         return obj.travel_from or "Not specified"
     travel_from_display.short_description = 'Travel From'
-    
+
+
+class GrantInline(admin.StackedInline):
+    model = GrantApplication
+    can_delete = False
+    verbose_name = 'grant'
+    verbose_name_plural = 'grants'
+
+
+admin.site.unregister(get_user_model())
+
+
+class UserAdminWithGrant(UserAdmin):
+    inlines = (GrantInline, UserProfileInline)
+
+    list_display = ("username", "email", "first_name", "last_name",
+                    "date_joined", "last_login", "is_staff")
+
+
+admin.site.register(get_user_model(), UserAdminWithGrant)
