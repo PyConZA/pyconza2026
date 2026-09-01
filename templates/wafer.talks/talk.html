@@ -131,19 +131,18 @@
         <th></th>
         <td class="flex flex-row gap-3 justify-end">
           {% if can_edit %}
-          <a href="{% url 'wafer_talk_edit' object.pk %}" class="float-end btn btn-secondary btn-small d-print-none">{%
-            trans
-            'Edit' %}</a>
+          <a href="{% url 'wafer_talk_edit' object.pk %}" class="float-end btn btn-secondary btn-small d-print-none">
+             {% trans 'Edit' %}</a>
           {% if user.is_staff %}
           <a href="{% url 'admin:talks_talk_change' object.pk %}"
-            class="float-end btn btn-secondary btn-small d-print-none">{%
-            trans 'Admin' %}</a>
+            class="float-end btn btn-secondary btn-small d-print-none">
+             {% trans 'Admin' %}</a>
           {% endif %}
           {% endif %}
           {% if can_review %}
           <a href="#review" class="float-end btn btn-secondary btn-small" data-bs-toggle="collapse"
-            data-bs-target="#review">{%
-            trans 'Review' %}</a>
+            data-bs-target="#review">
+             {% trans 'Review' %}</a>
           {% endif %}
         </td>
       </tr>

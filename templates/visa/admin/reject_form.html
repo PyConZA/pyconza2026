@@ -51,8 +51,8 @@
             value="{% if is_permanent %}{% trans 'Permanently Reject Visa Letter' %}{% else %}{% trans 'Reject Visa Letter' %}{% endif %}"
             class="default" {% if is_permanent %}style="background-color: #dc3545;" {% endif %} />
         <p class="deletelink-box">
-            <a href="{% url 'admin:visa_visainvitationletter_change' visa_letter.pk %}" class="deletelink">{% trans
-                'Cancel' %}</a>
+            <a href="{% url 'admin:visa_visainvitationletter_change' visa_letter.pk %}" class="deletelink">
+               {% trans 'Cancel' %}</a>
         </p>
     </div>
 </form>
