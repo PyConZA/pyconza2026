@@ -1,5 +1,5 @@
 ---
-name: Speaking
+name: Talks
 include_in_menu: True
 exclude_from_static: True
 menu_order: 1
