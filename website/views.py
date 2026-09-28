@@ -2,10 +2,17 @@ from django.shortcuts import render
 
 from bakery.views import BuildableTemplateView
 
+from website.tickets import homepage_ticket_counts
+
 
 class PageHome(BuildableTemplateView):
     template_name = "website/page_home.html"
     build_path = "index.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update(homepage_ticket_counts())
+        return context
 
 
 class PageTickets(BuildableTemplateView):
