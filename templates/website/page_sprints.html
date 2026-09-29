@@ -18,7 +18,8 @@
         </div>
         <div class="card text-center p-6">
             <div class="font-semibold text-lg mb-2">Where</div>
-            <div>Belmont Square, Cape Town, South Africa</div>
+            <div>To be announced</div>
+            <!-- <div>Belmont Square, Cape Town, South Africa</div> -->
         </div>
         <div class="card text-center p-6">
             <div class="font-semibold text-lg mb-2">Time</div>
@@ -30,7 +31,16 @@
         </div>
     </div>
 
-    <!-- Venue Information -->
+    <div class="flex flex-wrap justify-center gap-4">
+        <a href="{{ SPRINTS_APPLICATION_FORM }}" class="btn" rel="noopener noreferrer" target="_blank">Sign up to sprint</a>
+    </div>
+
+    <div class="bg-off-white border border-grey-300 rounded-xl p-8 text-center space-y-3">
+        <h2>Venue</h2>
+        <p class="text-lg">To be announced</p>
+        <p class="text-grey-700">We will publish the sprint venue here when it is confirmed.</p>
+    </div>
+    <!-- When the sprint venue is confirmed, uncomment this block and hide the TBA card above.
     <div class="bg-off-white border border-grey-300 rounded-xl p-8">
         <h2 class="text-center mb-6">Venue</h2>
         <div class="grid md:grid-cols-2 gap-8 items-center">
@@ -49,6 +59,7 @@
             </div>
         </div>
     </div>
+    -->
 
     <!-- What Are Sprints -->
     <div class="space-y-6">
@@ -91,9 +102,9 @@
         <h2 class="text-center">Why join the sprints?</h2>
         <div class="grid lg:grid-cols-2 gap-8">
             <!-- For Contributors -->
-            <div class="card p-8">
+            <div class="card p-8 flex flex-col h-full">
                 <h3>For contributors</h3>
-                <ul class="space-y-4">
+                <ul class="space-y-4 flex-grow">
                     <li class="flex items-start">
                         <span class="text-indigo font-bold mr-3" aria-hidden="true">✓</span>
                         <div>
@@ -119,12 +130,15 @@
                         </div>
                     </li>
                 </ul>
+                <div class="mt-auto pt-6">
+                    <a href="{{ SPRINTS_APPLICATION_FORM }}" class="btn btn-secondary w-full" rel="noopener noreferrer" target="_blank">Sign up to sprint</a>
+                </div>
             </div>
 
             <!-- For Maintainers -->
-            <div class="card p-8">
+            <div class="card p-8 flex flex-col h-full">
                 <h3>For project maintainers</h3>
-                <ul class="space-y-4">
+                <ul class="space-y-4 flex-grow">
                     <li class="flex items-start">
                         <span class="text-indigo font-bold mr-3" aria-hidden="true">✓</span>
                         <div>
@@ -150,6 +164,9 @@
                         </div>
                     </li>
                 </ul>
+                <div class="mt-auto pt-6">
+                    <a href="{{ SPRINTS_APPLICATION_FORM }}" class="btn btn-secondary w-full" rel="noopener noreferrer" target="_blank">Propose a project</a>
+                </div>
             </div>
         </div>
     </div>
@@ -161,11 +178,8 @@
             Sprint project list for PyConZA 2026 — coming soon.
         </p>
         <p class="text-off-white max-w-3xl mx-auto">
-            Want to sprint on your open-source project at PyConZA 2026? Get in touch to propose a project.
+            If you maintain an open-source project, propose it from the card above — same form as contributor sign-up.
         </p>
-        <div>
-            <a href="/pages/about/contact-us/" class="btn btn-secondary">Propose a project</a>
-        </div>
     </div>
 
     <!-- Contact -->

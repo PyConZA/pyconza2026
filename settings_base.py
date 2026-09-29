@@ -279,6 +279,7 @@ WAFER_MENUS = (
             {"url": reverse_lazy("wafer_talks_speakers"), "label": _("Speakers")},
         ],
     },
+    {"label": _("Sprints"), "url": reverse_lazy("page_sprints")},
 )
 
 
@@ -416,3 +417,4 @@ BAKERY_VIEWS = (
 
 CFP_DEADLINE = "2026-07-31"
 SPONSORSHIP_PROSPECTUS_URL="https://drive.google.com/file/d/1ku9YDy0CUMOrehioxflKwleSwjwFpRKO/view?usp=drive_link"
+SPRINTS_APPLICATION_FORM = "https://forms.gle/LKtPJhNsX7wWoNbW6"
