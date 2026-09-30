@@ -340,7 +340,7 @@ WAFER_TALK_FORM = "website.talks.forms.TalkForm"
 # Must match the tags on each ticket type exactly (case-insensitive for include).
 TICKET_TAG_IN_PERSON = "In Person"
 TICKET_TAG_ONLINE = "Online"
-TICKET_TAGS_EXCLUDE = ("Travel Donation", "Beginners Day", "Sponsor")
+TICKET_TAGS_EXCLUDE = ("Travel Donation", "Beginners Day")
 TICKET_CAPACITY_IN_PERSON = 250
 TICKET_CAPACITY_ONLINE = None
 
