@@ -2,7 +2,9 @@
 {% load static %}
 
 {% block extra_head %}
+    {% comment "PyGame workshop not running in 2026" %}
     <link rel="preload" as="image" href="{% static 'img/beginners_day/pygame.png' %}">
+    {% endcomment %}
 {% endblock %}
 
 {% block page_title %}PyConZA Beginner's Day{% endblock %}
@@ -16,7 +18,9 @@
         <div class="inline-flex flex-wrap justify-center items-center gap-x-4 gap-y-2 px-6 py-3 bg-cream-tint border border-indigo rounded-xl">
             <span class="font-semibold font-mono">Wednesday 14 October 2026</span>
             <span class="text-grey-500" aria-hidden="true">·</span>
-            <span class="font-semibold">Free to attend</span>
+            <span class="font-semibold">FREE to attend</span>
+            <span class="text-grey-500" aria-hidden="true">·</span>
+            <span>R50 secures your spot, refunded on the day</span>
         </div>
         <p class="text-lg max-w-3xl mx-auto">
             Curious about Python but don't know where to start? Already know a little Python and want to expand? Beginner's Day is built for you.
@@ -27,7 +31,7 @@
     <div class="space-y-6">
         <h2>What is Beginner's Day?</h2>
         <p>
-            Beginner's Day is a pre-conference event for newcomers to the Python community. Through hands-on workshops and mentorship, we open doors for aspiring developers, data scientists, and technologists from any background.
+            Beginner's Day is a pre-conference event for newcomers to the Python community. Through a hands-on workshop and mentorship, we open doors for aspiring developers, data scientists, and technologists from any background.
         </p>
         <div class="bg-off-white border-l-4 border-indigo p-4 rounded">
             <p class="font-semibold">Our aim</p>
@@ -39,13 +43,13 @@
     <div class="bg-off-white border border-grey-300 rounded-xl p-8 space-y-4">
         <h2 class="text-center">Advanced Pythonistas welcome too</h2>
         <p class="text-center">
-            We are all beginners at something. Even experienced Python developers will find topics here that are new to them — from data visualisation with Plotnine to game development with PyGame.
+            We are all beginners at something. Even experienced Python developers can pick up something new here, or help others take their first steps.
         </p>
         <div class="grid md:grid-cols-2 gap-8">
             <div class="text-center md:text-left">
                 <h3>Learn something new</h3>
                 <p class="leading-relaxed">
-                    Expand your toolkit by exploring areas outside your day-to-day. Data scientists can try game development; web developers can dig into data visualisation; everyone can pick up new libraries and approaches.
+                    Expand your toolkit by exploring areas outside your day-to-day. If data analysis isn't part of your usual work, this is a friendly way in.
                 </p>
             </div>
             <div class="text-center md:text-left">
@@ -56,13 +60,13 @@
             </div>
         </div>
         <div class="text-center pt-4">
-            <p class="font-semibold">Details for PyConZA 2026 Beginner's Day coming soon.</p>
+            <p class="font-semibold">Want to mentor? <a href="{% url 'page_volunteering' %}">Sign up as a volunteer</a>.</p>
         </div>
     </div>
 
     <!-- Featured Workshops -->
     <div class="space-y-8">
-        <h2>Featured workshops</h2>
+        <h2>The workshop</h2>
 
         <div class="space-y-6">
             <!-- HumbleData Workshop -->
@@ -72,6 +76,7 @@
                          alt="HumbleData"
                          class="h-20 mx-auto mb-4 object-contain">
                     <h3 class="mb-0">HumbleData</h3>
+                    <p class="mt-2 mb-0">Led by Sheena</p>
                 </div>
                 <div class="p-6 flex flex-col">
                     <div class="mb-3 flex flex-wrap gap-2">
@@ -96,6 +101,7 @@
                 </div>
             </div>
 
+            {% comment "DjangoGirls+ workshop not running in 2026" %}
             <!-- DjangoGirls Workshop -->
             <div class="card overflow-hidden p-0">
                 <div class="bg-cream-tint p-6 text-center border-b border-grey-300">
@@ -126,6 +132,7 @@
                     </div>
                 </div>
             </div>
+            {% endcomment %}
 
             <!-- Apify Workshop -->
             <!-- <div class="card overflow-hidden p-0">
@@ -157,6 +164,7 @@
                 </div>
             </div> -->
 
+            {% comment "PyGame workshop not running in 2026" %}
             <!-- PyGame Workshop -->
             <div class="card overflow-hidden p-0">
                 <div class="bg-cream-tint p-6 text-center border-b border-grey-300">
@@ -188,6 +196,7 @@
                     </div>
                 </div>
             </div>
+            {% endcomment %}
 
             <!-- Plotnine Workshop -->
             <!-- <div class="card overflow-hidden p-0">
@@ -271,7 +280,8 @@
             </div>
             <div class="card text-center">
                 <div class="font-semibold mb-1">Cost</div>
-                <div>Free to attend</div>
+                <div class="font-semibold">FREE</div>
+                <div class="text-sm">R50 secures your spot, refunded on the day</div>
             </div>
             <div class="card text-center">
                 <div class="font-semibold mb-1">Capacity</div>
@@ -323,10 +333,13 @@
         <h2>About attendance</h2>
 
         <div class="alert alert-info text-center">
-            <h3>Registration coming soon</h3>
+            <h3>Get your ticket</h3>
             <p>
-                Beginner's Day registration opens closer to the event. Details will follow.
+                Beginner's Day is free. A R50 ticket secures your spot, and we refund the full R50 when you attend on the day.
             </p>
+            <div class="mt-4">
+                <a href="https://za.pycon.org/pages/tickets/buy-tickets/" class="btn">Get a ticket</a>
+            </div>
         </div>
     </div>
 
@@ -384,7 +397,7 @@
             </div>
             <div class="border-b border-grey-300 pb-4">
                 <p class="font-semibold">Can I attend both Beginner's Day and the main conference?</p>
-                <p>Yes. Main-conference tickets are separate; Beginner's Day attendees get a discount.</p>
+                <p>Yes. Main-conference tickets are separate.</p>
             </div>
             <div class="border-b border-grey-300 pb-4">
                 <p class="font-semibold">What operating system should my laptop have?</p>
